@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Beef Burger",
+        "weight": 380,
+        "picture": "/assets/pictures/burgers/bigmac.png",
+        "description": "Big Burger with beef and cheese!",
+        "ingredients": ["Sesame Seed Bun","Burger Sauce","Cheddar", "Beef", "Lettuce"],
+        "owner": "admin"
+    },
+    {
+        "name": "Fish Burger",
+        "weight": 350,
+        "picture": "/assets/pictures/burgers/filletofish.png",
+        "description": "Burger with fish fillet and cheese!",
+        "ingredients": ["Regular Bun","Fish","Cheddar","Mayonnaise"],
+        "owner": "admin"
+    },
+    {
+        "name": "Bacon and Beef Burger",
+        "weight": 390,
+        "picture": "/assets/pictures/burgers/bigriosti.png",
+        "description": "Big beef Burger with bacon and cheese!",
+        "ingredients": ["Sesame Seed Bun","Mayonnaise","Cheddar","Bacon"],
+        "owner": "admin"
+    }
+]

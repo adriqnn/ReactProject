@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Margherita",
+        "weight": 490,
+        "picture": "/assets/pictures/pizzas/margherita.png",
+        "description": "Best value pizza in the store!",
+        "ingredients": ["Traditional Dough","Tomato Sauce","Mozzarella"],
+        "owner": "admin"
+    },
+    {
+        "name": "Pepperoni Pizza",
+        "weight": 560,
+        "picture": "/assets/pictures/pizzas/pepperoni.png",
+        "description": "Great and classic pizza with pepperoni!",
+        "ingredients": ["Traditional Dough","Tomato Sauce","Mozzarella","Pepperoni"],
+        "owner": "admin"
+    },
+    {
+        "name": "Ham Pizza",
+        "weight": 550,
+        "picture": "/assets/pictures/pizzas/ham.png",
+        "description": "Traditional pizza with ham and mozzarella!",
+        "ingredients": ["Traditional Dough","Tomato Sauce","Mozzarella","Smoked Ham"],
+        "owner": "admin"
+    }
+]
