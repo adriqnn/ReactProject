@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../../../App.css';
 
 export const Login = () => {
@@ -67,7 +68,7 @@ export const Login = () => {
                             </> */}
 
                             <div className="form-group">
-                                <p>Not registered yet? <a routerLink="/auth/register" style={{fontSize: "20px", color: "greenyellow"}}>Register Now!</a></p>
+                                <p>Not registered yet? <Link to="/auth/register" style={{fontSize: "20px", color: "greenyellow"}}>Register Now!</Link></p>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>

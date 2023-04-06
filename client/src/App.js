@@ -14,6 +14,7 @@ import { Login } from './components/Auth/Login/Login';
 import { Register } from './components/Auth/Register/Register';
 import { Profile } from './components/Auth/Profile/Profile';
 import { Logout } from './components/Auth/Logout/Logout';
+import { Burger } from './components/Burger/Burger/Burger';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           <Route path='/auth/profile' element={<Profile/>}/>
           <Route path='/auth/logout' element={<Logout/>}/>
 
+          <Route path='/burgers' element={<Burger/>}/>
+
+          
           
           <Route path='/about' element={<About/>}/>
           <Route path='/contacts' element={<Contacts/>}/>
