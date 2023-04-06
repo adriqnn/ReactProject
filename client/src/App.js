@@ -12,6 +12,7 @@ import { Contacts } from './components/Core/Contacts/Contacts';
 import { Error } from './components/Core/Error/Error';
 import { Login } from './components/Auth/Login/Login';
 import { Register } from './components/Auth/Register/Register';
+import { Profile } from './components/Auth/Profile/Profile';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
 
           <Route path='/auth/login' element={<Login/>}/>
           <Route path='/auth/register' element={<Register/>}/>
+          <Route path='/auth/profile' element={<Profile/>}/>
 
           
           <Route path='/about' element={<About/>}/>
