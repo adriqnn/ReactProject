@@ -13,6 +13,7 @@ import { Error } from './components/Core/Error/Error';
 import { Login } from './components/Auth/Login/Login';
 import { Register } from './components/Auth/Register/Register';
 import { Profile } from './components/Auth/Profile/Profile';
+import { Logout } from './components/Auth/Logout/Logout';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/auth/login' element={<Login/>}/>
           <Route path='/auth/register' element={<Register/>}/>
           <Route path='/auth/profile' element={<Profile/>}/>
+          <Route path='/auth/logout' element={<Logout/>}/>
 
           
           <Route path='/about' element={<About/>}/>
