@@ -1,8 +1,8 @@
 import { createContext, useContext } from "react";
 
-export const AuthContext = createContext();
+export const ApplicationContext = createContext();
 
-export const AuthProvider = ({
+export const ApplicationProvider = ({
     children,
 }) => {
     const context = {
@@ -11,9 +11,9 @@ export const AuthProvider = ({
 
     return (
         <>
-            <AuthContext.Provider value={context}>
+            <ApplicationContext.Provider value={context}>
                 {children}
-            </AuthContext.Provider>
+            </ApplicationContext.Provider>
         </>
     );
 };

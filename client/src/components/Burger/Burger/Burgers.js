@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export const Burger = () => {
+export const Burgers = () => {
 
     return (
         <main>

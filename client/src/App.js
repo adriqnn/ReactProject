@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { AuthProvider } from './contexts/AuthContext';
+import { ApplicationProvider } from './contexts/ApplicationContext';
 
 import { Home } from './components/Core/Home/Home';
 import { Header } from './components/Core/Header/Header';
@@ -14,11 +14,12 @@ import { Login } from './components/Auth/Login/Login';
 import { Register } from './components/Auth/Register/Register';
 import { Profile } from './components/Auth/Profile/Profile';
 import { Logout } from './components/Auth/Logout/Logout';
-import { Burger } from './components/Burger/Burger/Burger';
+import { Burgers } from './components/Burger/Burger/Burgers';
+import { Pizzas } from './components/Pizza/Pizza/Pizzas';
 
 function App() {
   return (
-      <AuthProvider>
+      <ApplicationProvider>
         <Header/>
 
         <Routes>
@@ -29,9 +30,9 @@ function App() {
           <Route path='/auth/profile' element={<Profile/>}/>
           <Route path='/auth/logout' element={<Logout/>}/>
 
-          <Route path='/burgers' element={<Burger/>}/>
+          <Route path='/burgers' element={<Burgers/>}/>
 
-          
+          <Route path='/pizzas' element={<Pizzas/>}/>
           
           <Route path='/about' element={<About/>}/>
           <Route path='/contacts' element={<Contacts/>}/>
@@ -40,7 +41,7 @@ function App() {
         </Routes>
 
         <Footer/>
-      </AuthProvider>
+      </ApplicationProvider>
 
   );
 };

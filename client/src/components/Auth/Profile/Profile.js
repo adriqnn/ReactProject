@@ -3,7 +3,7 @@ export const Profile = () => {
         <main>
             <section className="profile col-md-6 text-center col-lg" id="profile-page">
                 <div className="profile-container">
-                    <img className="profile-img" src="/assets/pictures/main/profilepic.png"/>
+                    <img className="profile-img" src="/assets/pictures/main/profilepic.png" alt="profile"/>
                     <p style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "20px", color: "greenyellow"}}>Username: <span></span></p>
                     <p style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "20px", color: "greenyellow"}}>Email: <span></span></p>
                     <p style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "18px", color: "greenyellow"}}>Created at: <span></span></p>
