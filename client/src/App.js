@@ -10,6 +10,7 @@ import './App.css';
 import { About } from './components/Core/About/About';
 import { Contacts } from './components/Core/Contacts/Contacts';
 import { Error } from './components/Core/Error/Error';
+import { Login } from './components/Auth/Login/Login';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home/>}/>
+
+          <Route path='/auth/login' element={<Login/>}/>
+
           
           <Route path='/about' element={<About/>}/>
           <Route path='/contacts' element={<Contacts/>}/>

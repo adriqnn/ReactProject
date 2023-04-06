@@ -8,7 +8,7 @@ export const About = () => {
                     <br></br>
                     <div>
                         <p style={{fontStyle: "italic", fontFamily: "cursive"}}> Small React Client Project.</p>
-                        <p style={{fontStyle: "italic", fontFamily: "cursive"}}> JS Back-End API Service for the Angular Client.</p>
+                        <p style={{fontStyle: "italic", fontFamily: "cursive"}}> JS Back-End API Service for the React Client.</p>
                         <p style={{fontStyle: "italic", fontFamily: "cursive"}}> ...</p>
                         <p style={{fontStyle: "italic", fontFamily: "cursive"}}> Functionality:</p>
                         <p style={{fontStyle: "italic", fontFamily: "cursive"}}> -Login.</p>
