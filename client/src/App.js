@@ -17,6 +17,7 @@ import { Logout } from './components/Auth/Logout/Logout';
 import { Burgers } from './components/Burger/Burger/Burgers';
 import { Pizzas } from './components/Pizza/Pizza/Pizzas';
 import { BurgerCreate } from './components/Burger/Burger-Create/Burger-Create';
+import { PizzaCreate } from './components/Pizza/Pizza-Create/Pizza-Create';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path='/burgers/create' element={<BurgerCreate/>}/>
 
           <Route path='/pizzas' element={<Pizzas/>}/>
+          <Route path='/pizzas/create' element={<PizzaCreate/>}/> 
           
           <Route path='/about' element={<About/>}/>
           <Route path='/contacts' element={<Contacts/>}/>
