@@ -10,7 +10,6 @@ export const BurgerIngredients = () => {
 
     useEffect(() => {
         burgerService.getAllBurgerIngredients().then(result => {
-            console.log(result);
             setBurgerIngredients(result);
         });
     }, []);

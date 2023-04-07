@@ -1,4 +1,19 @@
+import { useContext, useEffect, useState } from "react";
+import { ApplicationContext } from "../../../contexts/ApplicationContext";
+import { pizzaServiceFactory } from "../../../services/pizzaService";
+import { PizzaIngredient } from "./Pizza-Ingredient";
+
 export const PizzaIngredients = () => {
+    const { auth } = useContext(ApplicationContext);
+    const [pizzaIngredients, setPizzaIngredients] = useState([]);
+    const pizzaService = pizzaServiceFactory(auth.token);
+
+    useEffect(() => {
+        pizzaService.getAllPizzaIngredients().then(result => {
+            setPizzaIngredients(result);
+        });
+    }, []);
+
     return (
         <main>
             <section className="container" id="pizza-ingredient">
@@ -13,31 +28,17 @@ export const PizzaIngredients = () => {
                     <p className="line"></p>
                 </header>
                 <div className="row text-center">
-                    {/* <ng-container *ngIf="pizzaIngredientList">
-                        <ng-container *ngFor="let pizzaIngredient of pizzaIngredientList let i = index">
-                            <div className="col-lg-4 col-md-6 mb-4">
-                                <div className="card h-100">
-                                    <img className="card-img-top"
-                                        src={{pizzaIngredient.picture}}
-                                        alt="pizzaIngredient">
-                                    <div className="card-body">
-                                        <h5 className="card-title2"><span>{{pizzaIngredient.name}}</span></h5>
-                                        <h5 className="mt-4 card-info"> Type: {{pizzaIngredient.type}}<span></span></h5>
-                                        <h5 className="mt-4 card-info"> Weight: {{pizzaIngredient.weight}}g<span></span></h5>
-                                    </div>
-                                    <div className="card-footer">
-                                        <a [routerLink]="['/pizzas','pizzaIngredient', pizzaIngredient._id]" className="btn btn-success">Details</a>
-                                    </div>
-                                </div>
+                    {
+                        pizzaIngredients.length > 0 && pizzaIngredients.map(x => <PizzaIngredient key={x._id} {...x}/>)
+                    }
+                    {
+                        pizzaIngredients.length <= 0 && (
+                            <div className="no-ingredients">
+                                <img src="/assets/pictures/main/404missin.png" alt="missing"/>
+                                <p className="lead">Please try again later...</p>
                             </div>
-                        </ng-container>
-                    </ng-container>
-                    <ng-container *ngIf="!pizzaIngredientList">
-                        <div className="no-ingredients">
-                            <img src="/assets/pictures/main/404missin.png"/>
-                            <p className="lead">Please try again later...</p>
-                        </div>
-                    </ng-container>           */}
+                        )
+                    }
                 </div>
             </section>
         </main>
