@@ -10,7 +10,13 @@ export const burgerServiceFactory = (token) => {
         return result;
     };
 
+    const getOneBurgerIngredientById = async (burgerIngredientId) => {
+        const result = await request.get(`${baseUrl}/burgerIngredient/${burgerIngredientId}`);
+        return result;
+    }
+
     return {
         getAllBurgerIngredients,
+        getOneBurgerIngredientById
     }
 };
