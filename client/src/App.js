@@ -18,6 +18,7 @@ import { Burgers } from './components/Burger/Burger/Burgers';
 import { Pizzas } from './components/Pizza/Pizza/Pizzas';
 import { BurgerCreate } from './components/Burger/Burger-Create/Burger-Create';
 import { PizzaCreate } from './components/Pizza/Pizza-Create/Pizza-Create';
+import { BurgerDelete } from './components/Burger/Burger-Delete/Burger-Delete';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
 
           <Route path='/burgers' element={<Burgers/>}/>
           <Route path='/burgers/create' element={<BurgerCreate/>}/>
+          <Route path='/burgers/item/delete/:burgerId' element={<BurgerDelete/>}/>
 
           <Route path='/pizzas' element={<Pizzas/>}/>
           <Route path='/pizzas/create' element={<PizzaCreate/>}/> 
