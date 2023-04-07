@@ -10,7 +10,7 @@ export const ApplicationProvider = ({
 }) => {
     const navigate = useNavigate();
     const [auth, setAuth] = useLocalStorageSetter('auth', {});
-    const authService = authServiceFactory(auth.accessToken);
+    const authService = authServiceFactory(auth.token);
 
     
     const [registerFieldsError, setRegisterFieldsError] = useState(false);
@@ -27,7 +27,7 @@ export const ApplicationProvider = ({
             return;
         }else{
             setRegisterFieldsError(false);
-        }
+        };
 
         try{
             const result = await authService.register(registerData);
@@ -36,16 +36,49 @@ export const ApplicationProvider = ({
         }catch(err){
             err.message === 'Username is taken!' ? setRegisterUsernameTaken(true) : setRegisterUsernameTaken(false);
             err.message === 'Email is taken!' ? setRegisterEmailTaken(true) : setRegisterEmailTaken(false);
+        };
+    };
+
+    const [loginFieldsError, setLoginFieldsError] = useState(false);
+    const [loginWrongUsernameOrPassowrd, setLoginWrongUsernameOrPassowrd] = useState(false);
+    const onLoginFormSubmit = async (loginData) => {
+        const username = loginData.username;
+        const password = loginData.password;
+
+        if(username === '' || password === ''){
+            setLoginFieldsError(true);
+            return;
+        }else{
+            setLoginFieldsError(false);
+        };
+
+        try{
+            const result = await authService.login(loginData);
+            setAuth(result);
+            navigate('/');
+        }catch(err){
+            err.message === 'Incorrect username or password!' ? setLoginWrongUsernameOrPassowrd(true) : setLoginWrongUsernameOrPassowrd(false);
         }
+
     }
 
+    const onLogout = async () => {
+        const result = authService.logout();
+        setAuth({});
+        console.log(result);
+    }
 
     const context = {
         auth,
         registerFieldsError,
         registerUsernameTaken,
         registerEmailTaken,
-        onRegisterFormSubmit
+        onRegisterFormSubmit,
+        loginFieldsError,
+        loginWrongUsernameOrPassowrd,
+        onLoginFormSubmit,
+        isAuthenticated: !!auth.token,
+        onLogout,
     };
 
     return (

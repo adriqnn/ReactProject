@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom"
+import { ApplicationContext } from "../../../contexts/ApplicationContext";
 
 export const Header = () => {
+    const { auth, isAuthenticated } = useContext(ApplicationContext);
+    console.log(isAuthenticated);
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div className="container">
@@ -19,18 +24,30 @@ export const Header = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/burgers">Burgers</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/auth/login">Login</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/auth/register">Register</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/auth/profile">Profile</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/auth/logout">Logout as ...</Link>
-                        </li>
+                        {
+                            !isAuthenticated && (
+                                <>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/auth/login">Login</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/auth/register">Register</Link>
+                                    </li>
+                                </>
+                            )
+                        }
+                        {
+                            isAuthenticated && (
+                                <>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/auth/profile">Profile</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/auth/logout">Logout as {auth.user.email}</Link>
+                                    </li>
+                                </>
+                            )
+                        }
                     </ul>
                 </div>
             </div>

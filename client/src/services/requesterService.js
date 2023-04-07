@@ -17,7 +17,7 @@ const requester = async (method, token, url, data) => {
     const response = await fetch(url, options);
     const result = await response.json();
     
-    if(response.ok){
+    if(response.ok || response.status == '204'){
         return result;
     }else{
         throw new Error(result.message);
@@ -26,6 +26,7 @@ const requester = async (method, token, url, data) => {
 
 
 export const requestFactory = (token) => {
+    console.log(token);
 
     return {
         get: requester.bind(null, 'GET', token),
