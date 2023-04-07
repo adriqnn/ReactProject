@@ -15,18 +15,20 @@ const requester = async (method, token, url, data) => {
     };
 
     const response = await fetch(url, options);
-    const result = await response.json();
+
+    console.log(response);
     
-    if(response.ok || response.status == '204'){
+    if(response.ok || response.status === '204'){
+        const result = await response.json();
         return result;
     }else{
+        const result = await response.json();
         throw new Error(result.message);
     }
 };
 
 
 export const requestFactory = (token) => {
-    console.log(token);
 
     return {
         get: requester.bind(null, 'GET', token),

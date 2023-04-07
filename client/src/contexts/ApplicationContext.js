@@ -63,9 +63,8 @@ export const ApplicationProvider = ({
     }
 
     const onLogout = async () => {
-        const result = authService.logout();
         setAuth({});
-        console.log(result);
+        authService.logout();
     }
 
     const context = {

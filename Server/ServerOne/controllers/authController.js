@@ -51,6 +51,7 @@ authController.post('/logout', session(), async (req, res) => {
         const tokenCookie = req.cookies[authCookieName];
         const token = req.headers['x-authorization'];
         const blacklistedToken = await logout(token);
+        console.log(token);
         res.clearCookie(authCookieName);
         res.status(204).send({message: 'Logged Out!'});
     }catch(err){

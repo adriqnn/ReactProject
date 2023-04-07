@@ -4,7 +4,6 @@ import { ApplicationContext } from "../../../contexts/ApplicationContext";
 
 export const Header = () => {
     const { auth, isAuthenticated } = useContext(ApplicationContext);
-    console.log(isAuthenticated);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
