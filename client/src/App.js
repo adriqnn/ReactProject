@@ -2,11 +2,10 @@ import { Route, Routes } from 'react-router-dom';
 
 import { ApplicationProvider } from './contexts/ApplicationContext';
 
+import './App.css';
 import { Home } from './components/Core/Home/Home';
 import { Header } from './components/Core/Header/Header';
 import { Footer } from './components/Core/Footer/Footer';
-
-import './App.css';
 import { About } from './components/Core/About/About';
 import { Contacts } from './components/Core/Contacts/Contacts';
 import { Error } from './components/Core/Error/Error';
@@ -26,8 +25,6 @@ import { BurgerIngredients } from './components/Burger/Burger-Ingredient/Burger-
 import { PizzaIngredients } from './components/Pizza/Pizza-Ingredient/Pizza-Ingredients';
 import { BurgerIngredientDetails } from './components/Burger/Burger-Ingredient-Details/Burger-Ingredient-Details';
 import { PizzaIngredientDetails } from './components/Pizza/Pizza-Ingredient-Details/Pizza-Ingredient-Details';
-
-
 
 function App() {
   return (
