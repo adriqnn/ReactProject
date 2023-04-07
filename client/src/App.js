@@ -24,6 +24,7 @@ import { BurgerDetails } from './components/Burger/Burger-Details/Burger-Details
 import { PizzaDetails } from './components/Pizza/Pizza-Details/Pizza-Details';
 import { BurgerIngredients } from './components/Burger/Burger-Ingredient/Burger-Ingredients';
 import { PizzaIngredients } from './components/Pizza/Pizza-Ingredient/Pizza-Ingredients';
+import { BurgerIngredientDetails } from './components/Burger/Burger-Ingredient-Details/Burger-Ingredient-Details';
 
 
 
@@ -45,6 +46,7 @@ function App() {
           <Route path='/burgers/item/delete/:burgerId' element={<BurgerDelete/>}/>
           <Route path='/burgers/item/:burgerId' element={<BurgerDetails/>}/>
           <Route path='/burgers/burger-ingredients' element={<BurgerIngredients/>}/>
+          <Route path='/burgers/burger-ingredients/:burgerIngredientId' element={<BurgerIngredientDetails/>}/>
 
           <Route path='/pizzas' element={<Pizzas/>}/>
           <Route path='/pizzas/create' element={<PizzaCreate/>}/> 
