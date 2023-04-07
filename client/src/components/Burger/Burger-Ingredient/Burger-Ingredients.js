@@ -1,4 +1,20 @@
+import { useContext, useEffect, useState } from "react";
+import { burgerServiceFactory } from "../../../services/burgerService";
+import { ApplicationContext } from "../../../contexts/ApplicationContext";
+import { BurgerIngredient } from "./Burger-Ingredient";
+
 export const BurgerIngredients = () => {
+    const { auth } = useContext(ApplicationContext);
+    const [burgerIngredients, setBurgerIngredients] = useState([]);
+    const burgerService = burgerServiceFactory(auth.token);
+
+    useEffect(() => {
+        burgerService.getAllBurgerIngredients().then(result => {
+            console.log(result);
+            setBurgerIngredients(result);
+        });
+    }, []);
+
     return (
         <main>
             <section className="container" id="burger-ingredient">
@@ -13,31 +29,18 @@ export const BurgerIngredients = () => {
                     <p className="line"></p>
                 </header>
                 <div className="row text-center">
-                    {/* <ng-container *ngIf="burgerIngredientList">
-                        <ng-container *ngFor="let burgerIngredient of burgerIngredientList let i = index">
-                            <div className="col-lg-4 col-md-6 mb-4">
-                                <div className="card h-100">
-                                    <img className="card-img-top"
-                                        src={{burgerIngredient.picture}}
-                                        alt="pizzaIngredient">
-                                    <div className="card-body">
-                                        <h5 className="card-title2"><span>{{burgerIngredient.name}}</span></h5>
-                                        <h5 className="mt-4 card-info"> Type: {{burgerIngredient.type}}<span></span></h5>
-                                        <h5 className="mt-4 card-info"> Weight: {{burgerIngredient.weight}}g<span></span></h5>
-                                    </div>
-                                    <div className="card-footer">
-                                        <a [routerLink]="['/burgers','burgerIngredient', burgerIngredient._id]" className="btn btn-success">Details</a>
-                                    </div>
-                                </div>
+                    {
+                        burgerIngredients.length > 0 && burgerIngredients.map(x => <BurgerIngredient key={x._id} {...x}/>)
+                        
+                    }
+                    {
+                        burgerIngredients.length <= 0 && (
+                            <div className="no-ingredients">
+                                <img src="/assets/pictures/main/404missin.png" alt="missing"/>
+                                <p className="lead">Please try again later...</p>
                             </div>
-                        </ng-container>
-                    </ng-container>
-                    <ng-container *ngIf="!burgerIngredientList">
-                        <div className="no-ingredients">
-                            <img src="/assets/pictures/main/404missin.png"/>
-                            <p className="lead">Please try again later...</p>
-                        </div>
-                    </ng-container>           */}
+                        )
+                    }
                 </div>
             </section>
         </main>

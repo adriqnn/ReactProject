@@ -11,7 +11,6 @@ export const ApplicationProvider = ({
     const navigate = useNavigate();
     const [auth, setAuth] = useLocalStorageSetter('auth', {});
     const authService = authServiceFactory(auth.token);
-
     
     const [registerFieldsError, setRegisterFieldsError] = useState(false);
     const [registerUsernameTaken, setRegisterUsernameTaken] = useState(false);
@@ -58,14 +57,13 @@ export const ApplicationProvider = ({
             navigate('/');
         }catch(err){
             err.message === 'Incorrect username or password!' ? setLoginWrongUsernameOrPassowrd(true) : setLoginWrongUsernameOrPassowrd(false);
-        }
-
-    }
+        };
+    };
 
     const onLogout = async () => {
         setAuth({});
         authService.logout();
-    }
+    };
 
     const context = {
         auth,
