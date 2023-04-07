@@ -22,6 +22,7 @@ import { BurgerDelete } from './components/Burger/Burger-Delete/Burger-Delete';
 import { PizzaDelete } from './components/Pizza/Pizza-Delete/Pizza-Delete';
 import { BurgerDetails } from './components/Burger/Burger-Details/Burger-Details';
 import { PizzaDetails } from './components/Pizza/Pizza-Details/Pizza-Details';
+import { BurgerIngredient } from './components/Burger/Burger-Ingredient/Burger-Ingredient';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path='/burgers/create' element={<BurgerCreate/>}/>
           <Route path='/burgers/item/delete/:burgerId' element={<BurgerDelete/>}/>
           <Route path='/burgers/item/:burgerId' element={<BurgerDetails/>}/>
+          <Route path='/burgers/burger-ingredient' element={<BurgerIngredient/>}/>
 
           <Route path='/pizzas' element={<Pizzas/>}/>
           <Route path='/pizzas/create' element={<PizzaCreate/>}/> 
