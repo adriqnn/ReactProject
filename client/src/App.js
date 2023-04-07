@@ -38,7 +38,7 @@ function App() {
           <Route path='/burgers' element={<Burgers/>}/>
           <Route path='/burgers/create' element={<BurgerCreate/>}/>
           <Route path='/burgers/item/delete/:burgerId' element={<BurgerDelete/>}/>
-          {/* <Route path='/burgers/item/:burgerId' element={<BurgerDetails/>}/> */}
+          <Route path='/burgers/item/:burgerId' element={<BurgerDetails/>}/>
 
           <Route path='/pizzas' element={<Pizzas/>}/>
           <Route path='/pizzas/create' element={<PizzaCreate/>}/> 
