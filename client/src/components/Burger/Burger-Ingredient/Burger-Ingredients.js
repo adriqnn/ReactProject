@@ -1,4 +1,4 @@
-export const BurgerIngredient = () => {
+export const BurgerIngredients = () => {
     return (
         <main>
             <section className="container" id="burger-ingredient">

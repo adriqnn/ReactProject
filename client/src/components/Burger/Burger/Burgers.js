@@ -20,7 +20,7 @@ export const Burgers = () => {
                             | 
                         </> */}
 
-                        <Link to="/burgers/burgerIngredient" style={{color: "gold"}}>Ingredients</Link>
+                        <Link to="/burgers/burger-ingredients" style={{color: "gold"}}>Ingredients</Link>
                     </h1>
                     <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "22px"}}>Burgers List:</p>
                 </header>

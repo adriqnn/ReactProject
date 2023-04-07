@@ -20,7 +20,7 @@ export const Pizzas = () => {
                             | 
                         </ng-container> */}
 
-                        <Link to="/pizzas/pizzaIngredient" style={{color: "gold"}}>Ingredients</Link>
+                        <Link to="/pizzas/pizza-ingredients" style={{color: "gold"}}>Ingredients</Link>
                     </h1>
                     <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "22px"}}>Pizzas List:</p>
                 </header>
