@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { burgerServiceFactory } from "../../../services/burgerService";
 import { pizzaServiceFactory } from "../../../services/pizzaService";
+import { Link } from "react-router-dom";
 
 export const Profile = () => {
     const { auth } = useContext(ApplicationContext);
@@ -27,6 +28,9 @@ export const Profile = () => {
                     <p style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "20px", color: "greenyellow"}}>Username: {auth.user.username}<span></span></p>
                     <p style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "20px", color: "greenyellow"}}>Email: {auth.user.email}<span></span></p>
                     <p style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "18px", color: "greenyellow"}}>Created at: {auth.user.createdAt}<span></span></p>
+                    <div className="card-footer">
+                        <Link to={`/auth/profile/update/${auth.user._id}`} className="btn btn-success">Update Profile!</Link>
+                    </div>
                 </div>
                 <div className="profile-info">
                     

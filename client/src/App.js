@@ -25,6 +25,9 @@ import { BurgerIngredients } from './components/Burger/Burger-Ingredient/Burger-
 import { PizzaIngredients } from './components/Pizza/Pizza-Ingredient/Pizza-Ingredients';
 import { BurgerIngredientDetails } from './components/Burger/Burger-Ingredient-Details/Burger-Ingredient-Details';
 import { PizzaIngredientDetails } from './components/Pizza/Pizza-Ingredient-Details/Pizza-Ingredient-Details';
+import { ProfileUpdate } from './components/Auth/Profile/ProfileUpdate';
+import { RouteGuardUnAuthenitcated } from './components/Shared/RouteGuardUnAuthenticated';
+import { RouteGuardAuthenitcated } from './components/Shared/RouteGuardAuthenticated';
 
 function App() {
   return (
@@ -34,24 +37,33 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
 
-          <Route path='/auth/login' element={<Login/>}/>
-          <Route path='/auth/register' element={<Register/>}/>
-          <Route path='/auth/profile' element={<Profile/>}/>
-          <Route path='/auth/logout' element={<Logout/>}/>
+          <Route element={RouteGuardUnAuthenitcated}>
+            <Route path='/auth/login' element={<Login/>}/>
+            <Route path='/auth/register' element={<Register/>}/>
+          </Route>
+          <Route element={RouteGuardAuthenitcated}>
+            <Route path='/auth/profile' element={<Profile/>}/>
+            <Route path='/auth/logout' element={<Logout/>}/>
+            <Route path='/auth/profile/update/:userId' element={<ProfileUpdate/>}/>
+          </Route>
 
           <Route path='/burgers' element={<Burgers/>}/>
-          <Route path='/burgers/create' element={<BurgerCreate/>}/>
-          <Route path='/burgers/item/delete/:burgerId/:ownerId' element={<BurgerDelete/>}/>
           <Route path='/burgers/item/:burgerId' element={<BurgerDetails/>}/>
           <Route path='/burgers/burger-ingredients' element={<BurgerIngredients/>}/>
           <Route path='/burgers/burger-ingredients/:burgerIngredientId' element={<BurgerIngredientDetails/>}/>
+          <Route element={RouteGuardAuthenitcated}>
+            <Route path='/burgers/create' element={<BurgerCreate/>}/>
+            <Route path='/burgers/item/delete/:burgerId/:ownerId' element={<BurgerDelete/>}/>
+          </Route>
 
           <Route path='/pizzas' element={<Pizzas/>}/>
-          <Route path='/pizzas/create' element={<PizzaCreate/>}/> 
-          <Route path='/pizzas/item/delete/:pizzaId/:ownerId' element={<PizzaDelete/>}/>
           <Route path='/pizzas/item/:pizzaId' element={<PizzaDetails/>}/> 
           <Route path='/pizzas/pizza-ingredients' element={<PizzaIngredients/>}/> 
           <Route path='/pizzas/pizza-ingredients/:pizzaIngredientId' element={<PizzaIngredientDetails/>}/>
+          <Route element={RouteGuardAuthenitcated}>
+            <Route path='/pizzas/create' element={<PizzaCreate/>}/>   
+            <Route path='/pizzas/item/delete/:pizzaId/:ownerId' element={<PizzaDelete/>}/>
+          </Route>
           
           <Route path='/about' element={<About/>}/>
           <Route path='/contacts' element={<Contacts/>}/>

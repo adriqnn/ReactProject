@@ -38,6 +38,32 @@ export const ApplicationProvider = ({
         };
     };
 
+    const [updateFieldsError, setUpdateFieldsError] = useState(false);
+    const [updateUsernameTaken, setUpdateUsernameTaken] = useState(false);
+    const [updateEmailTaken, setUpdateEmailTaken] = useState(false);
+    const onUpdateFormSubmit = async (registerData) => {
+        const username = registerData.username;
+        const email = registerData.email;
+        const password = registerData.password;
+        const repass = registerData.repass;
+
+        if(username === '' || email === '' || password === '' || repass === ''){
+            setUpdateFieldsError(true);
+            return;
+        }else{
+            setUpdateFieldsError(false);
+        };
+
+        try{
+            await authService.update({...registerData, owner: auth.user._id});
+            onLogout();
+            navigate('/auth/login');
+        }catch(err){
+            err.message === 'Username is taken!' ? setUpdateUsernameTaken(true) : setUpdateUsernameTaken(false);
+            err.message === 'Email is taken!' ? setUpdateEmailTaken(true) : setUpdateEmailTaken(false);
+        };
+    };
+
     const [loginFieldsError, setLoginFieldsError] = useState(false);
     const [loginWrongUsernameOrPassowrd, setLoginWrongUsernameOrPassowrd] = useState(false);
     const onLoginFormSubmit = async (loginData) => {
@@ -74,6 +100,10 @@ export const ApplicationProvider = ({
         loginFieldsError,
         loginWrongUsernameOrPassowrd,
         onLoginFormSubmit,
+        updateFieldsError,
+        updateUsernameTaken,
+        updateEmailTaken,
+        onUpdateFormSubmit,
         isAuthenticated: !!auth.token,
         onLogout,
     };

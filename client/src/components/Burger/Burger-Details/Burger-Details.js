@@ -5,7 +5,7 @@ import { burgerServiceFactory } from "../../../services/burgerService";
 
 export const BurgerDetails = () => {
     const { burgerId } = useParams();
-    const { auth } = useContext(ApplicationContext);
+    const { auth, isAuthenticated } = useContext(ApplicationContext);
     const [burgerById, setBurgerById] = useState({});
     const burgerService = burgerServiceFactory(auth.token);
 
@@ -50,7 +50,7 @@ export const BurgerDetails = () => {
                     </div>
                     <div className="row text-center">
                         {
-                            burgerById.owner === auth.user._id && (
+                            burgerById.owner === auth.user?._id && (
                                 <div className="col-lg-4 col-md-6 mb-4">                        
                                 <div>
                                     <Link to={`/burgers/item/delete/${burgerId}/${burgerById.owner}`} className="btn btn-danger">Delete</Link>

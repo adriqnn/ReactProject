@@ -87,6 +87,25 @@ async function login(username, password){
     return userInfo;
 };
 
+async function update(username, email, password, owner){
+    const existingUsername = await User.findOne({username}).collation({locale: 'en', strength: 2});
+    const existingEmail = await User.findOne({email}).collation({locale: 'en', strength: 2});
+    if(existingUsername){
+        throw new Error('Username is taken!');
+    };
+    if(existingEmail){
+        throw new Error('Email is taken!');
+    };
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const currentUser = await User.findById(owner);
+
+    currentUser.username = username;
+    currentUser.email = email;
+    currentUser.password = hashedPassword;
+
+    await currentUser.save();
+};
+
 async function logout(token){
     return await blacklistToken(token);
 };
@@ -129,6 +148,7 @@ module.exports = {
     getUserById,
     register,
     login,
+    update,
     logout,
     verifyTokenAuth,
     parseToken
