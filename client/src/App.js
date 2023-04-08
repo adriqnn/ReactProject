@@ -37,11 +37,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
 
-          <Route element={RouteGuardUnAuthenitcated}>
+          <Route element={<RouteGuardUnAuthenitcated/>}>
             <Route path='/auth/login' element={<Login/>}/>
             <Route path='/auth/register' element={<Register/>}/>
           </Route>
-          <Route element={RouteGuardAuthenitcated}>
+          <Route element={<RouteGuardAuthenitcated/>}>
             <Route path='/auth/profile' element={<Profile/>}/>
             <Route path='/auth/logout' element={<Logout/>}/>
             <Route path='/auth/profile/update/:userId' element={<ProfileUpdate/>}/>
@@ -51,7 +51,7 @@ function App() {
           <Route path='/burgers/item/:burgerId' element={<BurgerDetails/>}/>
           <Route path='/burgers/burger-ingredients' element={<BurgerIngredients/>}/>
           <Route path='/burgers/burger-ingredients/:burgerIngredientId' element={<BurgerIngredientDetails/>}/>
-          <Route element={RouteGuardAuthenitcated}>
+          <Route element={<RouteGuardAuthenitcated/>}>
             <Route path='/burgers/create' element={<BurgerCreate/>}/>
             <Route path='/burgers/item/delete/:burgerId/:ownerId' element={<BurgerDelete/>}/>
           </Route>
@@ -60,7 +60,7 @@ function App() {
           <Route path='/pizzas/item/:pizzaId' element={<PizzaDetails/>}/> 
           <Route path='/pizzas/pizza-ingredients' element={<PizzaIngredients/>}/> 
           <Route path='/pizzas/pizza-ingredients/:pizzaIngredientId' element={<PizzaIngredientDetails/>}/>
-          <Route element={RouteGuardAuthenitcated}>
+          <Route element={<RouteGuardAuthenitcated/>}>
             <Route path='/pizzas/create' element={<PizzaCreate/>}/>   
             <Route path='/pizzas/item/delete/:pizzaId/:ownerId' element={<PizzaDelete/>}/>
           </Route>
