@@ -1,4 +1,96 @@
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ApplicationContext } from "../../../contexts/ApplicationContext";
+import { pizzaServiceFactory } from "../../../services/pizzaService";
+
 export const PizzaCreate = () => {
+    const navigate = useNavigate();
+    const { auth } = useContext(ApplicationContext);
+    const pizzaService = pizzaServiceFactory(auth.token);
+
+    const initialFormValues = {};
+    const [formValues, setFormValues] = useState(initialFormValues);
+    const initiaErrorValues = { pizzaNameRequired: false, pizzaNameLength: false, pizzaWeightRequired: false, pizzaWeightGramsFive: false, pizzaDescriptionRequired: false, pizzaDescriptionLenght: false };
+    const changeFormErrors = { pizzaNameRequired: false, pizzaNameLength: false, pizzaWeightRequired: false, pizzaWeightGramsFive: false, pizzaDescriptionRequired: false, pizzaDescriptionLenght: false };
+    const [formErrors, setFormErrors] = useState(initiaErrorValues);
+
+    const onNameChangeHandler = (e) => {
+        setFormValues(state => ({...state, [e.target.name]: e.target.value}));
+        formValues.name === '' ? changeFormErrors.pizzaNameRequired = true : changeFormErrors.pizzaNameRequired = false;
+        formValues.name.length < 3 ? changeFormErrors.pizzaNameLength = true : changeFormErrors.pizzaNameLength = false;
+        setFormErrors(state => ({...state, pizzaNameRequired: changeFormErrors.pizzaNameRequired, pizzaNameLength: changeFormErrors.pizzaNameLength}));
+    };
+
+    const onWeightChangeHandler = (e) => {
+        setFormValues(state => ({...state, [e.target.name]: e.target.value}));
+        formValues.weight === '' ? changeFormErrors.pizzaWeightRequired = true : changeFormErrors.pizzaWeightRequired = false;
+        Number(formValues.weight) < 5 ? changeFormErrors.pizzaWeightGramsFive = true : changeFormErrors.pizzaWeightGramsFive = false;
+        setFormErrors(state => ({...state, pizzaWeightRequired: changeFormErrors.pizzaWeightRequired, pizzaWeightGramsFive: changeFormErrors.pizzaWeightGramsFive}));
+    };
+
+    const onDescriptionChangeHandler = (e) => {
+        setFormValues(state => ({...state, [e.target.name]: e.target.value}));
+        formValues.description === '' ? changeFormErrors.pizzaDescriptionRequired = true : changeFormErrors.pizzaDescriptionRequired = false;
+        formValues.description.length < 3 ? changeFormErrors.pizzaDescriptionLenght = true : changeFormErrors.pizzaDescriptionLenght = false;
+        setFormErrors(state => ({...state, pizzaDescriptionRequired: changeFormErrors.pizzaDescriptionRequired, pizzaDescriptionLenght: changeFormErrors.pizzaDescriptionLenght}));
+    };
+
+    const onOtherChangeHandler = (e) => {
+        setFormValues(state => ({...state, [e.target.name]: e.target.value}));
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        onPizzaCreateFormSubmit(formValues);
+        // setFormValues(initialFormValues);
+    };
+
+    const [pizzaFormFieldsError, setPizzaFormFieldsErros] = useState(false);
+    const [pizzaNameTaken, setPizzaNameTaken] = useState(false);
+    const onPizzaCreateFormSubmit = async (pizzaData) =>{
+        const {name, weight, description, dough, ...rest } = pizzaData;
+        const main = {name, weight, description, dough};
+
+        if(name === '' || weight === '' || description === ''){
+            setPizzaFormFieldsErros(true)
+            return;
+        }else{
+            setPizzaFormFieldsErros(false);
+        };
+
+        const secondary = {
+            basil: !!rest.basil === true ? 'Basil' : '',
+            chicken: !!rest.chicken === true ? 'Chicken' : '',
+            corn: !!rest.corn === true ? 'Corn' : '',
+            emental: !!rest.emental === true ? 'Emental' : '',
+            flakysalt: !!rest.flakysalt === true ? 'Flaky Salt' : '',
+            garlicpowder: !!rest.garlicpowder === true ? 'Garlic Powder' : '',
+            greenpeppers: !!rest.greenpeppers === true ? 'Green Peppers' : '',
+            ketchup: !!rest.ketchup === true ? 'Ketchup' : '',
+            mozzarella: !!rest.mozzarella === true ? 'Mozzarella' : '',
+            mushrooms: !!rest.mushrooms === true ? 'Mushrooms' : '',
+            olives: !!rest.olives === true ? 'Olives' : '',
+            onions: !!rest.onions === true ? 'Onions' : '',
+            oregano: !!rest.oregano === true ? 'Oregano' : '',
+            pepperoni: !!rest.pepperoni === true ? 'Pepperoni' : '',
+            pickles: !!rest.pickles === true ? 'Pickles' : '',
+            smokedbacon: !!rest.smokedbacon === true ? 'Smoked Bacon' : '',
+            smokedcheese: !!rest.smokedcheese === true ? 'Smoked Cheese' : '',
+            smokedham: !!rest.smokedham === true ? 'Smoked Ham' : '',
+            sourcream: !!rest.sourcream === true ? 'Sour Cream' : '',
+            tomatoes: !!rest.tomatoes === true ? 'Tomatoes' : '',
+            tomatosauce: !!rest.tomatosauce === true ? 'Tomato Sauce' : '',
+        };
+        const owner = auth.user._id;
+        const pizza = {main: main, secondary: secondary, owner: owner};
+
+        try{
+            await pizzaService.createPizza(pizza);
+            navigate('/pizzas');
+        }catch(err){
+            err.message === 'Pizza name already in the Database!' ? setPizzaNameTaken(true) : setPizzaNameTaken(false);
+        };
+    };
 
     return (
         <main>
@@ -151,9 +243,9 @@ export const PizzaCreate = () => {
                                 </div>
                                 <div>
                                     <input type="checkbox" id="greenpeppers" name="greenpeppers"/>
-                                    <label for="greenpeppers">Green Peppers</label>
+                                    <label for="greenpeppers" style={{marginRight: "44px"}}>Green Peppers</label>
                                     <input type="checkbox" id="onions" name="onions"/>
-                                    <label for="onions">Onions</label>    
+                                    <label for="onions" style={{marginRight: "-2px"}}>Onions</label>    
                                 </div>
                                 <div>
                                     <input type="checkbox" id="olives" name="olives"/>
@@ -176,7 +268,7 @@ export const PizzaCreate = () => {
                                 </div>
                             </div>
                             <div className="form-group">
-                                <p>Go back to burgers...<a routerLink="/pizzas" style={{fontSize: "20px", color: "greenyellow"}}>Here!</a></p>
+                                <p>Go back to burgers...<Link to="/pizzas" style={{fontSize: "20px", color: "greenyellow"}}>Here!</Link></p>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>

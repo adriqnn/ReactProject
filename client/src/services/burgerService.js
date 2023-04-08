@@ -25,10 +25,16 @@ export const burgerServiceFactory = (token) => {
         return result;
     }
 
+    const createBurger = async (burger) => {
+        const result = await request.post(`${baseUrl}/burger/create/new`, {burger});
+        return result;
+    };
+
     return {
         getAllBurgerIngredients,
         getOneBurgerIngredientById,
         getAllBurgers,
-        getBurgerById
+        getBurgerById,
+        createBurger
     };
 };

@@ -29,7 +29,7 @@ export const Pizzas = () => {
                         {
                             isAuthenticated && (
                                 <>
-                                    <Link to="/pizza/create" style={{color: "gold"}}> Add Pizza </Link> 
+                                    <Link to="/pizzas/create" style={{color: "gold"}}> Add Pizza </Link> 
                                     | 
                                 </>
                             )
