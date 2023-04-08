@@ -1,7 +1,20 @@
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom"
+import { ApplicationContext } from "../../../contexts/ApplicationContext";
+import { burgerServiceFactory } from "../../../services/burgerService";
+import { Burger } from "./Burger";
 
 export const Burgers = () => {
+    const { auth, isAuthenticated } = useContext(ApplicationContext);
+    const [burgers, setBurgers] = useState([]);
+    const burgerService = burgerServiceFactory(auth.token);
 
+    useEffect(() => {
+        burgerService.getAllBurgers().then(result => {
+            setBurgers(result);
+        });
+    }, []);
+ 
     return (
         <main>
             <section className="container" id="burgers-main">
@@ -13,48 +26,33 @@ export const Burgers = () => {
                         <p className="line"></p>
                         <p>&nbsp;&nbsp;&nbsp;</p>
 
-                        {/* <>
-                            <a routerLink="/burgers/create" style="color: gold;">Add Burger</a>
-                            <!-- |
-                            <a routerLink="/burgers">Burgers</a>  -->
-                            | 
-                        </> */}
+                        { 
+                            isAuthenticated && (
+                                <>
+                                    <Link to="/burgers/create" style={{color: "gold"}}> Add Burger </Link>
+                                    | 
+                                </>
+                            )
+                        }
 
-                        <Link to="/burgers/burger-ingredients" style={{color: "gold"}}>Ingredients</Link>
+                        <Link to="/burgers/burger-ingredients" style={{color: "gold"}}> Ingredients </Link>
                     </h1>
                     <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "22px"}}>Burgers List:</p>
                 </header>
                 <div className="row text-center">
 
-                    {/* <ng-container *ngIf="burgers">
-                        <ng-container *ngFor="let burger of burgers let i = index">
-                            <div className="col-lg-4 col-md-6 mb-4">
-                                <div className="card h-100">
-                                    <img className="card-img-top2"
-                                        src={{burger.picture}}
-                                        alt="pizzaIngredient">
-                                    <div className="card-body">
-                                        <h5 className="card-title2"><span>{{burger.name}}</span></h5>
-                                        <h5 className="mt-4 card-info"> Weight: {{burger.weight}}g<span></span></h5>
-                                    </div>
-                                    <div className="card-footer">
-                                        <a [routerLink]="['/burgers','item', burger._id]" className="btn btn-success">Details</a>
-                                    </div>
-                                    <!-- <ng-container *ngIf="user?._id == burger?.owner">
-                                        <a [routerLink]="['/burgers','burgerIngredient', burger._id]" className="btn btn-success">Delete</a>
-                                    </ng-container> -->
-                                </div>
+                    {
+                        burgers.length > 0 && burgers.map(x => <Burger key={x._id} {...x}/>)
+                    }
+
+                    {
+                        burgers.length <= 0 && (
+                            <div className="no-ingredients">
+                                <img src="/assets/pictures/main/404missin.png" alt="missing"/>
+                                <p className="lead">Please try again later...</p>
                             </div>
-                        </ng-container>
-                    </ng-container> */}
-
-                    {/* <>
-                        <div className="no-ingredients">
-                            <img src="/assets/pictures/main/404missin.png"/>
-                            <p className="lead">Please try again later...</p>
-                        </div>
-                    </>  */}
-
+                        )
+                    }
                 </div>
             </section>
         </main>        

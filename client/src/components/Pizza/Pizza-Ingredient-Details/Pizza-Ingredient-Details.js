@@ -33,7 +33,7 @@ export const PizzaIngredientDetails = () => {
                         <div>
                             <img className="img-fluid rounded"
                                 src={pizzaIngredientById.picture}
-                                alt="pizza-ingredient-image"/>
+                                alt="pizza-ingredient"/>
                         </div>
                         <div className="item-desc">
                             <h5 style={{fontStyle: "italic", fontFamily: "cursive"}}>Description</h5>
