@@ -17,12 +17,12 @@ export const burgerServiceFactory = (token) => {
 
     const getAllBurgers = async () => {
         const result = await request.get(`${baseUrl}/burger`);
-        return result
-    }
+        return result;
+    };
 
     return {
         getAllBurgerIngredients,
         getOneBurgerIngredientById,
         getAllBurgers
-    }
+    };
 };

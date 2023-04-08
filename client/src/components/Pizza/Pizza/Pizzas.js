@@ -1,6 +1,19 @@
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ApplicationContext } from "../../../contexts/ApplicationContext";
+import { pizzaServiceFactory } from "../../../services/pizzaService";
+import { Pizza } from "./Pizza";
 
 export const Pizzas = () => {
+    const { auth, isAuthenticated } = useContext(ApplicationContext);
+    const [pizzas, setPizzas] = useState([]);
+    const pizzaService = pizzaServiceFactory(auth.token);
+
+    useEffect(() => {
+        pizzaService.getAllPizzas().then(result => {
+            setPizzas(result);
+        });
+    }, []);
 
     return (
         <main>
@@ -13,45 +26,32 @@ export const Pizzas = () => {
                         <p className="line"></p>
                         <p>&nbsp;&nbsp;&nbsp;</p>
 
-                        {/* <ng-container *ngIf="user">
-                            <a routerLink="/pizzas/create" style="color: gold;">Add Pizza</a> 
-                            <!-- |
-                            <a routerLink="/pizzas">Pizza Pies</a>  -->
-                            | 
-                        </ng-container> */}
+                        {
+                            isAuthenticated && (
+                                <>
+                                    <Link to="/pizza/create" style={{color: "gold"}}> Add Pizza </Link> 
+                                    | 
+                                </>
+                            )
+                        }
 
-                        <Link to="/pizzas/pizza-ingredients" style={{color: "gold"}}>Ingredients</Link>
+                        <Link to="/pizzas/pizza-ingredients" style={{color: "gold"}}> Ingredients </Link>
                     </h1>
                     <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "22px"}}>Pizzas List:</p>
                 </header>
                 <div className="row text-center">
 
-                    {/* <ng-container *ngIf="pizzas">
-                        <ng-container *ngFor="let pizza of pizzas let i = index">
-                            <div className="col-lg-4 col-md-6 mb-4">
-                                <div className="card h-100">
-                                    <img className="card-img-top"
-                                        src={{pizza.picture}}
-                                        alt="pizzaIngredient">
-                                    <div className="card-body">
-                                        <h5 className="card-title2"><span>{{pizza.name}}</span></h5>
-                                        <h5 className="mt-4 card-info"> Weight: {{pizza.weight}}g<span></span></h5>
-                                    </div>
-                                    <div className="card-footer">
-                                        <a [routerLink]="['/pizzas','item', pizza._id]" className="btn btn-success">Details</a>
-                                    </div>
-                                </div>
+                    {
+                        pizzas.length > 0 && pizzas.map(x => <Pizza key={x._id} {...x}/>)
+                    }
+                    {
+                        pizzas.length <= 0 && (
+                            <div className="no-ingredients">
+                                <img src="/assets/pictures/main/404missin.png" alt="missing"/>
+                                <p className="lead">Please try again later...</p>
                             </div>
-                        </ng-container>
-                    </ng-container> */}
-
-                    {/* <ng-container *ngIf="!pizzas || pizzas.length == 0">
-                        <div className="no-ingredients">
-                            <img src="/assets/pictures/main/404missin.png"/>
-                            <p className="lead">Please try again later...</p>
-                        </div>
-                    </ng-container>     */}
-
+                        )
+                    }
                 </div>
             </section>
         </main>

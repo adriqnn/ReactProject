@@ -44,7 +44,6 @@ export const Burgers = () => {
                     {
                         burgers.length > 0 && burgers.map(x => <Burger key={x._id} {...x}/>)
                     }
-
                     {
                         burgers.length <= 0 && (
                             <div className="no-ingredients">
