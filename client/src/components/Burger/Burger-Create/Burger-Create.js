@@ -88,7 +88,7 @@ export const BurgerCreate = () => {
         tomatoes: !!rest.bacon === true ? 'Tomatoes' : '',
         };
         const owner = auth.user._id;
-        const burger = {main: main, secondary:secondary, owner: owner};
+        const burger = {main: main, secondary: secondary, owner: owner};
 
         try{
             await burgerService.createBurger(burger);

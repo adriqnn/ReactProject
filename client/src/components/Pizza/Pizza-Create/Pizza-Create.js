@@ -8,7 +8,9 @@ export const PizzaCreate = () => {
     const { auth } = useContext(ApplicationContext);
     const pizzaService = pizzaServiceFactory(auth.token);
 
-    const initialFormValues = {};
+    const initialFormValues = { name: "", weight: "", description: "", dough: "", tomatosauce: "", ketchup: "", sourcream: "",  
+    emental: "", mozzarella: "", smokedcheese: "", pepperoni: "", chicken: "", smokedham: "", smokedbacon: "", 
+    tomatoes: "", mushrooms: "", pickles: "", corn: "", greenpeppers: "", onions: "", olives: "", flakysalt: "", oregano: "", garlicpowder: "", basil: ""};
     const [formValues, setFormValues] = useState(initialFormValues);
     const initiaErrorValues = { pizzaNameRequired: false, pizzaNameLength: false, pizzaWeightRequired: false, pizzaWeightGramsFive: false, pizzaDescriptionRequired: false, pizzaDescriptionLenght: false };
     const changeFormErrors = { pizzaNameRequired: false, pizzaNameLength: false, pizzaWeightRequired: false, pizzaWeightGramsFive: false, pizzaDescriptionRequired: false, pizzaDescriptionLenght: false };
@@ -103,168 +105,158 @@ export const PizzaCreate = () => {
                         <p className="line"></p>
                     </h1>
                     <div className="register">
-                        <form >
+                        <form method="POST" onSubmit={onSubmit}>
 
-                            {/* <ng-container *ngIf="errorMsg">
-                                <div className="form-group">
-                                    <ng-container>{{removeMsg()}}</ng-container>
-                                    <label for="error" style="color: red;">{{msg}}</label>
-                                    <!-- <input type="text"  className="form-control" value=""> -->
+                            {   
+                                pizzaFormFieldsError && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Please fill out name, weight and description!</label>
+                                    </div>
+                                )
+                            }
+
+                            {
+                                pizzaNameTaken && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Pizza name already in the Database!</label>
                                 </div>
-                            </ng-container> */}
+                                )
+                            }
 
                             <div className="form-group">
-                                <label for="name">Pizza Name</label>
-                                <input type="text" className="form-control" id="name" placeholder="Pizza Name" name="name" value=""/>
+                                <label htmlFor="name">Pizza Name</label>
+                                <input type="text" className={`form-control ${formErrors.pizzaNameRequired ? "errorred" : ""} ${formErrors.pizzaNameLength ? "errorred" : "" }`} id="name" placeholder="Pizza Name" 
+                                    name="name" value={formValues.name} onChange={onNameChangeHandler} onBlur={onNameChangeHandler}/>
                             </div>
 
-                            {/* <ng-container *ngIf="nameInput.touched">
-                                <ng-container *ngIf="nameInput?.errors?.['required']">
+                            {
+                                (formErrors.pizzaNameRequired || formErrors.pizzaNameLength) && (
                                     <div className="form-group">
-                                        <label for="error" style="color: red;">Pizza name is required!</label>
-                                        <!-- <input type="text"  className="form-control" value=""> -->
+                                        <label htmlFor="error" style={{color: "red"}}>Pizza name is required and must be at least 3 characters!</label>
                                     </div>
-                                </ng-container>
-                                <ng-container *ngIf="nameInput?.errors?.['minlength']">
-                                    <div className="form-group">
-                                        <label for="error" style="color: red;">Pizza name must be at least 3 characters!</label>
-                                        <!-- <input type="text"  className="form-control" value=""> -->
-                                    </div>
-                                </ng-container>
-                            </ng-container> */}
+                                )
+                            }
 
                             <div className="form-group">
-                                <label for="weight">Pizza Weight</label>
-                                <input type="number" className="form-control" id="weight" placeholder="Pizza Weight" name="weight" value=""/>
+                                <label htmlFor="weight">Pizza Weight</label>
+                                <input type="number" className={`form-control ${formErrors.pizzaWeightRequired ? "errorred" : ""} ${formErrors.pizzaWeightGramsFive ? "errorred" : ""}`} id="weight" placeholder="Pizza Weight" 
+                                name="weight" value={formValues.weight} onChange={onWeightChangeHandler} onBlur={onWeightChangeHandler}/>
                             </div>
-                            
-                            {/* <ng-container *ngIf="weightInput.touched">
-                                <ng-container *ngIf="weightInput?.errors?.['required']">
+
+                            {
+                                (formErrors.pizzaWeightRequired || formErrors.pizzaWeightGramsFive) && (
                                     <div className="form-group">
-                                        <label for="error" style="color: red;">Pizza weight is required!</label>
-                                        <!-- <input type="text"  className="form-control" value=""> -->
-                                    </div>
-                                </ng-container>
-                                <ng-container *ngIf="weightInput?.errors?.['min']">
-                                    <div className="form-group">
-                                        <label for="error" style="color: red;">Pizza weight must be at least 5 grams!</label>
-                                        <!-- <input type="text"  className="form-control" value=""> -->
-                                    </div>
-                                </ng-container>
-                            </ng-container> */}
+                                        <label htmlFor="error" style={{color: "red"}}>Pizza weight is required and must be at least 5 grams!</label>
+                                     </div>
+                                )
+                            }
 
                             <div className="form-group">
-                                <label for="description">Pizza Description</label>
-                                <input type="text" className="form-control" id="description" placeholder="Pizza Description" name="description" value=""/>
+                                <label htmlFor="description">Pizza Description</label>
+                                <input type="text" className={`form-control ${formErrors.burgerDescriptionRequired ? "errorred" : ""} ${formErrors.burgerDescriptionLenght ? "errorred" : ""}`} id="description" placeholder="Pizza Description" 
+                                name="description" value={formValues.description} onChange={onDescriptionChangeHandler} onBlur={onDescriptionChangeHandler}/>
                             </div>
 
-                            {/* <ng-container *ngIf="descriptionInput.touched">
-                                <ng-container *ngIf="descriptionInput?.errors?.['required']">
+                            {
+                                (formErrors.pizzaDescriptionRequired || formErrors.pizzaDescriptionLenght) && (
                                     <div className="form-group">
-                                        <label for="error" style="color: red;">Pizza description is required!</label>
-                                        <!-- <input type="text"  className="form-control" value=""> -->
+                                        <label htmlFor="error" style={{color: "red"}}>Pizza description is required and must be at least 3 characters!</label>
                                     </div>
-                                </ng-container>
-                                <ng-container *ngIf="descriptionInput?.errors?.['minlength']">
-                                    <div className="form-group">
-                                        <label for="error" style="color: red;">Pizza description must be at least 3 characters!</label>
-                                        <!-- <input type="text"  className="form-control" value=""> -->
-                                    </div>
-                                </ng-container>
-                            </ng-container> */}
+                                )
+                            }
 
                             <label>Dough</label>
                             <div className="ingredientsbuild">
                                 <div>
-                                    <input type="radio" id="traditionaldough" name="dough" value="Traditional Dough"/>
-                                    <label for="traditionaldough">Traditional Dough</label>
-                                    <input type="radio" id="italianstyle" name="dough" value="Italian Style"/>
-                                    <label for="italianstyle">Italian Style</label>    
+                                    <input type="radio" id="traditionaldough" name="dough" value="Traditional Dough" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="traditionaldough">Traditional Dough</label>
+                                    <input type="radio" id="italianstyle" name="dough" value="Italian Style" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="italianstyle">Italian Style</label>    
                                 </div>
                                 <div>
-                                    <input type="radio" id="thincruststyle" name="dough" value="Thin Crust Style"/>
-                                    <label for="thincruststyle" style={{paddingRight: "110px"}}>Thin Crust Style</label>
+                                    <input type="radio" id="thincruststyle" name="dough" value="Thin Crust Style" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="thincruststyle" style={{paddingRight: "110px"}}>Thin Crust Style</label>
                                 </div>
                             </div>
                             <label>Sauce</label>
                             <div className="ingredientsbuild">
                                 <div>
-                                    <input type="checkbox" id="tomatosauce" name="tomatosauce"/>
-                                    <label for="tomatosauce">Tomato Sauce</label>
-                                    <input type="checkbox" id="ketchup" name="ketchup"/>
-                                    <label for="ketchup">Ketchup</label>    
+                                    <input type="checkbox" id="tomatosauce" value="tomatosauce" name="tomatosauce" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="tomatosauce">Tomato Sauce</label>
+                                    <input type="checkbox" id="ketchup" value="ketchup" name="ketchup" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="ketchup">Ketchup</label>    
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="sourcream" name="sourcream"/>
-                                    <label for="sourcream" style={{paddingRight: "85px"}}>Sour Cream</label> 
+                                    <input type="checkbox" id="sourcream" value="sourcream" name="sourcream" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="sourcream" style={{paddingRight: "85px"}}>Sour Cream</label> 
                                 </div>
                             </div>
                             <label>Cheese</label>
                             <div className="ingredientsbuild">
                                 <div style={{paddingLeft: "25px"}}>
-                                    <input type="checkbox" id="emental" name="emental"/>
-                                    <label for="emental" style={{paddingRight: "40px"}}>Emental</label>
-                                    <input type="checkbox" id="mozzarella" name="mozzarella"/>
-                                    <label for="mozzarella">Mozzarella</label>    
+                                    <input type="checkbox" id="emental" value="emental" name="emental" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="emental" style={{paddingRight: "40px"}}>Emental</label>
+                                    <input type="checkbox" id="mozzarella" value="mozzarella" name="mozzarella" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="mozzarella">Mozzarella</label>    
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="smokedcheese" name="smokedcheese"/>
-                                    <label for="smokedcheese" style={{paddingRight: "50px"}}>Smoked Cheese</label> 
+                                    <input type="checkbox" id="smokedcheese" value="smokedcheese" name="smokedcheese" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="smokedcheese" style={{paddingRight: "50px"}}>Smoked Cheese</label> 
                                 </div>
                             </div>
                             <label>Meat</label>
                             <div className="ingredientsbuild">
                                 <div style={{paddingLeft: "10px"}}>
-                                    <input type="checkbox" id="pepperoni" name="pepperoni"/>
-                                    <label for="pepperoni" style={{paddingRight: "25px"}}>Pepperoni</label>
-                                    <input type="checkbox" id="chicken" name="chicken"/>
-                                    <label for="chicken">Chicken</label>    
+                                    <input type="checkbox" id="pepperoni" value="pepperoni" name="pepperoni" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="pepperoni" style={{paddingRight: "25px"}}>Pepperoni</label>
+                                    <input type="checkbox" id="chicken" value="chicken" name="chicken" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="chicken">Chicken</label>    
                                 </div>
                                 <div style={{paddingLeft: "57px"}}>
-                                    <input type="checkbox" id="smokedham" name="smokedham"/>
-                                    <label for="smokedham">Smoked Ham</label> 
-                                    <input type="checkbox" id="smokedbacon" name="smokedbacon"/>
-                                    <label for="smokedbacon">Smoked Bacon</label>
+                                    <input type="checkbox" id="smokedham" value="smokedham" name="smokedham" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="smokedham">Smoked Ham</label> 
+                                    <input type="checkbox" id="smokedbacon" value="smokedbacon" name="smokedbacon" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="smokedbacon">Smoked Bacon</label>
                                 </div>
                             </div>
                             <label>Vegetables</label>
                             <div className="ingredientsbuild">
                                 <div style={{paddingLeft: "40px"}}>
-                                    <input type="checkbox" id="tomatoes" name="tomatoes"/>
-                                    <label for="tomatoes" style={{paddingRight: "25px"}}>Tomatoes</label>
-                                    <input type="checkbox" ngModel id="mushrooms" name="mushrooms"/>
-                                    <label for="mushrooms">Mushrooms</label>    
+                                    <input type="checkbox" id="tomatoes" value="tomatoes" name="tomatoes" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="tomatoes" style={{paddingRight: "25px"}}>Tomatoes</label>
+                                    <input type="checkbox" id="mushrooms" value="mushrooms" name="mushrooms" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="mushrooms">Mushrooms</label>    
                                 </div>
                                 <div style={{paddingRight: "10px"}}>
-                                    <input type="checkbox" id="pickles" name="pickles"/>
-                                    <label for="pickles" style={{paddingRight: "45px"}}>Pickles</label>
-                                    <input type="checkbox" id="corn" name="corn"/>
-                                    <label for="corn">Corn</label>    
+                                    <input type="checkbox" id="pickles" value="pickles" name="pickles" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="pickles" style={{paddingRight: "45px"}}>Pickles</label>
+                                    <input type="checkbox" id="corn" value="corn" name="corn" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="corn">Corn</label>    
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="greenpeppers" name="greenpeppers"/>
-                                    <label for="greenpeppers" style={{marginRight: "44px"}}>Green Peppers</label>
-                                    <input type="checkbox" id="onions" name="onions"/>
-                                    <label for="onions" style={{marginRight: "-2px"}}>Onions</label>    
+                                    <input type="checkbox" id="greenpeppers" value="greenpeppers" name="greenpeppers" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="greenpeppers" style={{marginRight: "44px"}}>Green Peppers</label>
+                                    <input type="checkbox" id="onions" value="onions" name="onions" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="onions" style={{marginRight: "-2px"}}>Onions</label>    
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="olives" name="olives"/>
-                                    <label for="olives" style={{paddingRight: "110px"}}>Olives</label> 
+                                    <input type="checkbox" id="olives" value="olives" name="olives" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="olives" style={{paddingRight: "110px"}}>Olives</label> 
                                 </div>
                             </div>
                             <label>Condiment</label>
                             <div className="ingredientsbuild">
                                 <div>
-                                    <input type="checkbox" id="flakysalt" name="flakysalt"/>
-                                    <label for="flakysalt">Flaky Salt</label>
-                                    <input type="checkbox" id="oregano" name="oregano"/>
-                                    <label for="oregano">Oregano</label>    
+                                    <input type="checkbox" id="flakysalt" value="flakysalt" name="flakysalt" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="flakysalt">Flaky Salt</label>
+                                    <input type="checkbox" id="oregano" value="oregano" name="oregano" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="oregano">Oregano</label>    
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="garlicpowder" name="garlicpowder"/>
-                                    <label for="garlicpowder">Garlic Powder</label> 
-                                    <input type="checkbox" id="basil" name="basil"/>
-                                    <label for="basil">Basil</label> 
+                                    <input type="checkbox" id="garlicpowder" value="garlicpowder" name="garlicpowder" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="garlicpowder">Garlic Powder</label> 
+                                    <input type="checkbox" id="basil" value="basil" name="basil" onChange={onOtherChangeHandler}/>
+                                    <label htmlFor="basil">Basil</label> 
                                 </div>
                             </div>
                             <div className="form-group">
