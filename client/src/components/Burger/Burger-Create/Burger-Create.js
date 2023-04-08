@@ -114,7 +114,7 @@ export const BurgerCreate = () => {
                             {
                                 burgerFormFieldsError && (
                                     <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>Please fill out name, weight and description!</label>
+                                    <label htmlFor="error" style={{color: "red"}}>Please fill out name, weight, description and bun!</label>
                                     </div>
                                 )
                             }

@@ -35,12 +35,18 @@ export const burgerServiceFactory = (token) => {
         return result;
     };
 
+    const getUserBurgers = async (ownerId) => {
+        const result = await request.get(`${baseUrl}/burger/user/${ownerId}`);
+        return result;
+    };
+
     return {
         getAllBurgerIngredients,
         getOneBurgerIngredientById,
         getAllBurgers,
         getBurgerById,
         createBurger,
-        deleteBurger
+        deleteBurger,
+        getUserBurgers
     };
 };

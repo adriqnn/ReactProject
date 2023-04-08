@@ -25,6 +25,16 @@ const requester = async (method, token, url, data) => {
         const result = await response.json();
         throw new Error(result.message);
     }
+
+    // if(response.ok){
+    //     const result = await response.json();
+    //     return result;
+    // }else if(response.status === '204'){
+    //     return;
+    // }else{
+    //     const result = await response.json();
+    //     throw new Error(result.message);
+    // }
 };
 
 

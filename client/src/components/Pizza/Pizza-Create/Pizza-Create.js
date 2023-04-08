@@ -110,7 +110,7 @@ export const PizzaCreate = () => {
                             {   
                                 pizzaFormFieldsError && (
                                     <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>Please fill out name, weight and description!</label>
+                                    <label htmlFor="error" style={{color: "red"}}>Please fill out name, weight, description and dough!</label>
                                     </div>
                                 )
                             }

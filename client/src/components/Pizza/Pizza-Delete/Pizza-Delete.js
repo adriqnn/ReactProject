@@ -19,5 +19,5 @@ export const PizzaDelete = () => {
         }
     }, []);
 
-    return deleteNoOwner ? <Navigate to="/"/> : <Navigate to="/pizzas"/>;
+    return !!deleteNoOwner ? <Navigate to="/"/> : <Navigate to="/pizzas/pizza-ingredients"/>;
 };

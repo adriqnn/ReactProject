@@ -35,12 +35,18 @@ export const pizzaServiceFactory = (token) => {
         return result;
     };
 
+    const getUserPizzas = async (ownerId) => {
+        const result = await request.get(`${baseUrl}/pizza/user/${ownerId}`);
+        return result;
+    };
+
     return {
         getAllPizzaIngredients,
         getOnePizzaIngredientById,
         getAllPizzas,
         getPizzaById,
         createPizza,
-        deletePizza
+        deletePizza,
+        getUserPizzas
     };
 };

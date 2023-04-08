@@ -1,9 +1,23 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
+import { burgerServiceFactory } from "../../../services/burgerService";
+import { pizzaServiceFactory } from "../../../services/pizzaService";
 
 export const Profile = () => {
-
     const { auth } = useContext(ApplicationContext);
+    const [burgers, setBurgers] = useState([]);
+    const [pizzas, setPizzas] = useState([]);
+    const burgerService = burgerServiceFactory(auth.token);
+    const pizzaService = pizzaServiceFactory(auth.token);
+
+    useEffect(() => {
+        burgerService.getUserBurgers(auth.user._id).then(result => {
+            setBurgers(result);
+        });
+        pizzaService.getUserPizzas(auth.user._id).then(result => {
+            setPizzas(result);
+        });
+    }, []);
 
     return (
         <main>
@@ -15,32 +29,41 @@ export const Profile = () => {
                     <p style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "18px", color: "greenyellow"}}>Created at: {auth.user.createdAt}<span></span></p>
                 </div>
                 <div className="profile-info">
+                    
+                    {
+                        (burgers.length + pizzas.length) > 0 && (
+                            <p> <span></span> {`Total Burgers and Pizzas -> ${burgers.length + pizzas.length}`}</p>
+                        )
+                    }
 
-                    {/* <>
-                        <p> <span></span> Total Burgers and Pizzas -> {{userBurgers.length + userPizzas.length}}</p>
-                    </>
-                    <>
-                        <p> <span></span> Total Burgers and Pizzas -> No Records!</p>
-                    </> */}
+                    {
+                        (burgers.length + pizzas.length) <= 0 && (
+                            <p> <span></span> {`Total Burgers and Pizzas -> No Records!`}</p>
+                        )
+                    }
 
                     <p className="line"></p>
                     <div className="trips-info">
 
-                        {/* <>
-                            <p style="font-family: cursive; color: gold; text-decoration: underline;">Burgers:</p>
-                            <>
-                                <p>{{burger.name}}</p>
-                            </>
-                        </> */}
+                        <p style={{fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Burgers:</p>
+                        {
+                            burgers.length > 0 && (
+                                <>
+                                    {burgers.map(x =>  <p key={x.name}>{x.name}</p>)}
+                                </>
+                            )
+                        }
 
                         <p className="line"></p>
 
-                        {/* <>
-                            <p style="font-family: cursive; color: gold; text-decoration: underline;">Pizzas:</p>
-                            <>
-                                <p>{{pizza.name}}</p>
-                            </>
-                        </> */}
+                        <p style={{fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizzas:</p>
+                        {
+                            pizzas.length > 0 && (
+                                <>
+                                    {pizzas.map(x =>  <p key={x.name}>{x.name}</p>)}
+                                </>
+                            )
+                        }
 
                     </div>
                 </div>
