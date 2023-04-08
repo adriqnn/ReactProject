@@ -30,7 +30,7 @@ export const BurgerDetails = () => {
                     <p className="line"></p>
                     <div className="item-info">
                         <p>&nbsp;&nbsp;&nbsp;</p>
-                        <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", color: "gold"}}>Ingredients for :</p>
+                        <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", color: "gold"}}>Ingredients for {burgerById.name}:</p>
                         {
                             burgerById.ingredients?.map(x => <p key={x.name} className="lead" style={{fontSize: "18px", fontStyle: "italic", fontFamily: "cursive"}}>{x.name} - {x.description}</p>)
                         }
