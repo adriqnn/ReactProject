@@ -1,17 +1,23 @@
+import { useContext, useEffect, useState } from "react";
+import { ApplicationContext } from "../../../contexts/ApplicationContext";
+import { Navigate, useParams } from "react-router-dom";
+import { pizzaServiceFactory } from "../../../services/pizzaService";
+
 export const PizzaDelete = () => {
-    return (
-        <main>
-            <section id="home-page" className="py-5">
-                <div style={{height: "15vh"}}></div>
-                <div className="container home">
-                    <h1 style={{fontStyle: "italic", fontFamily: "cursive"}}>Delete Pizza</h1>
-                    <br></br>
-                    <div>
-                        <p style={{fontStyle: "italic", fontFamily: "cursive"}}>Delete Pizza Works!</p>
-            
-                    </div>
-                </div>
-            </section>
-        </main>
-    );
-}
+    const { auth } = useContext(ApplicationContext);
+    const { pizzaId, ownerId } = useParams();
+    const pizzaService = pizzaServiceFactory(auth.token);
+    const [deleteNoOwner, setDeleteNoOwner] = useState(false);
+
+    useEffect(() => {
+        if(ownerId === auth.user._id){
+            pizzaService.deletePizza(pizzaId).then(() => {
+                setDeleteNoOwner(false);
+            });
+        }else{
+            setDeleteNoOwner(true);
+        }
+    }, []);
+
+    return deleteNoOwner ? <Navigate to="/"/> : <Navigate to="/pizzas"/>;
+};

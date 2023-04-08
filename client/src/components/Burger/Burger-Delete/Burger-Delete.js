@@ -1,10 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { burgerServiceFactory } from "../../../services/burgerService";
 
 export const BurgerDelete = () => {
-    const navigate = useNavigate();
     const { auth } = useContext(ApplicationContext);
     const { burgerId, ownerId } = useParams();
     const burgerService = burgerServiceFactory(auth.token);
@@ -12,7 +11,7 @@ export const BurgerDelete = () => {
 
     useEffect(() => {
         if(ownerId === auth.user._id){
-            burgerService.deleteBurger(burgerId).then(result => {
+            burgerService.deleteBurger(burgerId).then(() => {
                 setDeleteNoOwner(false);
             });
         }else{
@@ -20,5 +19,5 @@ export const BurgerDelete = () => {
         }
     }, []);
 
-    return deleteNoOwner ? navigate('/') : <Navigate to="/burgers"/>;
+    return deleteNoOwner ? <Navigate to="/"/> : <Navigate to="/burgers"/>;
 };
