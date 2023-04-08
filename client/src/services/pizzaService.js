@@ -20,9 +20,15 @@ export const pizzaServiceFactory = (token) => {
         return result;
     };
 
+    const getPizzaById = async (pizzaId) => {
+        const result = await request.get(`${baseUrl}/pizza/${pizzaId}`);
+        return result;
+    }
+
     return {
         getAllPizzaIngredients,
         getOnePizzaIngredientById,
-        getAllPizzas
+        getAllPizzas,
+        getPizzaById
     };
 };
