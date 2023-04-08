@@ -54,7 +54,7 @@ export const BurgerCreate = () => {
         const {name, weight, description, bun, ...rest } = burgerData;
         const main = {name, weight, description, bun};
 
-        if(name === '' || weight === '' || description === ''){
+        if(name === '' || weight === '' || description === '' || bun === ''){
             setBurgerFormFieldsErros(true)
             return;
         }else{

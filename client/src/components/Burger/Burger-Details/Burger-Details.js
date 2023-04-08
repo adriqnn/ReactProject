@@ -53,7 +53,7 @@ export const BurgerDetails = () => {
                             burgerById.owner === auth.user._id && (
                                 <div className="col-lg-4 col-md-6 mb-4">                        
                                 <div>
-                                    <Link to={`/burgers/item/delete/${burgerId}`} className="btn btn-danger">Delete</Link>
+                                    <Link to={`/burgers/item/delete/${burgerId}/${burgerById.owner}`} className="btn btn-danger">Delete</Link>
                                 </div>
                             </div>
                             )

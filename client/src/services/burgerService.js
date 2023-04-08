@@ -30,11 +30,17 @@ export const burgerServiceFactory = (token) => {
         return result;
     };
 
+    const deleteBurger = async (burgerId) => {
+        const result = await request.delete(`${baseUrl}/burger/delete/${burgerId}`);
+        return result;
+    };
+
     return {
         getAllBurgerIngredients,
         getOneBurgerIngredientById,
         getAllBurgers,
         getBurgerById,
-        createBurger
+        createBurger,
+        deleteBurger
     };
 };

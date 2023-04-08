@@ -41,14 +41,14 @@ function App() {
 
           <Route path='/burgers' element={<Burgers/>}/>
           <Route path='/burgers/create' element={<BurgerCreate/>}/>
-          <Route path='/burgers/item/delete/:burgerId' element={<BurgerDelete/>}/>
+          <Route path='/burgers/item/delete/:burgerId/:ownerId' element={<BurgerDelete/>}/>
           <Route path='/burgers/item/:burgerId' element={<BurgerDetails/>}/>
           <Route path='/burgers/burger-ingredients' element={<BurgerIngredients/>}/>
           <Route path='/burgers/burger-ingredients/:burgerIngredientId' element={<BurgerIngredientDetails/>}/>
 
           <Route path='/pizzas' element={<Pizzas/>}/>
           <Route path='/pizzas/create' element={<PizzaCreate/>}/> 
-          <Route path='/pizzas/item/delete/:pizzaId' element={<PizzaDelete/>}/>
+          <Route path='/pizzas/item/delete/:pizzaId/:ownerId' element={<PizzaDelete/>}/>
           <Route path='/pizzas/item/:pizzaId' element={<PizzaDetails/>}/> 
           <Route path='/pizzas/pizza-ingredients' element={<PizzaIngredients/>}/> 
           <Route path='/pizzas/pizza-ingredients/:pizzaIngredientId' element={<PizzaIngredientDetails/>}/>

@@ -53,7 +53,7 @@ export const PizzaCreate = () => {
         const {name, weight, description, dough, ...rest } = pizzaData;
         const main = {name, weight, description, dough};
 
-        if(name === '' || weight === '' || description === ''){
+        if(name === '' || weight === '' || description === '' || dough === ''){
             setPizzaFormFieldsErros(true)
             return;
         }else{
