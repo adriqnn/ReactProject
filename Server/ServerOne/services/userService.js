@@ -1,9 +1,10 @@
-const User = require('../models/User');
+const { Types } = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
+const User = require('../models/User');
 const { getRoleByName } = require('../services/roleService');
 const { blacklistToken } = require('../services/tokenBklacklistService');
-const { Types } = require('mongoose');
 const JWT_SECRET = 'zxc';
 
 async function createAdmin(){

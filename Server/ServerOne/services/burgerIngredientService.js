@@ -1,5 +1,6 @@
-const BurgerIngredient = require('../models/BurgerIngredient');
 const { Types } = require('mongoose');
+
+const BurgerIngredient = require('../models/BurgerIngredient');
 
 async function getAllBurgerIngredient(){
     return BurgerIngredient.find({}).sort({_id: 1});
