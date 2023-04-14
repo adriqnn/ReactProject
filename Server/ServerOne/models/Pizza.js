@@ -32,6 +32,12 @@ const pizzaSchema = new Schema({
         type: Types.ObjectId,
         ref: 'User',
         required: true
+    },
+    likes:{
+        type: Types.ObjectId,
+        default: [],
+        ref: 'User',
+        required: true
     }
 },{ timestamps: { createdAt: 'created_at'}});
 
