@@ -1,8 +1,8 @@
+const burgerController = require('express').Router();
+
 const { getAllBurgers, getById, deleteById, createRequestBurger, getBurgersByUserId } = require('../services/burgerService');
 const { parseError } = require('../util/parser');
 const session = require('../middlewares/session');
-
-const burgerController = require('express').Router();
 
 burgerController.get('/', async (req, res) => {
     try{
@@ -57,7 +57,7 @@ burgerController.get('/user/:id', session(), async (req, res) => {
     }catch(err){
         const message = parseError(err);
         res.status(400).json({message});
-    }
+    };
 });
 
 module.exports = burgerController;

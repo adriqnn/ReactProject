@@ -1,6 +1,7 @@
+const burgerIngredientController = require('express').Router();
+
 const { getAllBurgerIngredient, getById } = require('../services/burgerIngredientService');
 const { parseError } = require('../util/parser');
-const burgerIngredientController = require('express').Router();
 
 burgerIngredientController.get('/', async (req, res) => {
     try{
@@ -10,7 +11,6 @@ burgerIngredientController.get('/', async (req, res) => {
         const message = parseError(err);
         res.status(400).json({message});
     };
-
 });
 
 burgerIngredientController.get('/:id', async (req, res) => {

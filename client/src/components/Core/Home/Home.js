@@ -8,8 +8,8 @@ export const Home = () => {
                     <p className="line"></p>
                     <div>
                         <p>...</p>
-                        <p className="lead">"Best Burgers and Pizzas in the biz!"</p>
-                        <p className="lead">"Come and visti us!"</p>
+                        <p className="lead">"Best Burgers and Pizzas in the business!"</p>
+                        <p className="lead">"Come and visit us!"</p>
                     </div>
                 </div>
             </section>

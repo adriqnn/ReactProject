@@ -1,7 +1,8 @@
-const { parseError } = require('../util/parser');
-const validator = require('validator');
-const { register, login, logout, update } = require('../services/userService');
 const authController = require('express').Router();
+const validator = require('validator');
+
+const { register, login, logout, update } = require('../services/userService');
+const { parseError } = require('../util/parser');
 const { authCookieName } = require('../app-config');
 const session = require('../middlewares/session');
 
@@ -42,7 +43,7 @@ authController.post('/update', async(req, res) => {
             throw new Error('The username must be at least 3 characters long!');
         };
         if(validator.isEmail(req.body.email) == false){
-            throw new Error('Invalid email!')
+            throw new Error('Invalid email!');
         };
         if(req.body.password.length < 3){
             throw new Error('Password must be at least 3 characters long!');

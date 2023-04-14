@@ -1,8 +1,8 @@
+const pizzaController = require('express').Router();
+
 const { getAllPizzas, getById, deleteById, createRequestPizza, getPizzasByUserId } = require('../services/pizzaService');
 const { parseError } = require('../util/parser');
 const session = require('../middlewares/session');
-
-const pizzaController = require('express').Router();
 
 pizzaController.get('/', async (req, res) => {
     try{
@@ -19,7 +19,7 @@ pizzaController.get('/:id', async (req, res) => {
         const item = await getById(req.params.id);
         if(!item){
             throw new Error('Item not in the database`');
-        }
+        };
         res.json(item);
     }catch(err) {
         const message = parseError(err);
@@ -58,7 +58,7 @@ pizzaController.get('/user/:id', session(), async (req, res) => {
     }catch(err){
         const message = parseError(err);
         res.status(400).json({message});
-    }
+    };
 });
 
 module.exports = pizzaController;

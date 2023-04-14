@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const CONNECTION_STRING = 'mongodb://localhost:27017/pizza_burger_spot';
+const CONNECTION_STRING = 'mongodb://localhost:27017/react_pizza_burger_spot';
 
 module.exports = async (app) => {
     try{

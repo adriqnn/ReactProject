@@ -1,6 +1,7 @@
+const pizzaIngredientController = require('express').Router();
+
 const { getAllPizzaIngredient, getById } = require('../services/pizzaIngredientService');
 const { parseError } = require('../util/parser');
-const pizzaIngredientController = require('express').Router();
 
 pizzaIngredientController.get('/', async (req, res) => {
     try{
@@ -9,7 +10,7 @@ pizzaIngredientController.get('/', async (req, res) => {
     }catch(err){
         const message = parseError(err);
         res.status(400).json({message});
-    }
+    };
 });
 
 pizzaIngredientController.get('/:id', async (req, res) => {
