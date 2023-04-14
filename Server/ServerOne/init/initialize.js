@@ -1,9 +1,9 @@
-const { countBurgerIngredients, createBurgerIngredient } = require('../services/burgerIngredientService');
-const { countBurgers, createBurgerForDB } = require('../services/burgerService');
-const { countPizzaIngredients, createPizzaIngredient } = require('../services/pizzaIngredientService');
-const { countPizzas, createPizzaForDB } = require('../services/pizzaService');
 const { createRole, countRoles } = require('../services/roleService');
 const { countUsers, createAdmin } = require('../services/userService');
+const { countBurgerIngredients, createBurgerIngredient } = require('../services/burgerIngredientService');
+const { countPizzaIngredients, createPizzaIngredient } = require('../services/pizzaIngredientService');
+const { countBurgers, createBurgerForDB } = require('../services/burgerService');
+const { countPizzas, createPizzaForDB } = require('../services/pizzaService');
 
 module.exports = async () => {
     const ROLES_INITIALIZED = await countRoles();
@@ -16,18 +16,23 @@ module.exports = async () => {
     if(ROLES_INITIALIZED == 0){
         await Promise.all(require('./role_db.json').map(e => createRole(e)));
     };
+
     if(ADMIN_INITIALIZED == 0){
         await createAdmin();
     };
-    if(PIZZA_INGREDIENTS_INITIALIZED == 0){
-        await Promise.all(require('./pizza_ingredients_db.json').map(e => createPizzaIngredient(e)));
-    };
+
     if(BURGER_INGREDIENTS_INITIALIZED == 0){
         await Promise.all(require('./burger_ingredients_db.json').map(e => createBurgerIngredient(e)));
     };
+
+    if(PIZZA_INGREDIENTS_INITIALIZED == 0){
+        await Promise.all(require('./pizza_ingredients_db.json').map(e => createPizzaIngredient(e)));
+    };
+
     if(BURGERS_INITIALIZED == 0){
         await Promise.all(require('./burgers_db.json').map(e => createBurgerForDB(e)));
     };
+
     if(PIZZA_INITIALIZED == 0){
         await Promise.all(require('./pizzas_db.json').map(e => createPizzaForDB(e)));
     };
