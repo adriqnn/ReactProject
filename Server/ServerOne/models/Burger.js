@@ -34,7 +34,7 @@ const burgerSchema = new Schema({
         required: true
     },
     likes:{
-        type: Types.ObjectId,
+        type: [Types.ObjectId],
         default: [],
         ref: 'User',
         required: true
