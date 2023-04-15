@@ -80,7 +80,7 @@ authController.post('/logout', session(), async (req, res) => {
         const blacklistedToken = await logout(token);
         console.log(token);
         res.clearCookie(authCookieName);
-        res.status(204).send({message: 'Logged Out!'});
+        res.status(200).send({message: 'Logged Out!'});
     }catch(err){
         const message = parseError(err);
         res.status(400).json({message});

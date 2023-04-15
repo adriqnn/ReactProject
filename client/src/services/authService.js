@@ -1,6 +1,6 @@
 import { requestFactory } from './requesterService';
 
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'http://localhost:3030';
 
 export const authServiceFactory = (token) => {
     const request = requestFactory(token);

@@ -31,7 +31,7 @@ burgerController.delete('/delete/:id', session(), async (req, res) => {
     const item = await getById(req.params.id);
     try{
         await deleteById(req.params.id);
-        res.status(204).end();
+        res.status(200).send({message: 'Item Deleted!'});
     }catch(err){
         const message = parseError(err);
         res.status(400).json({message});
