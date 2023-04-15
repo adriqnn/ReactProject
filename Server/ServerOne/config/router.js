@@ -7,6 +7,7 @@ const pizzaController = require("../controllers/pizzaController");
 const pizzaIngredientController = require("../controllers/pizzaIngredientController");
 const session = require('../middlewares/session');
 const profileController = require("../controllers/profileController");
+const restaurantController = require("../controllers/restaurantController");
 
 module.exports = (app) => {
     app.use('/', homeController);
@@ -16,5 +17,6 @@ module.exports = (app) => {
     app.use('/burgerIngredient', burgerIngredientController);
     app.use('/pizza', pizzaController);
     app.use('/pizzaIngredient', pizzaIngredientController);
+    app.use('/restaurant', restaurantController);
     app.use('/profile', session(), profileController);
 };

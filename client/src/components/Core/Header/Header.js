@@ -18,10 +18,13 @@ export const Header = () => {
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/pizzas">Pizzas</Link>
+                            <Link className="nav-link" to="/pizzas">Pizza</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/burgers">Burgers</Link>
+                            <Link className="nav-link" to="/burgers">Burger</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/restaurants">Restaurants</Link>
                         </li>
                         {
                             !isAuthenticated && (
