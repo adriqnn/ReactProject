@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { authServiceFactory } from "../services/authService";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorageSetter } from "../hooks/useLocalStorageSetter";
@@ -117,7 +117,7 @@ export const ApplicationProvider = ({
     );
 };
 
-// export const useApplicationContext = () => {
-//     const context = useContext(ApplicationContext);
-//     return context;
-// };
+export const useApplicationContext = () => {
+    const context = useContext(ApplicationContext);
+    return context;
+};
