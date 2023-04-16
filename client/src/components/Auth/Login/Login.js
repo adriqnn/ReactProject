@@ -45,7 +45,6 @@ export const Login = () => {
                     <p>&nbsp;</p>
                     <div className="login">
                         <form method="POST" onSubmit={onSubmit}>
-
                             {
                                 loginFieldsError && (
                                     <div className="form-group">
@@ -53,7 +52,6 @@ export const Login = () => {
                                 </div>
                                 )
                             }
-
                             {
                                 loginWrongUsernameOrPassowrd && (
                                     <div className="form-group">
@@ -61,7 +59,6 @@ export const Login = () => {
                                 </div>
                                 )
                             }
-
                             {
                                 loginServerOffline && (
                                     <div className="form-group">
@@ -69,13 +66,11 @@ export const Login = () => {
                                 </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="username">Username</label>
                                 <input type="text" className={`form-control ${formErrors.usernameRequired ? "errorred" : ""} ${formErrors.usernameMinLength ? "errorred" : ""}`} id="username" placeholder="Username" 
                                     name="username" value={formValues.username} onChange={onUsernameChangeHandler} onBlur={onUsernameChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.usernameRequired || formErrors.usernameMinLength) && (
                                     <div className="form-group">
@@ -83,13 +78,11 @@ export const Login = () => {
                                     </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="password">Password</label>
                                 <input type="password" className={`form-control ${(formErrors.passwordRequired || formErrors.passwordMinLength) ? "errorred" : ""}`} id="password" placeholder="Password" 
                                 name="password" value={formValues.password} onChange={onPasswordChangeHandler} onBlur={onPasswordChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.passwordRequired || formErrors.passwordMinLength) && (
                                     <div className="form-group">
@@ -97,7 +90,6 @@ export const Login = () => {
                                     </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <p>Not registered yet? <Link to="/auth/register" style={{fontSize: "20px", color: "greenyellow"}}>Register Now!</Link></p>
                             </div>

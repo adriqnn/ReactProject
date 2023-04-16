@@ -16,6 +16,7 @@ export const ApplicationProvider = ({
     const [registerFieldsError, setRegisterFieldsError] = useState(false);
     const [registerUsernameTaken, setRegisterUsernameTaken] = useState(false);
     const [registerEmailTaken, setRegisterEmailTaken] = useState(false);
+    const [registerServerOffline, setRegisterServerOffline] = useState(false);
     const onRegisterFormSubmit = async (registerData) => {
         const username = registerData.username;
         const email = registerData.email;
@@ -24,9 +25,8 @@ export const ApplicationProvider = ({
 
         if(username === '' || email === '' || password === '' || repass === ''){
             setRegisterFieldsError(true);
+            removeMessage();
             return;
-        }else{
-            setRegisterFieldsError(false);
         };
 
         try{
@@ -36,6 +36,8 @@ export const ApplicationProvider = ({
         }catch(err){
             err.message === 'Username is taken!' ? setRegisterUsernameTaken(true) : setRegisterUsernameTaken(false);
             err.message === 'Email is taken!' ? setRegisterEmailTaken(true) : setRegisterEmailTaken(false);
+            err.message === 'NetworkError when attempting to fetch resource.' ? setRegisterServerOffline(true) : setRegisterServerOffline(false);
+            removeMessage();
         };
     };
 
@@ -99,6 +101,10 @@ export const ApplicationProvider = ({
             setLoginFieldsError(false);
             setLoginWrongUsernameOrPassowrd(false);
             setLoginServerOffline(false);
+            setRegisterFieldsError(false);
+            setRegisterUsernameTaken(false);
+            setRegisterEmailTaken(false);
+            setRegisterServerOffline(false);
         }, 5000);
     };
 
@@ -107,6 +113,7 @@ export const ApplicationProvider = ({
         registerFieldsError,
         registerUsernameTaken,
         registerEmailTaken,
+        registerServerOffline,
         onRegisterFormSubmit,
         loginFieldsError,
         loginWrongUsernameOrPassowrd,
