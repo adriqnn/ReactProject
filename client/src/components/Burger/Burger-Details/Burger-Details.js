@@ -68,13 +68,13 @@ export const BurgerDetails = () => {
                             )
                         }
                         {
-                        (errorFetchingBurgerByIdData) && (
-                            <div className="no-ingredients">
-                                <img src="/assets/pictures/main/404missin.png" alt="missing"/>
-                                <p className="lead">Please try again later...</p>
-                            </div>
-                        )
-                    }
+                            (errorFetchingBurgerByIdData) && (
+                                <div className="no-ingredients">
+                                    <img src="/assets/pictures/main/404missin.png" alt="missing"/>
+                                    <p className="lead">Please try again later...</p>
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
             </section>
