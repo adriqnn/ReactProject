@@ -9,9 +9,10 @@ export const BurgerContext = createContext();
 export const BurgerProvider = () => {
     const navigate = useNavigate();
     const { auth } = useContext(ApplicationContext);
+    const burgerService = burgerServiceFactory(auth.token);
+    
     const [burgers, setBurgers] = useState([]);
     const [errorFetchingBurgersData, setErrorFetchingBurgersData ] = useState(false); 
-    const burgerService = burgerServiceFactory(auth.token);
 
     useEffect(() => {
         burgerService.getAllBurgers().then(result => {
@@ -24,15 +25,15 @@ export const BurgerProvider = () => {
 
     const [burgerFormFieldsError, setBurgerFormFieldsErros] = useState(false);
     const [burgerNameTaken, setBurgerNameTaken] = useState(false);
+    const [burgerServerOffline, setBurgerServerOffline] = useState(false);
     const onBurgerCreateFormSubmit = async (burgerData) =>{
         const {name, weight, description, bun, ...rest } = burgerData;
         const main = {name, weight, description, bun};
 
         if(name === '' || weight === '' || description === '' || bun === ''){
-            setBurgerFormFieldsErros(true)
+            setBurgerFormFieldsErros(true);
+            removeMessage();
             return;
-        }else{
-            setBurgerFormFieldsErros(false);
         };
 
         const secondary = {
@@ -67,12 +68,20 @@ export const BurgerProvider = () => {
         try{
             const newBurger = await burgerService.createBurger(burger);
             setBurgers(state => [...state, newBurger.burger]);
-            console.log(burgers);
-            console.log(newBurger);
             navigate('/burgers');
         }catch(err){
             err.message === 'Burger name already in the Database!' ? setBurgerNameTaken(true) : setBurgerNameTaken(false);
+            err.message === 'NetworkError when attempting to fetch resource.' ? setBurgerServerOffline(true) : setBurgerServerOffline(false);
+            removeMessage();
         };
+    };
+
+    function removeMessage(){
+        setTimeout(() => {
+            setBurgerFormFieldsErros(false);
+            setBurgerNameTaken(false);
+            setBurgerServerOffline(false);
+        }, 5000);
     };
 
     const context = {
@@ -80,6 +89,7 @@ export const BurgerProvider = () => {
         burgers,
         burgerFormFieldsError,
         burgerNameTaken,
+        burgerServerOffline,
         onBurgerCreateFormSubmit
     };
 

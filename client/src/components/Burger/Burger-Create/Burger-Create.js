@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BurgerContext } from "../../../contexts/BurgerContext";
 
 export const BurgerCreate = () => {
-    const { burgerFormFieldsError, burgerNameTaken, onBurgerCreateFormSubmit } = useContext(BurgerContext);
+    const { burgerFormFieldsError, burgerNameTaken, burgerServerOffline, onBurgerCreateFormSubmit } = useContext(BurgerContext);
 
     const initialFormValues = { name: "", weight: "", description: "", bun: "", mayonnaise: "", ketchup: "", burgersauce: "", mustard: "", 
     emental: "", gouda: "", cheddar:  "", beef: "", chicken: "", fish: "", bacon: "", pepperoni: "", tomatoes: "", mushrooms: "",
@@ -70,6 +70,14 @@ export const BurgerCreate = () => {
                                 burgerNameTaken && (
                                     <div className="form-group">
                                     <label htmlFor="error" style={{color: "red"}}>Burger name already in the Database!</label>
+                                </div>
+                                )
+                            }
+
+                            {
+                                burgerServerOffline && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Please try again later!</label>
                                 </div>
                                 )
                             }
