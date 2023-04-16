@@ -6,7 +6,7 @@ import { BurgerContext } from "../../../contexts/BurgerContext";
 
 export const Burgers = () => {
     const { isAuthenticated } = useContext(ApplicationContext);
-    const { burgers } = useContext(BurgerContext);
+    const { burgers, errorFetchingBurgersData } = useContext(BurgerContext);
  
     return (
         <main>
@@ -38,7 +38,7 @@ export const Burgers = () => {
                         burgers.length > 0 && burgers.map(x => <Burger key={x._id} {...x}/>)
                     }
                     {
-                        burgers.length <= 0 && (
+                        (burgers.length <= 0 || errorFetchingBurgersData) && (
                             <div className="no-ingredients">
                                 <img src="/assets/pictures/main/404missin.png" alt="missing"/>
                                 <p className="lead">Please try again later...</p>

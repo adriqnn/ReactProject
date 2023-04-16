@@ -10,11 +10,15 @@ export const BurgerProvider = () => {
     const navigate = useNavigate();
     const { auth } = useContext(ApplicationContext);
     const [burgers, setBurgers] = useState([]);
+    const [errorFetchingBurgersData, setErrorFetchingBurgersData ] = useState(false); 
     const burgerService = burgerServiceFactory(auth.token);
 
     useEffect(() => {
         burgerService.getAllBurgers().then(result => {
             setBurgers(result);
+            setErrorFetchingBurgersData(false);
+        }).catch(() => {
+            setErrorFetchingBurgersData(true);
         });
     }, []);
 
@@ -72,6 +76,7 @@ export const BurgerProvider = () => {
     };
 
     const context = {
+        errorFetchingBurgersData,
         burgers,
         burgerFormFieldsError,
         burgerNameTaken,
