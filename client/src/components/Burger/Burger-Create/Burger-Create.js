@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+
 import { BurgerContext } from "../../../contexts/BurgerContext";
 
 export const BurgerCreate = () => {
@@ -57,7 +58,6 @@ export const BurgerCreate = () => {
                     </h1>
                     <div className="register">
                         <form method="POST" onSubmit={onSubmit}>
-
                             {
                                 burgerFormFieldsError && (
                                     <div className="form-group">
@@ -65,7 +65,6 @@ export const BurgerCreate = () => {
                                     </div>
                                 )
                             }
-
                             {
                                 burgerNameTaken && (
                                     <div className="form-group">
@@ -73,7 +72,6 @@ export const BurgerCreate = () => {
                                 </div>
                                 )
                             }
-
                             {
                                 burgerServerOffline && (
                                     <div className="form-group">
@@ -81,13 +79,11 @@ export const BurgerCreate = () => {
                                 </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="name">Burger Name</label>
                                 <input type="text" className={`form-control ${formErrors.burgerNameRequired ? "errorred" : ""} ${formErrors.burgerNameLength ? "errorred" : "" }`} id="name" placeholder="Burger Name" 
                                     name="name" value={formValues.name} onChange={onNameChangeHandler} onBlur={onNameChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.burgerNameRequired || formErrors.burgerNameLength) && (
                                     <div className="form-group">
@@ -95,13 +91,11 @@ export const BurgerCreate = () => {
                                     </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="weight">Burger Weight</label>
                                 <input type="number" className={`form-control ${formErrors.burgerWeightRequired ? "errorred" : ""} ${formErrors.burgerWeightGramsFive ? "errorred" : ""}`} id="weight" placeholder="Burger Weight" 
                                     name="weight" value={formValues.weight} onChange={onWeightChangeHandler} onBlur={onWeightChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.burgerWeightRequired || formErrors.burgerWeightGramsFive) && (
                                     <div className="form-group">
@@ -109,13 +103,11 @@ export const BurgerCreate = () => {
                                      </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="description">Burger Description</label>
                                 <input type="text" className={`form-control ${formErrors.burgerDescriptionRequired ? "errorred" : ""} ${formErrors.burgerDescriptionLenght ? "errorred" : ""}`} id="description" placeholder="Burger Description" 
                                     name="description" value={formValues.description} onChange={onDescriptionChangeHandler} onBlur={onDescriptionChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.burgerDescriptionRequired || formErrors.burgerDescriptionLenght) && (
                                     <div className="form-group">
@@ -123,7 +115,6 @@ export const BurgerCreate = () => {
                                     </div>
                                 )
                             }
-
                             <label>Bun</label>
                             <div className="ingredientsbuild">
                                 <div>

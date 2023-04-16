@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
+
 import { PizzaContext } from "../../../contexts/PizzaContext";
 
 export const PizzaDelete = () => {

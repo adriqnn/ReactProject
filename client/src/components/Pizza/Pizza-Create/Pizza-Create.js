@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+
 import { PizzaContext } from "../../../contexts/PizzaContext";
 
 export const PizzaCreate = () => {
@@ -56,7 +57,6 @@ export const PizzaCreate = () => {
                     </h1>
                     <div className="register">
                         <form method="POST" onSubmit={onSubmit}>
-
                             {   
                                 pizzaFormFieldsError && (
                                     <div className="form-group">
@@ -64,7 +64,6 @@ export const PizzaCreate = () => {
                                     </div>
                                 )
                             }
-
                             {
                                 pizzaNameTaken && (
                                     <div className="form-group">
@@ -72,7 +71,6 @@ export const PizzaCreate = () => {
                                 </div>
                                 )
                             }
-
                             {
                                 pizzaServerOffline && (
                                     <div className="form-group">
@@ -80,13 +78,11 @@ export const PizzaCreate = () => {
                                 </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="name">Pizza Name</label>
                                 <input type="text" className={`form-control ${formErrors.pizzaNameRequired ? "errorred" : ""} ${formErrors.pizzaNameLength ? "errorred" : "" }`} id="name" placeholder="Pizza Name" 
                                     name="name" value={formValues.name} onChange={onNameChangeHandler} onBlur={onNameChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.pizzaNameRequired || formErrors.pizzaNameLength) && (
                                     <div className="form-group">
@@ -94,13 +90,11 @@ export const PizzaCreate = () => {
                                     </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="weight">Pizza Weight</label>
                                 <input type="number" className={`form-control ${formErrors.pizzaWeightRequired ? "errorred" : ""} ${formErrors.pizzaWeightGramsFive ? "errorred" : ""}`} id="weight" placeholder="Pizza Weight" 
                                 name="weight" value={formValues.weight} onChange={onWeightChangeHandler} onBlur={onWeightChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.pizzaWeightRequired || formErrors.pizzaWeightGramsFive) && (
                                     <div className="form-group">
@@ -108,13 +102,11 @@ export const PizzaCreate = () => {
                                      </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="description">Pizza Description</label>
                                 <input type="text" className={`form-control ${formErrors.burgerDescriptionRequired ? "errorred" : ""} ${formErrors.burgerDescriptionLenght ? "errorred" : ""}`} id="description" placeholder="Pizza Description" 
                                 name="description" value={formValues.description} onChange={onDescriptionChangeHandler} onBlur={onDescriptionChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.pizzaDescriptionRequired || formErrors.pizzaDescriptionLenght) && (
                                     <div className="form-group">
@@ -122,7 +114,6 @@ export const PizzaCreate = () => {
                                     </div>
                                 )
                             }
-
                             <label>Dough</label>
                             <div className="ingredientsbuild">
                                 <div>
