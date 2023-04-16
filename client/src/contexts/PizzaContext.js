@@ -73,6 +73,20 @@ export const PizzaProvider = () => {
         };
     };
 
+    const [deleteNoOwner, setDeleteNoOwner] = useState(false);
+    const onDeletePizza = async (pizzaId, ownerId) => {
+        if(ownerId === auth.user._id){
+            pizzaService.deletePizza(pizzaId).then(() => {
+                setDeleteNoOwner(false);
+                setPizzas(state => state.filter(x => x._id !== pizzaId));
+            }).catch(() => {
+                return;
+            });
+        }else{
+            setDeleteNoOwner(true);
+        };
+    };
+
     function removeMessage(){
         setTimeout(() => {
             setPizzaFormFieldsErros(false);
@@ -88,6 +102,8 @@ export const PizzaProvider = () => {
         pizzaNameTaken,
         pizzzaServerOffline,
         onPizzaCreateFormSubmit,
+        deleteNoOwner,
+        onDeletePizza
     };
 
     return (
