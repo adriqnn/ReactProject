@@ -5,7 +5,7 @@ import { burgerServiceFactory } from "../../../services/burgerService";
 
 export const BurgerDetails = () => {
     const { burgerId } = useParams();
-    const { auth, isAuthenticated } = useContext(ApplicationContext);
+    const { auth } = useContext(ApplicationContext);
     const [burgerById, setBurgerById] = useState({});
     const burgerService = burgerServiceFactory(auth.token);
 

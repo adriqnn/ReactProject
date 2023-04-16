@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { ApplicationProvider } from './contexts/ApplicationContext';
 
@@ -28,6 +28,7 @@ import { PizzaIngredientDetails } from './components/Pizza/Pizza-Ingredient-Deta
 import { ProfileUpdate } from './components/Auth/Profile/ProfileUpdate';
 import { RouteGuardUnAuthenitcated } from './components/Shared/RouteGuardUnAuthenticated';
 import { RouteGuardAuthenitcated } from './components/Shared/RouteGuardAuthenticated';
+import { BurgerProvider } from './contexts/BurgerContext';
 
 function App() {
   return (
@@ -47,13 +48,15 @@ function App() {
             <Route path='/auth/profile/update/:userId' element={<ProfileUpdate/>}/>
           </Route>
 
-          <Route path='/burgers' element={<Burgers/>}/>
-          <Route path='/burgers/item/:burgerId' element={<BurgerDetails/>}/>
-          <Route path='/burgers/burger-ingredients' element={<BurgerIngredients/>}/>
-          <Route path='/burgers/burger-ingredients/:burgerIngredientId' element={<BurgerIngredientDetails/>}/>
-          <Route element={<RouteGuardAuthenitcated/>}>
-            <Route path='/burgers/create' element={<BurgerCreate/>}/>
-            <Route path='/burgers/item/delete/:burgerId/:ownerId' element={<BurgerDelete/>}/>
+          <Route element={<BurgerProvider/>}>
+            <Route path='/burgers' element={<Burgers/>}/>
+            <Route path='/burgers/item/:burgerId' element={<BurgerDetails/>}/>
+            <Route path='/burgers/burger-ingredients' element={<BurgerIngredients/>}/>
+            <Route path='/burgers/burger-ingredients/:burgerIngredientId' element={<BurgerIngredientDetails/>}/>
+            <Route element={<RouteGuardAuthenitcated/>}>
+              <Route path='/burgers/create' element={<BurgerCreate/>}/>
+              <Route path='/burgers/item/delete/:burgerId/:ownerId' element={<BurgerDelete/>}/>
+            </Route>
           </Route>
 
           <Route path='/pizzas' element={<Pizzas/>}/>

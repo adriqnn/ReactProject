@@ -1,19 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom"
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
-import { burgerServiceFactory } from "../../../services/burgerService";
 import { Burger } from "./Burger";
+import { BurgerContext } from "../../../contexts/BurgerContext";
 
 export const Burgers = () => {
-    const { auth, isAuthenticated } = useContext(ApplicationContext);
-    const [burgers, setBurgers] = useState([]);
-    const burgerService = burgerServiceFactory(auth.token);
-
-    useEffect(() => {
-        burgerService.getAllBurgers().then(result => {
-            setBurgers(result);
-        });
-    }, []);
+    const { isAuthenticated } = useContext(ApplicationContext);
+    const { burgers } = useContext(BurgerContext);
  
     return (
         <main>
