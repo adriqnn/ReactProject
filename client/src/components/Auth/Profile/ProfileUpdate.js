@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
-import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { Link } from "react-router-dom";
 
+import { ApplicationContext } from "../../../contexts/ApplicationContext";
+
 export const ProfileUpdate = () => {
-    const { updateFieldsError, updateUsernameTaken, updateEmailTaken, onUpdateFormSubmit, auth } = useContext(ApplicationContext);
+    const { updateFieldsError, updateUsernameTaken, updateEmailTaken, updatePasswordsMustMatch, updateServerOffline, onUpdateFormSubmit, auth } = useContext(ApplicationContext);
 
     const initialFormValues = { username: auth.user.username, email: auth.user.email, password: "", repass: "" };
     const [formValues, setFormValues] = useState(initialFormValues);
@@ -59,7 +60,6 @@ export const ProfileUpdate = () => {
                     <p>&nbsp;</p>
                     <div className="register">
                         <form method="POST" onSubmit={onSubmit}>
-
                             {
                                 updateFieldsError && (
                                     <div className="form-group">
@@ -67,7 +67,6 @@ export const ProfileUpdate = () => {
                                 </div>
                                 )
                             }
-
                             {
                                 updateUsernameTaken && (
                                     <div className="form-group">
@@ -75,7 +74,6 @@ export const ProfileUpdate = () => {
                                 </div>
                                 )
                             }
-
                             {
                                 updateEmailTaken && (
                                     <div className="form-group">
@@ -83,13 +81,25 @@ export const ProfileUpdate = () => {
                                 </div>
                                 )
                             }
-
+                             {
+                                updatePasswordsMustMatch && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Passwords must match!</label>
+                                </div>
+                                )
+                            }
+                            {
+                                updateServerOffline && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Please try again later!</label>
+                                </div>
+                                )
+                            }
                             <div className="form-group">
                                 <label htmlFor="username">Username</label>
                                 <input type="text" className={`form-control ${formErrors.usernameRequired ? "errorred" : ""} ${formErrors.usernameMinLength ? "errorred" : ""}`} id="username" placeholder="Username" 
                                     name="username" value={formValues.username} onChange={onUsernameChangeHandler} onBlur={onUsernameChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.usernameRequired || formErrors.usernameMinLength) && (
                                     <div className="form-group">
@@ -97,13 +107,11 @@ export const ProfileUpdate = () => {
                                     </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="email">Email</label>
                                 <input type="text" className={`form-control ${formErrors.emailRequired ? "errorred" : ""} ${formErrors.emailMinLength ? "errorred" : ""} ${formErrors.emailIsNotValid ? "errorred" : ""}`} id="email" placeholder="Email" 
                                     name="email" value={formValues.email} onChange={onEmailChangeHandler} onBlur={onEmailChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.emailRequired || formErrors.emailMinLength) && (
                                     <div className="form-group">
@@ -111,7 +119,6 @@ export const ProfileUpdate = () => {
                                     </div>
                                 )
                             }
-
                             {
                                 formErrors.emailIsNotValid && (
                                     <div className="form-group">
@@ -119,13 +126,11 @@ export const ProfileUpdate = () => {
                                     </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="password">Password</label>
                                 <input type="password" className={`form-control ${(formErrors.passwordRequired || formErrors.passwordMinLength) ? "errorred" : ""}`} id="password" placeholder="Password" 
                                     name="password" value={formValues.password} onChange={onPasswordChangeHandler} onBlur={onPasswordChangeHandler}/>
                             </div>
-
                             {
                                 (formErrors.passwordRequired || formErrors.passwordMinLength) && (
                                     <div className="form-group">
@@ -133,13 +138,11 @@ export const ProfileUpdate = () => {
                                     </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <label htmlFor="rePassword">Confirm Password</label>
                                 <input type="password" className={`form-control ${formErrors.passwordMatch ? "errorred" : ""}`} id="rePassword" placeholder="Confirm Password" 
                                 name="repass" value={formValues.repass} onChange={onRePassChangeHandler} onBlur={onRePassChangeHandler}/>
                             </div>
-
                             {
                                 formErrors.passwordMatch && (
                                     <div className="form-group">
@@ -147,7 +150,6 @@ export const ProfileUpdate = () => {
                                     </div>
                                 )
                             }
-
                             <div className="form-group">
                                 <p>Go Back to <Link to="/auth/profile" style={{fontSize: "20px", color: "greenyellow"}}>Profile!</Link></p>
                             </div>

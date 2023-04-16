@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 
 export const Register = () => {
-    const { registerFieldsError, registerUsernameTaken, registerEmailTaken, registerServerOffline, onRegisterFormSubmit } = useContext(ApplicationContext);
+    const { registerFieldsError, registerUsernameTaken, registerEmailTaken, registerPasswordsMustMatch, registerServerOffline, onRegisterFormSubmit } = useContext(ApplicationContext);
 
     const initialFormValues = { username: "", email: "", password: "", repass: "" };
     const [formValues, setFormValues] = useState(initialFormValues);
@@ -78,6 +78,13 @@ export const Register = () => {
                                 registerEmailTaken && (
                                     <div className="form-group">
                                     <label htmlFor="error" style={{color: "red"}}>Email is taken!</label>
+                                </div>
+                                )
+                            }
+                            {
+                                registerPasswordsMustMatch && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Passwords must match!</label>
                                 </div>
                                 )
                             }

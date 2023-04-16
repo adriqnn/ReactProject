@@ -16,6 +16,7 @@ export const ApplicationProvider = ({
     const [registerFieldsError, setRegisterFieldsError] = useState(false);
     const [registerUsernameTaken, setRegisterUsernameTaken] = useState(false);
     const [registerEmailTaken, setRegisterEmailTaken] = useState(false);
+    const [registerPasswordsMustMatch, setRegisterPasswordsMustMatch] = useState(false);
     const [registerServerOffline, setRegisterServerOffline] = useState(false);
     const onRegisterFormSubmit = async (registerData) => {
         const username = registerData.username;
@@ -25,6 +26,12 @@ export const ApplicationProvider = ({
 
         if(username === '' || email === '' || password === '' || repass === ''){
             setRegisterFieldsError(true);
+            removeMessage();
+            return;
+        };
+
+        if(password !== repass){
+            setRegisterPasswordsMustMatch(true);
             removeMessage();
             return;
         };
@@ -44,6 +51,8 @@ export const ApplicationProvider = ({
     const [updateFieldsError, setUpdateFieldsError] = useState(false);
     const [updateUsernameTaken, setUpdateUsernameTaken] = useState(false);
     const [updateEmailTaken, setUpdateEmailTaken] = useState(false);
+    const [updataPassowrdsMustMatch, setUpdatePasswordsMustMatch] = useState(false);
+    const [updateServerOffline, setUpdateServerOffline] = useState(false);
     const onUpdateFormSubmit = async (registerData) => {
         const username = registerData.username;
         const email = registerData.email;
@@ -52,9 +61,14 @@ export const ApplicationProvider = ({
 
         if(username === '' || email === '' || password === '' || repass === ''){
             setUpdateFieldsError(true);
+            removeMessage();
             return;
-        }else{
-            setUpdateFieldsError(false);
+        };
+
+        if(password !== repass){
+            setUpdatePasswordsMustMatch(true);
+            removeMessage();
+            return;
         };
 
         try{
@@ -64,6 +78,8 @@ export const ApplicationProvider = ({
         }catch(err){
             err.message === 'Username is taken!' ? setUpdateUsernameTaken(true) : setUpdateUsernameTaken(false);
             err.message === 'Email is taken!' ? setUpdateEmailTaken(true) : setUpdateEmailTaken(false);
+            err.message === 'NetworkError when attempting to fetch resource.' ? setUpdateServerOffline(true) : setUpdateServerOffline(false);
+            removeMessage();
         };
     };
 
@@ -101,10 +117,18 @@ export const ApplicationProvider = ({
             setLoginFieldsError(false);
             setLoginWrongUsernameOrPassowrd(false);
             setLoginServerOffline(false);
+
             setRegisterFieldsError(false);
             setRegisterUsernameTaken(false);
             setRegisterEmailTaken(false);
+            setRegisterPasswordsMustMatch(false);
             setRegisterServerOffline(false);
+
+            setUpdateFieldsError(false);
+            setUpdateUsernameTaken(false);
+            setUpdateEmailTaken(false);
+            setUpdatePasswordsMustMatch(false);
+            setUpdateServerOffline(false);
         }, 5000);
     };
 
@@ -114,6 +138,7 @@ export const ApplicationProvider = ({
         registerUsernameTaken,
         registerEmailTaken,
         registerServerOffline,
+        registerPasswordsMustMatch,
         onRegisterFormSubmit,
         loginFieldsError,
         loginWrongUsernameOrPassowrd,
@@ -122,6 +147,8 @@ export const ApplicationProvider = ({
         updateFieldsError,
         updateUsernameTaken,
         updateEmailTaken,
+        updataPassowrdsMustMatch,
+        updateServerOffline,
         onUpdateFormSubmit,
         isAuthenticated: !!auth.token,
         onLogout,
