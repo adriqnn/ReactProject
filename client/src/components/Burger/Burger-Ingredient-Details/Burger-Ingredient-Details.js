@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { burgerServiceFactory } from "../../../services/burgerService";
 
@@ -7,6 +8,7 @@ export const BurgerIngredientDetails = () => {
     const { burgerIngredientId } = useParams();
     const { auth } = useContext(ApplicationContext);
     const burgerService = burgerServiceFactory(auth.token);
+    
     const [burgerIngredintById, setBurgerIngredientById] = useState({});
     const [errorFetchingBurgerIngredientById, setErrorFetchingBurgerIngredientById] = useState(false);
 

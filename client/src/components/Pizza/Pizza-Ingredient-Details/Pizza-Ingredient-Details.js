@@ -1,13 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { pizzaServiceFactory } from "../../../services/pizzaService";
 
 export const PizzaIngredientDetails = () => {
     const { pizzaIngredientId } = useParams();
     const { auth } = useContext(ApplicationContext);
-    const [pizzaIngredientById, setPizzaIngredientById] = useState([]);
     const pizzaService = pizzaServiceFactory(auth.token);
+    
+    const [pizzaIngredientById, setPizzaIngredientById] = useState([]);
     const [errorFetchingPizzaIngredientById, setErrorFetchingPizzaIngredientById] = useState(false);
 
     useEffect(() => {
