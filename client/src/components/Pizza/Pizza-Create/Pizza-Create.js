@@ -104,7 +104,7 @@ export const PizzaCreate = () => {
                             }
                             <div className="form-group">
                                 <label htmlFor="description">Pizza Description</label>
-                                <input type="text" className={`form-control ${formErrors.burgerDescriptionRequired ? "errorred" : ""} ${formErrors.burgerDescriptionLenght ? "errorred" : ""}`} id="description" placeholder="Pizza Description" 
+                                <input type="text" className={`form-control ${formErrors.pizzaDescriptionRequired ? "errorred" : ""} ${formErrors.pizzaDescriptionLenght ? "errorred" : ""}`} id="description" placeholder="Pizza Description" 
                                 name="description" value={formValues.description} onChange={onDescriptionChangeHandler} onBlur={onDescriptionChangeHandler}/>
                             </div>
                             {

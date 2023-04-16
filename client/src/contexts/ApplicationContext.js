@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { authServiceFactory } from "../services/authService";
-import { useNavigate } from "react-router-dom";
 import { useLocalStorageSetter } from "../hooks/useLocalStorageSetter";
 
 export const ApplicationContext = createContext();
@@ -67,15 +67,15 @@ export const ApplicationProvider = ({
 
     const [loginFieldsError, setLoginFieldsError] = useState(false);
     const [loginWrongUsernameOrPassowrd, setLoginWrongUsernameOrPassowrd] = useState(false);
+    const [loginServerOffline, setLoginServerOffline] = useState(false);
     const onLoginFormSubmit = async (loginData) => {
         const username = loginData.username;
         const password = loginData.password;
 
         if(username === '' || password === ''){
             setLoginFieldsError(true);
+            removeMessage();
             return;
-        }else{
-            setLoginFieldsError(false);
         };
 
         try{
@@ -84,12 +84,22 @@ export const ApplicationProvider = ({
             navigate('/');
         }catch(err){
             err.message === 'Incorrect username or password!' ? setLoginWrongUsernameOrPassowrd(true) : setLoginWrongUsernameOrPassowrd(false);
+            err.message === 'NetworkError when attempting to fetch resource.' ? setLoginServerOffline(true) : setLoginServerOffline(false);
+            removeMessage();
         };
     };
 
     const onLogout = async () => {
         setAuth({});
         authService.logout();
+    };
+
+    function removeMessage(){
+        setTimeout(() => {
+            setLoginFieldsError(false);
+            setLoginWrongUsernameOrPassowrd(false);
+            setLoginServerOffline(false);
+        }, 5000);
     };
 
     const context = {
@@ -100,6 +110,7 @@ export const ApplicationProvider = ({
         onRegisterFormSubmit,
         loginFieldsError,
         loginWrongUsernameOrPassowrd,
+        loginServerOffline,
         onLoginFormSubmit,
         updateFieldsError,
         updateUsernameTaken,

@@ -1,6 +1,7 @@
-import { useContext } from "react"
-import { ApplicationContext } from "../../contexts/ApplicationContext"
+import { useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
+
+import { ApplicationContext } from "../../contexts/ApplicationContext";
 
 export const RouteGuardAuthenitcated =  () => {
     const { isAuthenticated } = useContext(ApplicationContext);

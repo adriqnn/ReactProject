@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
-import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { Navigate } from "react-router-dom";
+
+import { ApplicationContext } from "../../../contexts/ApplicationContext";
 
 export const Logout = () => {
     const { onLogout } = useContext(ApplicationContext);

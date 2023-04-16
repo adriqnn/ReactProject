@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-import '../../../App.css';
 import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { ApplicationContext } from '../../../contexts/ApplicationContext';
 
 export const Login = () => {
-    const { loginFieldsError, loginWrongUsernameOrPassowrd, onLoginFormSubmit } = useContext(ApplicationContext);
+    const { loginFieldsError, loginWrongUsernameOrPassowrd, loginServerOffline, onLoginFormSubmit } = useContext(ApplicationContext);
 
     const initialFormValues = { username: "", password: "" };
     const [formValues, setFormValues] = useState(initialFormValues);
@@ -58,6 +58,14 @@ export const Login = () => {
                                 loginWrongUsernameOrPassowrd && (
                                     <div className="form-group">
                                     <label htmlFor="error" style={{color: "red"}}>Incorrect username or password!</label>
+                                </div>
+                                )
+                            }
+
+                            {
+                                loginServerOffline && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Please try again later!</label>
                                 </div>
                                 )
                             }
