@@ -29,6 +29,7 @@ import { ProfileUpdate } from './components/Auth/Profile/ProfileUpdate';
 import { RouteGuardUnAuthenitcated } from './components/Shared/RouteGuardUnAuthenticated';
 import { RouteGuardAuthenitcated } from './components/Shared/RouteGuardAuthenticated';
 import { BurgerProvider } from './contexts/BurgerContext';
+import { PizzaProvider } from './contexts/PizzaContext';
 
 function App() {
   return (
@@ -59,13 +60,15 @@ function App() {
             </Route>
           </Route>
 
-          <Route path='/pizzas' element={<Pizzas/>}/>
-          <Route path='/pizzas/item/:pizzaId' element={<PizzaDetails/>}/> 
-          <Route path='/pizzas/pizza-ingredients' element={<PizzaIngredients/>}/> 
-          <Route path='/pizzas/pizza-ingredients/:pizzaIngredientId' element={<PizzaIngredientDetails/>}/>
-          <Route element={<RouteGuardAuthenitcated/>}>
-            <Route path='/pizzas/create' element={<PizzaCreate/>}/>   
-            <Route path='/pizzas/item/delete/:pizzaId/:ownerId' element={<PizzaDelete/>}/>
+          <Route element={<PizzaProvider/>}>
+            <Route path='/pizzas' element={<Pizzas/>}/>
+            <Route path='/pizzas/item/:pizzaId' element={<PizzaDetails/>}/> 
+            <Route path='/pizzas/pizza-ingredients' element={<PizzaIngredients/>}/> 
+            <Route path='/pizzas/pizza-ingredients/:pizzaIngredientId' element={<PizzaIngredientDetails/>}/>
+            <Route element={<RouteGuardAuthenitcated/>}>
+              <Route path='/pizzas/create' element={<PizzaCreate/>}/>   
+              <Route path='/pizzas/item/delete/:pizzaId/:ownerId' element={<PizzaDelete/>}/>
+            </Route>
           </Route>
           
           <Route path='/about' element={<About/>}/>
@@ -76,7 +79,6 @@ function App() {
 
         <Footer/>
       </ApplicationProvider>
-
   );
 };
 

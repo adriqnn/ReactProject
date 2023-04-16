@@ -1,19 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
-import { pizzaServiceFactory } from "../../../services/pizzaService";
 import { Pizza } from "./Pizza";
+import { PizzaContext } from "../../../contexts/PizzaContext";
 
 export const Pizzas = () => {
-    const { auth, isAuthenticated } = useContext(ApplicationContext);
-    const [pizzas, setPizzas] = useState([]);
-    const pizzaService = pizzaServiceFactory(auth.token);
-
-    useEffect(() => {
-        pizzaService.getAllPizzas().then(result => {
-            setPizzas(result);
-        });
-    }, []);
+    const { isAuthenticated } = useContext(ApplicationContext);
+    const { pizzas, errorFetchingPizzasData } = useContext(PizzaContext)
 
     return (
         <main>
@@ -45,7 +38,7 @@ export const Pizzas = () => {
                         pizzas.length > 0 && pizzas.map(x => <Pizza key={x._id} {...x}/>)
                     }
                     {
-                        pizzas.length <= 0 && (
+                        (pizzas.length <= 0 || errorFetchingPizzasData) && (
                             <div className="no-ingredients">
                                 <img src="/assets/pictures/main/404missin.png" alt="missing"/>
                                 <p className="lead">Please try again later...</p>

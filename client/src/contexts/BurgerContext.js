@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
 import { ApplicationContext } from "./ApplicationContext";
-import { Outlet, useNavigate } from "react-router-dom";
 import { burgerServiceFactory } from "../services/burgerService";
 
 export const BurgerContext = createContext();
@@ -12,7 +12,7 @@ export const BurgerProvider = () => {
     const burgerService = burgerServiceFactory(auth.token);
 
     const [burgers, setBurgers] = useState([]);
-    const [errorFetchingBurgersData, setErrorFetchingBurgersData ] = useState(false); 
+    const [errorFetchingBurgersData, setErrorFetchingBurgersData] = useState(false); 
 
     useEffect(() => {
         burgerService.getAllBurgers().then(result => {
