@@ -5,12 +5,16 @@ import { BurgerIngredient } from "./Burger-Ingredient";
 
 export const BurgerIngredients = () => {
     const { auth } = useContext(ApplicationContext);
-    const [burgerIngredients, setBurgerIngredients] = useState([]);
     const burgerService = burgerServiceFactory(auth.token);
+    const [burgerIngredients, setBurgerIngredients] = useState([]);
+    const [errorFetchingBurgerIngredientsData, setErrorFetchingBurgerIngredientsData] = useState(false);
 
     useEffect(() => {
         burgerService.getAllBurgerIngredients().then(result => {
             setBurgerIngredients(result);
+            setErrorFetchingBurgerIngredientsData(false)
+        }).catch(() => {
+            setErrorFetchingBurgerIngredientsData(true);
         });
     }, []);
 
@@ -33,7 +37,7 @@ export const BurgerIngredients = () => {
                         
                     }
                     {
-                        burgerIngredients.length <= 0 && (
+                        (burgerIngredients.length <= 0 || errorFetchingBurgerIngredientsData) && (
                             <div className="no-ingredients">
                                 <img src="/assets/pictures/main/404missin.png" alt="missing"/>
                                 <p className="lead">Please try again later...</p>

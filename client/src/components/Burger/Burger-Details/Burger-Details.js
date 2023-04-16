@@ -8,13 +8,13 @@ export const BurgerDetails = () => {
     const { auth } = useContext(ApplicationContext);
     const burgerService = burgerServiceFactory(auth.token);
     const [burgerById, setBurgerById] = useState({});
-    const [burgerByIdServerError, setBurgerByIdServerError] = useState(false);
+    const [errorFetchingBurgerByIdData, setErrorFetchingBurgerByIdData] = useState(false);
 
     useEffect(() => {
         burgerService.getBurgerById(burgerId).then(result => {
             setBurgerById(result);
         }).catch(() => {
-            setBurgerByIdServerError(true);
+            setErrorFetchingBurgerByIdData(true);
         });
     }, [burgerId]);
 
@@ -27,7 +27,7 @@ export const BurgerDetails = () => {
                     </div>
                     <p className="line"></p>
                     {
-                      !burgerByIdServerError &&  (
+                      !errorFetchingBurgerByIdData &&  (
                         <>
                             <div className="item-info">
                                 <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", color: "gold"}}>Burger details for {burgerById.name}:</p>
@@ -68,7 +68,7 @@ export const BurgerDetails = () => {
                             )
                         }
                         {
-                        (burgerByIdServerError) && (
+                        (errorFetchingBurgerByIdData) && (
                             <div className="no-ingredients">
                                 <img src="/assets/pictures/main/404missin.png" alt="missing"/>
                                 <p className="lead">Please try again later...</p>
