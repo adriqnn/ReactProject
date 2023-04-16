@@ -7,10 +7,14 @@ export const PizzaIngredients = () => {
     const { auth } = useContext(ApplicationContext);
     const [pizzaIngredients, setPizzaIngredients] = useState([]);
     const pizzaService = pizzaServiceFactory(auth.token);
+    const [errorFetchingPizzaIngredientsData, setErrorFetchingPizzaIngredientsData] = useState(false);
 
     useEffect(() => {
         pizzaService.getAllPizzaIngredients().then(result => {
             setPizzaIngredients(result);
+            setErrorFetchingPizzaIngredientsData(false);
+        }).catch(() => {
+            setErrorFetchingPizzaIngredientsData(true);
         });
     }, []);
 
@@ -32,7 +36,7 @@ export const PizzaIngredients = () => {
                         pizzaIngredients.length > 0 && pizzaIngredients.map(x => <PizzaIngredient key={x._id} {...x}/>)
                     }
                     {
-                        pizzaIngredients.length <= 0 && (
+                        (pizzaIngredients.length <= 0 || errorFetchingPizzaIngredientsData) && (
                             <div className="no-ingredients">
                                 <img src="/assets/pictures/main/404missin.png" alt="missing"/>
                                 <p className="lead">Please try again later...</p>
