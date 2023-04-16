@@ -1,12 +1,9 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { ApplicationContext } from "../../../contexts/ApplicationContext";
-import { pizzaServiceFactory } from "../../../services/pizzaService";
+import { Link } from "react-router-dom";
+import { PizzaContext } from "../../../contexts/PizzaContext";
 
 export const PizzaCreate = () => {
-    const navigate = useNavigate();
-    const { auth } = useContext(ApplicationContext);
-    const pizzaService = pizzaServiceFactory(auth.token);
+    const { pizzaFormFieldsError, pizzaNameTaken, pizzaServerOffline, onPizzaCreateFormSubmit } = useContext(PizzaContext);
 
     const initialFormValues = { name: "", weight: "", description: "", dough: "", tomatosauce: "", ketchup: "", sourcream: "",  
     emental: "", mozzarella: "", smokedcheese: "", pepperoni: "", chicken: "", smokedham: "", smokedbacon: "", 
@@ -47,53 +44,6 @@ export const PizzaCreate = () => {
         // setFormValues(initialFormValues);
     };
 
-    const [pizzaFormFieldsError, setPizzaFormFieldsErros] = useState(false);
-    const [pizzaNameTaken, setPizzaNameTaken] = useState(false);
-    const onPizzaCreateFormSubmit = async (pizzaData) =>{
-        const {name, weight, description, dough, ...rest } = pizzaData;
-        const main = {name, weight, description, dough};
-
-        if(name === '' || weight === '' || description === '' || dough === ''){
-            setPizzaFormFieldsErros(true)
-            return;
-        }else{
-            setPizzaFormFieldsErros(false);
-        };
-
-        const secondary = {
-            basil: !!rest.basil === true ? 'Basil' : '',
-            chicken: !!rest.chicken === true ? 'Chicken' : '',
-            corn: !!rest.corn === true ? 'Corn' : '',
-            emental: !!rest.emental === true ? 'Emental' : '',
-            flakysalt: !!rest.flakysalt === true ? 'Flaky Salt' : '',
-            garlicpowder: !!rest.garlicpowder === true ? 'Garlic Powder' : '',
-            greenpeppers: !!rest.greenpeppers === true ? 'Green Peppers' : '',
-            ketchup: !!rest.ketchup === true ? 'Ketchup' : '',
-            mozzarella: !!rest.mozzarella === true ? 'Mozzarella' : '',
-            mushrooms: !!rest.mushrooms === true ? 'Mushrooms' : '',
-            olives: !!rest.olives === true ? 'Olives' : '',
-            onions: !!rest.onions === true ? 'Onions' : '',
-            oregano: !!rest.oregano === true ? 'Oregano' : '',
-            pepperoni: !!rest.pepperoni === true ? 'Pepperoni' : '',
-            pickles: !!rest.pickles === true ? 'Pickles' : '',
-            smokedbacon: !!rest.smokedbacon === true ? 'Smoked Bacon' : '',
-            smokedcheese: !!rest.smokedcheese === true ? 'Smoked Cheese' : '',
-            smokedham: !!rest.smokedham === true ? 'Smoked Ham' : '',
-            sourcream: !!rest.sourcream === true ? 'Sour Cream' : '',
-            tomatoes: !!rest.tomatoes === true ? 'Tomatoes' : '',
-            tomatosauce: !!rest.tomatosauce === true ? 'Tomato Sauce' : '',
-        };
-        const owner = auth.user._id;
-        const pizza = {main: main, secondary: secondary, owner: owner};
-
-        try{
-            await pizzaService.createPizza(pizza);
-            navigate('/pizzas');
-        }catch(err){
-            err.message === 'Pizza name already in the Database!' ? setPizzaNameTaken(true) : setPizzaNameTaken(false);
-        };
-    };
-
     return (
         <main>
             <section className="py-5" id="register-page">
@@ -119,6 +69,14 @@ export const PizzaCreate = () => {
                                 pizzaNameTaken && (
                                     <div className="form-group">
                                     <label htmlFor="error" style={{color: "red"}}>Pizza name already in the Database!</label>
+                                </div>
+                                )
+                            }
+
+                            {
+                                pizzaServerOffline && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Please try again later!</label>
                                 </div>
                                 )
                             }
