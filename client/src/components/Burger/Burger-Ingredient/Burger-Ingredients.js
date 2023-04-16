@@ -7,7 +7,7 @@ import { BurgerIngredient } from "./Burger-Ingredient";
 export const BurgerIngredients = () => {
     const { auth } = useContext(ApplicationContext);
     const burgerService = burgerServiceFactory(auth.token);
-    
+
     const [burgerIngredients, setBurgerIngredients] = useState([]);
     const [errorFetchingBurgerIngredientsData, setErrorFetchingBurgerIngredientsData] = useState(false);
 
@@ -35,8 +35,7 @@ export const BurgerIngredients = () => {
                 </header>
                 <div className="row text-center">
                     {
-                        burgerIngredients.length > 0 && burgerIngredients.map(x => <BurgerIngredient key={x._id} {...x}/>)
-                        
+                        burgerIngredients.length > 0 && burgerIngredients.map(x => <BurgerIngredient key={x._id} {...x}/>)                       
                     }
                     {
                         (burgerIngredients.length <= 0 || errorFetchingBurgerIngredientsData) && (
