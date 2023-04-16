@@ -10,7 +10,7 @@ export const BurgerProvider = () => {
     const navigate = useNavigate();
     const { auth } = useContext(ApplicationContext);
     const burgerService = burgerServiceFactory(auth.token);
-    
+
     const [burgers, setBurgers] = useState([]);
     const [errorFetchingBurgersData, setErrorFetchingBurgersData ] = useState(false); 
 
@@ -26,7 +26,7 @@ export const BurgerProvider = () => {
     const [burgerFormFieldsError, setBurgerFormFieldsErros] = useState(false);
     const [burgerNameTaken, setBurgerNameTaken] = useState(false);
     const [burgerServerOffline, setBurgerServerOffline] = useState(false);
-    const onBurgerCreateFormSubmit = async (burgerData) =>{
+    const onBurgerCreateFormSubmit = async (burgerData) => {
         const {name, weight, description, bun, ...rest } = burgerData;
         const main = {name, weight, description, bun};
 
@@ -76,6 +76,20 @@ export const BurgerProvider = () => {
         };
     };
 
+    const [deleteNoOwner, setDeleteNoOwner] = useState(false);
+    const onDeleteBurger = async (burgerId, ownerId) => {
+        if(ownerId === auth.user._id){
+            burgerService.deleteBurger(burgerId).then(() => {
+                setDeleteNoOwner(false);
+                setBurgers(state => state.filter(x => x._id !== burgerId));
+            }).catch(() => {
+                return;
+            });
+        }else{
+            setDeleteNoOwner(true);
+        };
+    };
+
     function removeMessage(){
         setTimeout(() => {
             setBurgerFormFieldsErros(false);
@@ -90,7 +104,9 @@ export const BurgerProvider = () => {
         burgerFormFieldsError,
         burgerNameTaken,
         burgerServerOffline,
-        onBurgerCreateFormSubmit
+        onBurgerCreateFormSubmit,
+        deleteNoOwner,
+        onDeleteBurger
     };
 
     return (
