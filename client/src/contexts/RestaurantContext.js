@@ -1,10 +1,9 @@
 import { createContext, useContext } from "react";
+import { Outlet } from "react-router-dom";
 
 export const RestaurantContext = createContext();
 
-export const RestaurantProvider = ({
-    children,
-}) => {
+export const RestaurantProvider = () => {
     
     const context = {
 
@@ -13,7 +12,7 @@ export const RestaurantProvider = ({
     return (
         <>
             <RestaurantContext.Provider value={context}>
-                {children}
+                <Outlet/>
             </RestaurantContext.Provider>
         </>
     );
