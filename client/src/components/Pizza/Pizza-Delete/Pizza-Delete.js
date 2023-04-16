@@ -4,7 +4,7 @@ import { PizzaContext } from "../../../contexts/PizzaContext";
 
 export const PizzaDelete = () => {
     const { pizzaId, ownerId } = useParams();
-    const [deleteNoOwner, onDeletePizza] = useContext(PizzaContext);
+    const { deleteNoOwner, onDeletePizza } = useContext(PizzaContext);
 
     useEffect(() => {
         onDeletePizza(pizzaId, ownerId);

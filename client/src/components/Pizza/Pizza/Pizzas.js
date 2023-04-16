@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
-import { Pizza } from "./Pizza";
 import { PizzaContext } from "../../../contexts/PizzaContext";
+import { Pizza } from "./Pizza";
 
 export const Pizzas = () => {
     const { isAuthenticated } = useContext(ApplicationContext);
@@ -18,7 +19,6 @@ export const Pizzas = () => {
                         <p> </p>
                         <p className="line"></p>
                         <p>&nbsp;&nbsp;&nbsp;</p>
-
                         {
                             isAuthenticated && (
                                 <>
@@ -27,13 +27,11 @@ export const Pizzas = () => {
                                 </>
                             )
                         }
-
                         <Link to="/pizzas/pizza-ingredients" style={{color: "gold"}}> Ingredients </Link>
                     </h1>
                     <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "22px"}}>Pizzas List:</p>
                 </header>
                 <div className="row text-center">
-
                     {
                         pizzas.length > 0 && pizzas.map(x => <Pizza key={x._id} {...x}/>)
                     }

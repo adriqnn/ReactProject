@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
-import { Burger } from "./Burger";
 import { BurgerContext } from "../../../contexts/BurgerContext";
+import { Burger } from "./Burger";
 
 export const Burgers = () => {
     const { isAuthenticated } = useContext(ApplicationContext);
@@ -18,7 +19,6 @@ export const Burgers = () => {
                         <p> </p>
                         <p className="line"></p>
                         <p>&nbsp;&nbsp;&nbsp;</p>
-
                         { 
                             isAuthenticated && (
                                 <>
@@ -27,13 +27,11 @@ export const Burgers = () => {
                                 </>
                             )
                         }
-
                         <Link to="/burgers/burger-ingredients" style={{color: "gold"}}> Ingredients </Link>
                     </h1>
                     <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "22px"}}>Burgers List:</p>
                 </header>
                 <div className="row text-center">
-
                     {
                         burgers.length > 0 && burgers.map(x => <Burger key={x._id} {...x}/>)
                     }
