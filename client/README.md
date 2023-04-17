@@ -147,7 +147,18 @@ restaurant delete - 'http://localhost:3000/restaurants/item/delete/id';
 
 ## General Information:
 
-1. 11 Dynamic Pages;
+1. Dynamic Pages:
+    * Profile Page;
+    * Burgers Page;
+    * Burger Details Page;
+    * Burger Ingredients Page;
+    * Burger Ingredient Details Page;
+    * Pizzas Page;
+    * Pizza Details Page;
+    * Pizza Ingredients Page;
+    * Pizza Ingredient Details Page;
+    * Restaurants Page;
+    * Restaurant Details Page;
 2. Specific Views:
     * Burgers Catalog and Burger Details;
     * Burger Ingredients Catalog and Burger Ingredient Details;
@@ -178,16 +189,7 @@ restaurant delete - 'http://localhost:3000/restaurants/item/delete/id';
     * Guards;
 15. Good UI/UX;
 
-> Functionality:\
 
-> -Profile Page with own Burgers/Pizzas.\
-> -Create Manage and View Burgers.\
-> -Create Manage and View Pizzas.\
-> -Check Burger Ingredients.\
-> -Check Pizza Ingredients.\
-> -Home, About & Contacts\
-> -Other\
-> ...\
 > More Functionality to come soon...\
 > Thanks!
 
