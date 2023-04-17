@@ -145,6 +145,39 @@ restaurant update - 'http://localhost:3000/restaurants/item/update/id';
 restaurant delete - 'http://localhost:3000/restaurants/item/delete/id';
 ```
 
+## General Information:
+
+1. 11 Dynamic Pages;
+2. Specific Views:
+    * Burgers Catalog and Burger Details;
+    * Burger Ingredients Catalog and Burger Ingredient Details;
+    * Pizza Catalog and Pizza Details;
+    * Pizza Ingredients Catalog and Pizza Ingredient Details;
+    * Restaurant Catalog and Restaurant Details;
+3. CRUD Collection:
+    * Users - Create, Read and Update;
+    * Burgers - Create, Read, Delete and Like/Unlike Functionality;
+    * Pizzas - Create, Read, Delete and Like/Unlike Functionality;
+    * Restaurants - Create, Read, Update and Delete; 
+4. Using React for client-side;
+5. Using REST-api server connected to MongoDB;
+6. User Authentication, authorized requests and guest/user guards;
+7. Client-side routing in App.js with react-router-dom;
+8. Application has statefull and stateless components, bound forms, component styling and other;
+9. Used GitHub for the application source control;
+10. Application has data validation for the forms and error handling for the server requests and other parts where it is needed;
+11. Application is divided into multiple components with separate css files;
+12. Application has documentation for the setup, use and functionality;
+13. Application has 4 contexts:
+    * ApplicationContext;
+    * BurgerContext;
+    * PizzaContext;
+    * RestaurantContext;
+14. Application has some other features:
+    * Hooks;
+    * Guards;
+15. Good UI/UX;
+
 > Functionality:\
 
 > -Profile Page with own Burgers/Pizzas.\
