@@ -38,9 +38,19 @@ The Application has:
 * Public Part - accessible for everyone without authentication;
 * Private Part - accessible only for registered users of the application;
 
-### Public Part -unauthenticated users;
+### Public Part -> Unauthenticated users;
+    ```
+    home - '/';
+    ```
+    ```
+    contacts - '/contacts';
+    ```
+    ```
+    about - '/';
+    ```
 
-### Private Part - authenticated users;
+
+### Private Part -> Authenticated users;
 
 > Functionality:\
 > -Login.\
