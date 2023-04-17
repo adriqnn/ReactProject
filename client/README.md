@@ -35,8 +35,8 @@ npm start --- to run the REST-api server;
 ## React Client Application Structure:
 
 The Application has:
-* >> Public Part - accessible for everyone without authentication;
-* >> Private Part - available only for registered users of the application;
+* Public Part - accessible for everyone without authentication;
+* Private Part - available only for registered users of the application;
 
 > Functionality:\
 > -Login.\
