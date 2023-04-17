@@ -36,7 +36,11 @@ npm start --- to run the REST-api server;
 
 The Application has:
 * Public Part - accessible for everyone without authentication;
-* Private Part - available only for registered users of the application;
+* Private Part - accessible only for registered users of the application;
+
+### Public Part -unauthenticated users;
+
+### Private Part - authenticated users;
 
 > Functionality:\
 > -Login.\
