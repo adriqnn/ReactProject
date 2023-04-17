@@ -40,6 +40,16 @@ export const pizzaServiceFactory = (token) => {
         return result;
     };
 
+    const likePizza = async (pizzaId, userId) => {
+        const result = await request.get(`${baseUrl}/pizza/upvote/${pizzaId}/${userId}`);
+        return result;
+    };
+
+    const unlikePizza = async (pizzaId, userId) => {
+        const result = await request.get(`${baseUrl}/pizza/downvote/${pizzaId}/${userId}`);
+        return result;
+    };
+
     return {
         getAllPizzaIngredients,
         getOnePizzaIngredientById,
@@ -47,6 +57,8 @@ export const pizzaServiceFactory = (token) => {
         getPizzaById,
         createPizza,
         deletePizza,
-        getUserPizzas
+        getUserPizzas,
+        likePizza,
+        unlikePizza
     };
 };

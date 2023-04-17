@@ -76,7 +76,7 @@ function App() {
             <Route path='/pizzas/pizza-ingredients' element={<PizzaIngredients/>}/> 
             <Route path='/pizzas/pizza-ingredients/:pizzaIngredientId' element={<PizzaIngredientDetails/>}/>
             <Route element={<RouteGuardAuthenitcated/>}>
-              <Route path='/pizzas/create' element={<PizzaCreate/>}/>   
+              <Route path='/pizzas/create' element={<PizzaCreate/>}/>
               <Route path='/pizzas/item/delete/:pizzaId/:ownerId' element={<PizzaDelete/>}/>
             </Route>
           </Route>

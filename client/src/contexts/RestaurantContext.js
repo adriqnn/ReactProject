@@ -61,7 +61,6 @@ export const RestaurantProvider = () => {
         const restaurant = {name, address, description, rating, owner: owner, restaurantId: restaurantId};
         try{
             const updatedRestaurant = await restaurantService.updateRestaurant(restaurant);
-            console.log(updatedRestaurant);
             setRestaurants(state => state.map(x => x._id === updatedRestaurant._id ? updatedRestaurant : x));
             navigate('/restaurants');
         }catch(err){

@@ -40,6 +40,16 @@ export const burgerServiceFactory = (token) => {
         return result;
     };
 
+    const likeBurger = async (burgerId, userId) => {
+        const result = await request.get(`${baseUrl}/burger/upvote/${burgerId}/${userId}`);
+        return result;
+    };
+
+    const unlikeBurger = async (burgerId, userId) => {
+        const result = await request.get(`${baseUrl}/burger/downvote/${burgerId}/${userId}`);
+        return result;
+    };
+
     return {
         getAllBurgerIngredients,
         getOneBurgerIngredientById,
@@ -47,6 +57,8 @@ export const burgerServiceFactory = (token) => {
         getBurgerById,
         createBurger,
         deleteBurger,
-        getUserBurgers
+        getUserBurgers,
+        likeBurger,
+        unlikeBurger
     };
 };

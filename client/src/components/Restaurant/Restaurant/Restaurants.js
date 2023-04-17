@@ -34,7 +34,16 @@ export const Restaurants = () => {
                         restaurants.length > 0 && restaurants.map(x => <Restaurant key={x._id} {...x}/>)
                     }
                     {
-                        (restaurants.length <= 0 || errorFetchingRestaurantsData) && (
+                        (restaurants.length <= 0) && (
+                            <>
+                                <div className="no-ingredients">
+                                    <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>There are no restaurants in the collection!</p>
+                                </div>
+                            </>
+                        )
+                    }
+                    {
+                        (errorFetchingRestaurantsData) && (
                             <div className="no-ingredients">
                                 <img src="/assets/pictures/main/404missin.png" alt="missing"/>
                                 <p className="lead">Please try again later...</p>

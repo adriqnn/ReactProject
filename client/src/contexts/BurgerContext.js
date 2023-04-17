@@ -90,6 +90,22 @@ export const BurgerProvider = () => {
         };
     };
 
+    const onLikeBurger = async (burgerId, userId) => {
+        burgerService.likeBurger(burgerId, userId).then(() => {
+            setBurgers(state => state.map(x => x._id === burgerId ? {...x, likes: [...x.likes, userId]} : x));
+        }).catch(() => {
+            return;
+        });
+    };
+
+    const onUnlikeBurger = async (burgerId, userId) => {
+        burgerService.unlikeBurger(burgerId, userId).then(() => {
+            setBurgers(state => state.map(x => x._id === burgerId ? {...x, likes: x.likes.filter(x => x !== userId)} : x))
+        }).catch(() => {
+            return;
+        });
+    };
+
     function removeMessage(){
         setTimeout(() => {
             setBurgerFormFieldsErros(false);
@@ -97,6 +113,7 @@ export const BurgerProvider = () => {
             setBurgerServerOffline(false);
         }, 5000);
     };
+
 
     const context = {
         errorFetchingBurgersData,
@@ -106,7 +123,9 @@ export const BurgerProvider = () => {
         burgerServerOffline,
         onBurgerCreateFormSubmit,
         deleteNoOwner,
-        onDeleteBurger
+        onDeleteBurger,
+        onLikeBurger,
+        onUnlikeBurger
     };
 
     return (

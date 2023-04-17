@@ -63,6 +63,18 @@ async function getBurgersByUserId(id){
     return await Burger.find({owner: id});
 };
 
+async function upvote(burgerId, userId){
+    const burger = await Burger.findById(burgerId);
+    burger.likes.push(userId);
+    await burger.save();
+};
+
+async function downvote(burgerId, userId){
+    const burger = await Burger.findById(burgerId);
+    burger.likes = burger.likes.filter(x => x != userId);
+    await burger.save();
+};
+
 module.exports = {
     getAllBurgers,
     createBurgerForDB,
@@ -71,5 +83,7 @@ module.exports = {
     getById,
     deleteById,
     createRequestBurger,
-    getBurgersByUserId
+    getBurgersByUserId,
+    upvote,
+    downvote
 };

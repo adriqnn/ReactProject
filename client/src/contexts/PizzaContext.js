@@ -87,6 +87,22 @@ export const PizzaProvider = () => {
         };
     };
 
+    const onLikePizza = async (pizzaId, userId) => {
+        pizzaService.likePizza(pizzaId, userId).then(() => {
+            setPizzas(state => state.map(x => x._id === pizzaId ? {...x, likes: [...x.likes, userId]} : x));
+        }).catch(() => {
+            return;
+        });
+    };
+
+    const onUnlikePizza = async (pizzaId, userId) => {
+        pizzaService.unlikePizza(pizzaId, userId).then(() => {
+            setPizzas(state => state.map(x => x._id === pizzaId ? {...x, likes: x.likes.filter(x => x !== userId)} : x))
+        }).catch(() => {
+            return;
+        });
+    };
+
     function removeMessage(){
         setTimeout(() => {
             setPizzaFormFieldsErros(false);
@@ -103,7 +119,9 @@ export const PizzaProvider = () => {
         pizzzaServerOffline,
         onPizzaCreateFormSubmit,
         deleteNoOwner,
-        onDeletePizza
+        onDeletePizza,
+        onLikePizza,
+        onUnlikePizza
     };
 
     return (

@@ -63,6 +63,18 @@ async function getPizzasByUserId(id){
     return await Pizza.find({owner: id});
 };
 
+async function upvote(pizzaId, userId){
+    const pizza = await Pizza.findById(pizzaId);
+    pizza.likes.push(userId);
+    await pizza.save();
+};
+
+async function downvote(pizzaId, userId){
+    const pizza = await Pizza.findById(pizzaId);
+    pizza.likes = pizza.likes.filter(x => x != userId);
+    await pizza.save();
+};
+
 module.exports = {
     getAllPizzas,
     createRequestPizza,
@@ -71,5 +83,7 @@ module.exports = {
     countPizzas,
     getById,
     deleteById,
-    getPizzasByUserId
+    getPizzasByUserId,
+    upvote,
+    downvote
 };

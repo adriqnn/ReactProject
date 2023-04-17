@@ -12,13 +12,13 @@ export const Footer = () => {
                     &nbsp;
                     <Link to="/contacts"> Contacts </Link>
                     &nbsp;
-                    <Link to='https://twitter.com'><i class="fab fa-twitter"></i></Link>
+                    <Link to='https://twitter.com'><i className="fab fa-twitter"></i></Link>
                     &nbsp;
-                    <Link to='https://www.facebook.com'><i class="fab fa-facebook-square"></i></Link>
+                    <Link to='https://www.facebook.com'><i className="fab fa-facebook-square"></i></Link>
                     &nbsp;
-                    <Link to='https://www.instagram.com/'><i class="fab fa-instagram"></i></Link>
+                    <Link to='https://www.instagram.com/'><i className="fab fa-instagram"></i></Link>
                     &nbsp;
-                    <Link to='https://www.youtube.com'><i class="fab fa-youtube"></i></Link>
+                    <Link to='https://www.youtube.com'><i className="fab fa-youtube"></i></Link>
                 </p>
             </div>
         </footer>

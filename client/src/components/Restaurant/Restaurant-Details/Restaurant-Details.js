@@ -56,7 +56,7 @@ export const RestaurantDetails = () => {
                             restaurantById.owner === auth.user?._id && (
                                 <div className="col-lg-4 col-md-6 mb-4">                        
                                 <div>
-                                    <Link to={`/restaurants/item/update/${restaurantId}/${restaurantById.owner}`} className="btn btn-danger">Update</Link>
+                                    <Link to={`/restaurants/item/update/${restaurantId}/${restaurantById.owner}`} className="btn btn-danger" style={{backgroundColor: "#17a2b8", borderColor: "#17a2b8"}}>Update</Link>
                                     &nbsp;&nbsp;&nbsp;  
                                     <Link to={`/restaurants/item/delete/${restaurantId}/${restaurantById.owner}`} className="btn btn-danger">Delete</Link>
                                 </div>
