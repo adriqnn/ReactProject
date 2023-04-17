@@ -5,12 +5,12 @@ This is a small react client-side application called PizzaBurgerSpot for managin
 
 You need to download the client and run:
 ```
-npm i --- to install the dependansies;
+npm install --- to install the dependansies;
 npm start --- to run the React client;
 ```
 You also need to download the server and run:
 ```
-npm i --- to install the dependansies;
+npm install --- to install the dependansies;
 npm start --- to run the REST-api server;
 ```
 
@@ -32,7 +32,10 @@ npm start --- to run the REST-api server;
     * mongoose: 6.8.0;
     * validator: 13.7.;
 
-
+## React Client Application Structure:
+    The Application has:
+    * Public Part - accessible for everyone without authentication;
+    * Private Part - available only for registered users of the application;
 
 
 > Functionality:\
