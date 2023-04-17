@@ -198,6 +198,6 @@ Thanks!
 
 <p><img src="https://github.com/adriqnn/ReactProject/blob/master/client/public/assets/documentation/home-page-default.jpg">
 <p><img src="https://github.com/adriqnn/ReactProject/blob/master/client/public/assets/documentation/login-page-default.jpg">
-<p><img src="https://github.com/adriqnn/ReactProject/blob/master/client/public/assets/documentation/register-page.jpg">
+<p><img src="https://github.com/adriqnn/ReactProject/blob/master/client/public/assets/documentation/register-page-default.jpg">
 <p><img src="https://github.com/adriqnn/ReactProject/blob/master/client/public/assets/documentation/burgers-catalog-page-default.jpg">
 <p><img src="https://github.com/adriqnn/ReactProject/blob/master/client/public/assets/documentation/pizzas-catalog-page-default.jpg">
