@@ -44,11 +44,11 @@ home - 'http://localhost:3000/';
 ```
 
 ```
-contacts - 'http://localhost:3000/contacts';
+about - 'http://localhost:3000/about';
 ```
 
 ```
-about - 'http://localhost:3000/about';
+contacts - 'http://localhost:3000/contacts';
 ```
 
 ```
@@ -68,6 +68,14 @@ pizza details - 'http://localhost:3000/pizzas/item/id'
 ```
 
 ```
+pizza ingredients  - 'http://localhost:3000/pizzas/pizza-ingredients';
+```
+
+```
+pizza ingredient details - 'http://localhost:3000/pizzas/pizza-ingredients/id';
+```
+
+```
 burgers - 'http://localhost:3000/burgers';
 ```
 
@@ -76,11 +84,23 @@ burger details - 'http://localhost:3000/burgers/item/id'
 ```
 
 ```
+burger ingredients - 'http://localhost:3000/burgers/burger-ingredients'
+```
+
+```
+burger ingredient details - 'http://localhost:3000/burgers/burger-ingredients/id'
+```
+
+```
 restaurants - 'http://localhost:3000/restaurants';
 ```
 
 ```
 restaurant details - 'http://localhost:3000/restaurants/item/id'
+```
+
+```
+error - 'http://localhost:3000/*'
 ```
 
 ### Private Part -> Authenticated users;
