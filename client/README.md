@@ -17,4 +17,4 @@
 > More Functionality to come soon...\
 > Thanks!
 
-<p><img src="https://github.com/adriqnn/ReactProject/blob/master/client/public/assets/documentation/home-page.jpg">
+<p><img src="https://github.com/adriqnn/ReactProject/blob/master/client/public/assets/documentation/home-page-crrent.jpg">
