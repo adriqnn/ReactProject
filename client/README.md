@@ -191,6 +191,7 @@ restaurant delete - 'http://localhost:3000/restaurants/item/delete/id';
 16. Used Google Drive to store some assets;
 
 > More Functionality to come soon...\
+
 Thanks!
 
 ## Some Pictures from the Application:
