@@ -30,12 +30,13 @@ npm start --- to run the REST-api server;
     * express-validator: 6.14.2;
     * jsonwebtoken: 8.5.1;
     * mongoose: 6.8.0;
-    * validator: 13.7.;
+    * validator: 13.7.0;
 
 ## React Client Application Structure:
     The Application has:
-    * Public Part - accessible for everyone without authentication;
-    * Private Part - available only for registered users of the application;
+
+    >> Public Part - accessible for everyone without authentication;
+    >> Private Part - available only for registered users of the application;
 
 
 > Functionality:\
