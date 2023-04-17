@@ -38,17 +38,38 @@ The Application has:
 * Public Part - accessible for everyone without authentication;
 * Private Part - accessible only for registered users of the application;
 
-### Public Part -> Unauthenticated users;
-    ```
-    home - '/';
-    ```
-    ```
-    contacts - '/contacts';
-    ```
-    ```
-    about - '/';
-    ```
+### Public Part -> Unauthenticated users:
+```
+home - 'http://localhost:3000/';
+```
 
+```
+contacts - 'http://localhost:3000/contacts';
+```
+
+```
+about - 'http://localhost:3000/about';
+```
+
+```
+login - 'http://localhost:3000/auth/login';
+```
+
+```
+register - 'http://localhost:3000/auth/register';
+```
+
+```
+pizzas - 'http://localhost:3000/pizzas';
+```
+
+```
+burgers - 'http://localhost:3000/burgers';
+```
+
+```
+restaurants - 'http://localhost:3000/restaurants';
+```
 
 ### Private Part -> Authenticated users;
 
