@@ -16,6 +16,11 @@ const restaurantSchema = new Schema({
         required: true,
         minlength: [3, 'The description must be at least 3 characters long!']
     },
+    picture:{
+        type: String,
+        required: true,
+        minlength: [3, 'The picture url must be at least 3 characters long!']
+    },
     rating:{
         type: Number,
         required: true,
@@ -27,12 +32,12 @@ const restaurantSchema = new Schema({
         ref: 'User',
         required: true
     },
-    comments:{
-        type: [Types.ObjectId],
-        default: [],
-        ref: 'Comment',
-        required: true
-    }
+    // comments:{
+    //     type: [Types.ObjectId],
+    //     default: [],
+    //     ref: 'Comment',
+    //     required: true
+    // }
 },{ timestamps: { createdAt: 'created_at'}});
 
 const Restaurant = model('Restaurant', restaurantSchema);

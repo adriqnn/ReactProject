@@ -11,6 +11,7 @@ export const Login = () => {
     const initialErrorValues = { usernameRequired: false, usernameMinLength: false, passwordRequired: false, passwordMinLength: false };
     const changeFormErrors = { usernameRequired: false, usernameMinLength: false, passwordRequired: false, passwordMinLength: false };
     const [formErrors, setFormErrors] = useState(initialErrorValues);
+    const [fillTheFormProperly, setFillTheFormProperly] = useState(false);
 
     const onUsernameChangeHandler = (e) => {
         setFormValues(state => ({...state, [e.target.name]: e.target.value}));
@@ -28,8 +29,19 @@ export const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        onLoginFormSubmit(formValues);
-        setFormValues(initialFormValues);
+        if(Object.values(formErrors).filter(x => x === true).length > 0){
+            setFillTheFormProperly(true);
+            removeMessage();
+        }else{
+            onLoginFormSubmit(formValues);
+            setFormValues(initialFormValues);
+        };
+    };
+
+    function removeMessage() {
+        setTimeout(() => {
+            setFillTheFormProperly(false);
+        }, 5000);
     };
  
     return (
@@ -63,6 +75,13 @@ export const Login = () => {
                                 loginServerOffline && (
                                     <div className="form-group">
                                     <label htmlFor="error" style={{color: "red"}}>Please try again later!</label>
+                                </div>
+                                )
+                            }
+                            {
+                                fillTheFormProperly && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Fill the form properly!</label>
                                 </div>
                                 )
                             }

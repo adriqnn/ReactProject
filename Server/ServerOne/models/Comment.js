@@ -1,7 +1,7 @@
 const {Schema, model, Types} = require('mongoose');
 
 const commentSchema = new Schema({
-    comment:{
+    text:{
         type: String,
         required: true,
         minlength: [3, 'The comment must be at least 3 characters long!']

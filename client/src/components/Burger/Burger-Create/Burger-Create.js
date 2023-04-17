@@ -14,6 +14,7 @@ export const BurgerCreate = () => {
     const initiaErrorValues = { burgerNameRequired: false, burgerNameLength: false, burgerWeightRequired: false, burgerWeightGramsFive: false, burgerDescriptionRequired: false, burgerDescriptionLenght: false };
     const changeFormErrors = { burgerNameRequired: false, burgerNameLength: false, burgerWeightRequired: false, burgerWeightGramsFive: false, burgerDescriptionRequired: false, burgerDescriptionLenght: false };
     const [formErrors, setFormErrors] = useState(initiaErrorValues);
+    const [fillTheFormProperly, setFillTheFormProperly] = useState(false);
 
     const onNameChangeHandler = (e) => {
         setFormValues(state => ({...state, [e.target.name]: e.target.value}));
@@ -42,8 +43,19 @@ export const BurgerCreate = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        onBurgerCreateFormSubmit(formValues);
-        // setFormValues(initialFormValues);
+        if(Object.values(formErrors).filter(x => x === true).length > 0){
+            setFillTheFormProperly(true);
+            removeMessage();
+        }else{
+            onBurgerCreateFormSubmit(formValues);
+            // setFormValues(initialFormValues);
+        };
+    };
+
+    function removeMessage() {
+        setTimeout(() => {
+            setFillTheFormProperly(false);
+        }, 5000);
     };
 
     return (
@@ -76,6 +88,13 @@ export const BurgerCreate = () => {
                                 burgerServerOffline && (
                                     <div className="form-group">
                                     <label htmlFor="error" style={{color: "red"}}>Please try again later!</label>
+                                </div>
+                                )
+                            }
+                            {
+                                fillTheFormProperly && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Fill the form properly!</label>
                                 </div>
                                 )
                             }

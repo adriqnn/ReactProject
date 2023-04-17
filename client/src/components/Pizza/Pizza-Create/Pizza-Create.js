@@ -13,6 +13,7 @@ export const PizzaCreate = () => {
     const initiaErrorValues = { pizzaNameRequired: false, pizzaNameLength: false, pizzaWeightRequired: false, pizzaWeightGramsFive: false, pizzaDescriptionRequired: false, pizzaDescriptionLenght: false };
     const changeFormErrors = { pizzaNameRequired: false, pizzaNameLength: false, pizzaWeightRequired: false, pizzaWeightGramsFive: false, pizzaDescriptionRequired: false, pizzaDescriptionLenght: false };
     const [formErrors, setFormErrors] = useState(initiaErrorValues);
+    const [fillTheFormProperly, setFillTheFormProperly] = useState(false);
 
     const onNameChangeHandler = (e) => {
         setFormValues(state => ({...state, [e.target.name]: e.target.value}));
@@ -41,8 +42,19 @@ export const PizzaCreate = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        onPizzaCreateFormSubmit(formValues);
-        // setFormValues(initialFormValues);
+        if(Object.values(formErrors).filter(x => x === true).length > 0){
+            setFillTheFormProperly(true);
+            removeMessage();
+        }else{
+            onPizzaCreateFormSubmit(formValues);
+            // setFormValues(initialFormValues);
+        };
+    };
+
+    function removeMessage() {
+        setTimeout(() => {
+            setFillTheFormProperly(false);
+        }, 5000);
     };
 
     return (
@@ -75,6 +87,13 @@ export const PizzaCreate = () => {
                                 pizzaServerOffline && (
                                     <div className="form-group">
                                     <label htmlFor="error" style={{color: "red"}}>Please try again later!</label>
+                                </div>
+                                )
+                            }
+                            {
+                                fillTheFormProperly && (
+                                    <div className="form-group">
+                                    <label htmlFor="error" style={{color: "red"}}>Fill the form properly!</label>
                                 </div>
                                 )
                             }
