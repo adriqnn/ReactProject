@@ -12,6 +12,8 @@ export const Footer = () => {
                     &nbsp;
                     <Link to="/contacts"> Contacts </Link>
                     &nbsp;
+                    <Link to="https://github.com/adriqnn/ReactProject/tree/master/client"> Documentation </Link>
+                    &nbsp;
                     <Link to='https://twitter.com'><i className="fab fa-twitter"></i></Link>
                     &nbsp;
                     <Link to='https://www.facebook.com'><i className="fab fa-facebook-square"></i></Link>
