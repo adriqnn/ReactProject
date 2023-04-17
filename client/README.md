@@ -64,7 +64,7 @@ pizzas - 'http://localhost:3000/pizzas';
 ```
 
 ```
-pizza details - 'http://localhost:3000/pizzas/item/id'
+pizza details - 'http://localhost:3000/pizzas/item/id';
 ```
 
 ```
@@ -80,15 +80,15 @@ burgers - 'http://localhost:3000/burgers';
 ```
 
 ```
-burger details - 'http://localhost:3000/burgers/item/id'
+burger details - 'http://localhost:3000/burgers/item/id';
 ```
 
 ```
-burger ingredients - 'http://localhost:3000/burgers/burger-ingredients'
+burger ingredients - 'http://localhost:3000/burgers/burger-ingredients';
 ```
 
 ```
-burger ingredient details - 'http://localhost:3000/burgers/burger-ingredients/id'
+burger ingredient details - 'http://localhost:3000/burgers/burger-ingredients/id';
 ```
 
 ```
@@ -96,18 +96,57 @@ restaurants - 'http://localhost:3000/restaurants';
 ```
 
 ```
-restaurant details - 'http://localhost:3000/restaurants/item/id'
+restaurant details - 'http://localhost:3000/restaurants/item/id';
 ```
 
 ```
-error - 'http://localhost:3000/*'
+error - 'http://localhost:3000/*';
 ```
 
 ### Private Part -> Authenticated users;
 
+```
+logout - 'http://localhost:3000/auth/logout';
+```
+
+```
+profile - 'http://localhost:3000/auth/profile';
+```
+
+```
+profile update - 'http://localhost:3000/auth/profile/update/id';
+```
+
+```
+burger create - 'http://localhost:3000/burgers/create';
+```
+
+```
+burger delete - 'http://localhost:3000/burgers/item/delete/id';
+```
+
+```
+pizza create - 'http://localhost:3000/pizzas/create';
+```
+
+```
+pizza delete - 'http://localhost:3000/pizzas/item/delete/id';
+```
+
+```
+restaurant create - 'http://localhost:3000/restaurants/create';
+```
+
+```
+restaurant update - 'http://localhost:3000/restaurants/item/update/id';
+```
+
+```
+restaurant delete - 'http://localhost:3000/restaurants/item/delete/id';
+```
+
 > Functionality:\
-> -Login.\
-> -Register.\
+
 > -Profile Page with own Burgers/Pizzas.\
 > -Create Manage and View Burgers.\
 > -Create Manage and View Pizzas.\
