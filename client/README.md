@@ -188,6 +188,7 @@ restaurant delete - 'http://localhost:3000/restaurants/item/delete/id';
     * Hooks;
     * Guards;
 15. Good UI/UX;
+16. Used Google Drive to store some assets;
 
 
 > More Functionality to come soon...\

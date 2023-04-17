@@ -42,7 +42,7 @@ async function createRequestRestaurant(restaurant){
         name: restaurant.name,
         address: restaurant.address,
         description: restaurant.description,
-        picture: '/assets/pictures/main/restaurant.png',
+        picture: 'https://drive.google.com/uc?export=view&id=1kEzvWsOcCTZD9CvnAeJd6eQPPDWCaCQ5',
         rating: restaurant.rating,
         owner: owner._id
     };
