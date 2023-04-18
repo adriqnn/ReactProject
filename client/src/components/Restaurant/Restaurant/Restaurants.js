@@ -15,7 +15,7 @@ export const Restaurants = () => {
             <section className="container" id="burgers-main">
                 <header className="ingredient">
                     <h1 style={{fontFamily: "cursive"}}>
-                        <h1 style={{fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</h1>
+                        <p style={{fontSize: "36px", fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</p>
                         <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>Restaurant Collection!</p>
                         <p> </p>
                         <p className="line"></p>
