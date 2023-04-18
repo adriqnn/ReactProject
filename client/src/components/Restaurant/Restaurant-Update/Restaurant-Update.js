@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { RestaurantContext } from "../../../contexts/RestaurantContext";
+import './Restaurant-Update.css';
 
 export const RestaurantUpdate = () => {
     const { restaurantId } = useParams();

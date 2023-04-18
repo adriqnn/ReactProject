@@ -24,7 +24,7 @@ const requester = async (method, token, url, data) => {
     }else{
         const result = await response.json();
         throw new Error(result.message);
-    }
+    };
 
     // if(response.ok){
     //     const result = await response.json();

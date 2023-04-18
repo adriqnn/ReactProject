@@ -7,7 +7,6 @@ export const Restaurant = ({
     picture,
     rating 
 }) => {
-
     return (
         <div className="col-lg-4 col-md-6 mb-4">
             <div className="card h-100">

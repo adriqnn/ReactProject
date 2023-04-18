@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export const useLocalStorageSetter = (key, initialValue) => {
     const [state, setState] = useState(() => {
@@ -6,7 +6,7 @@ export const useLocalStorageSetter = (key, initialValue) => {
         if(persistedStateSeriazlied){
             const persistedState = JSON.parse(persistedStateSeriazlied);
             return persistedState;
-        }
+        };
         return initialValue;
     });
 

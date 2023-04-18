@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { RestaurantContext } from "../../../contexts/RestaurantContext";
 import { Restaurant } from "./Restaurant";
+import './Restaurants.css';
 
 export const Restaurants = () => {
     const { isAuthenticated } = useContext(ApplicationContext);
@@ -52,6 +53,6 @@ export const Restaurants = () => {
                     }
                 </div>
             </section>
-    </main>        
+        </main>        
     );
 };

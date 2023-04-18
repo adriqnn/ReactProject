@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { BurgerContext } from "../../../contexts/BurgerContext";
 import { Burger } from "./Burger";
+import './Burgers.css';
 
 export const Burgers = () => {
     const { isAuthenticated } = useContext(ApplicationContext);

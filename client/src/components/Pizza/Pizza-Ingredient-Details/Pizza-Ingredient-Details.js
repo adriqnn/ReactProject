@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { pizzaServiceFactory } from "../../../services/pizzaService";
+import './Pizza-Ingredient.css';
 
 export const PizzaIngredientDetails = () => {
     const { pizzaIngredientId } = useParams();

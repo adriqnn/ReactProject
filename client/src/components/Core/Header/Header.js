@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
+import './Header.css';
 
 export const Header = () => {
     const { auth, isAuthenticated } = useContext(ApplicationContext);

@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { burgerServiceFactory } from "../../../services/burgerService";
+import './Burger-Details.css';
 
 export const BurgerDetails = () => {
     const { burgerId } = useParams();

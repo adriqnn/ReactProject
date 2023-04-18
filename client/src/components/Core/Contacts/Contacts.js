@@ -1,3 +1,5 @@
+import './Contacts.css';
+
 export const Contacts = () => {
     return (
         <main>

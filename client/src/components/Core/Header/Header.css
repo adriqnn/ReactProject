@@ -1,0 +1,46 @@
+li>a.nav-link {
+  color: rgba(255, 255, 255, 0.8)!important;
+}
+
+li>a.nav-link:hover {
+  color: #099cf1!important;
+}
+
+.details .container {
+  padding: 2%;
+}
+
+section div.container.home {
+  padding-top: 0;
+}
+
+div.container .register, div.container .login {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+label, .container>h1 {
+  color: white;
+}
+
+label, .container>h1 {
+  color: white;
+}
+
+.container form {
+  text-align: center;
+}
+
+section>div.container {
+  padding-top: 40px;
+}
+
+.car.logo {
+  transform: rotate(-8deg);
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+}

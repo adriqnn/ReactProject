@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { burgerServiceFactory } from "../../../services/burgerService";
 import { pizzaServiceFactory } from "../../../services/pizzaService";
+import './Profile.css';
 
 export const Profile = () => {
     const { auth } = useContext(ApplicationContext);
@@ -30,12 +31,12 @@ export const Profile = () => {
         });
     }, []);
 
-    function resetErrors(){
-        setTimeout(() => {
-            setErrorFetchingBurgerData(false);
-            setErrorFetchingPizzaData(false);
-        }, 5000);
-    };
+    // function resetErrors(){
+    //     setTimeout(() => {
+    //         setErrorFetchingBurgerData(false);
+    //         setErrorFetchingPizzaData(false);
+    //     }, 5000);
+    // };
 
     function getDate(timestamp){
         const date = new Date(Number(timestamp));

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { burgerServiceFactory } from "../../../services/burgerService";
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { BurgerIngredient } from "./Burger-Ingredient";
+import './Burger-Ingredients.css';
 
 export const BurgerIngredients = () => {
     const { auth } = useContext(ApplicationContext);

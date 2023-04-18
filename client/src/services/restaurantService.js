@@ -13,7 +13,7 @@ export const restaurantServiceFactory = (token) => {
     const getRestaurantById = async (restaurantId) => {
         const result = await request.get(`${baseUrl}/restaurant/${restaurantId}`);
         return result;
-    }
+    };
 
     const createRestaurant = async (restaurant) => {
         const result = await request.post(`${baseUrl}/restaurant/create/new`, {restaurant});

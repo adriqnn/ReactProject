@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { pizzaServiceFactory } from "../../../services/pizzaService";
 import { PizzaIngredient } from "./Pizza-Ingredient";
+import './Pizza-Ingredients.css';
 
 export const PizzaIngredients = () => {
     const { auth } = useContext(ApplicationContext);

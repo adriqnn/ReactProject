@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
 import { restaurantServiceFactory } from "../../../services/restaurantService";
+import './Restaurant-Details.css';
 
 export const RestaurantDetails = () => {
     const { restaurantId } = useParams();

@@ -1,4 +1,4 @@
-import { requestFactory } from "./requesterService"
+import { requestFactory } from "./requesterService";
 
 const baseUrl = 'http://localhost:3030';
 
@@ -23,7 +23,7 @@ export const burgerServiceFactory = (token) => {
     const getBurgerById = async (burgerId) => {
         const result = await request.get(`${baseUrl}/burger/${burgerId}`);
         return result;
-    }
+    };
 
     const createBurger = async (burger) => {
         const result = await request.post(`${baseUrl}/burger/create/new`, {burger});

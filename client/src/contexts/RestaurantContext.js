@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+
 import { ApplicationContext } from "./ApplicationContext";
 import { restaurantServiceFactory } from "../services/restaurantService";
 

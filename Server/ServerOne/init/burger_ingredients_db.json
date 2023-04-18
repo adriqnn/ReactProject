@@ -3,189 +3,189 @@
         "name": "Regular Bun",
         "weight": 70,
         "type": "Buns",
-        "picture": "/assets/pictures/burger-ingredients/regularbun.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1ccBqlHVW8r5Dvo5fDIVO7t99Fy23UIQm",
         "description": "Soft roll Bun."
     },
     {
         "name": "Sesame Seed Bun",
         "weight": 80,
         "type": "Buns",
-        "picture": "/assets/pictures/burger-ingredients/sesameseedbun.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1j7pixoiH6pXRKQpg6RUe5YOpy1XhJJl_",
         "description": "Regular Bun with Sesame seeds."
     },
     {
         "name": "Brioche Bun",
         "weight": 90,
         "type": "Buns",
-        "picture": "/assets/pictures/burger-ingredients/briochebun.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1vTfKWxRIz6bKDWwHEgM54HTmtCHXcna8",
         "description": "French style Brioche Bun."
     },
     {
         "name": "Mayonnaise",
         "weight": 20,
         "type": "Sauce",
-        "picture": "/assets/pictures/burger-ingredients/mayonnaise.png",
+        "picture": "https://drive.google.com/uc?export=view&id=19NAlTqq-NdM8SI14_rX5IYk6UVzex5RQ",
         "description": "Japanesse style sweet and sour Mayonnaise."
     },
     {
         "name": "Ketchup",
         "weight": 20,
         "type": "Sauce",
-        "picture": "/assets/pictures/burger-ingredients/ketchup.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1Zc9sREQ6BMuBecsDLUTnPushC9XnPcVw",
         "description": "Regular einz Ketchup."
     },
     {
         "name": "Burger Sauce",
         "weight": 20,
         "type": "Sauce",
-        "picture": "/assets/pictures/burger-ingredients/burgersauce.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1TGL9gVGclBQ4TsSuWYpmVXsxCyY5Ej2k",
         "description": "Burger Sauce tat best compliments the burger."
     },
     {
         "name": "Mustard",
         "weight": 20,
         "type": "Sauce",
-        "picture": "/assets/pictures/burger-ingredients/mustard.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1SmJB3BeyZ7QsMCQU9srVjN8GBPUf-Yf3",
         "description": "French style dijon honey-mustard."
     },
     {
         "name": "Emental",
         "weight": 35,
         "type": "Cheese",
-        "picture": "/assets/pictures/burger-ingredients/emental.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1zpdMKuwy50sb1IoWSHMqKs_tnEKYYRgz",
         "description": "French Emental Cheese."
     },
     {
         "name": "Gouda",
         "weight": 35,
         "type": "Cheese",
-        "picture": "/assets/pictures/burger-ingredients/gouda.png",
+        "picture": "https://drive.google.com/uc?export=view&id=16_yOMajjVBx1lN5A651n_KRfCX4RHrxd",
         "description": "French Gouda Cheese."
     },
     {
         "name": "Cheddar",
         "weight": 35,
         "type": "Cheese",
-        "picture": "/assets/pictures/burger-ingredients/cheddar.png",
+        "picture": "https://drive.google.com/uc?export=view&id=13upfrT8DPBF-uTOZ6rYdTENnjFFQCiaV",
         "description": "American Cheddar Cheese."
     },
     {
         "name": "Beef",
         "weight": 100,
         "type": "Meat",
-        "picture": "/assets/pictures/burger-ingredients/beef.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1r4wCno0E0Ks7gtRqD0KSp9rwQPYdVCYh",
         "description": "Black Angus Beef patty."
     },
     {
         "name": "Chicken",
         "weight": 100,
         "type": "Meat",
-        "picture": "/assets/pictures/burger-ingredients/chicken.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1MAh6eLNGQcNhvBXmzWicKmp8yXN6EG6j",
         "description": "Local High Quality Chicken patty."
     },
     {
         "name": "Fish",
         "weight": 100,
         "type": "Meat",
-        "picture": "/assets/pictures/burger-ingredients/fish.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1VwZ3sWmLwodZHKQIz50C12zq5TrC0LU8",
         "description": "High Quality White Fish patty."
     },
     {
         "name": "Bacon",
         "weight": 60,
         "type": "Meat",
-        "picture": "/assets/pictures/burger-ingredients/bacon.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1iWMOlgl583PYP0l-eA1Wf4zRBxen8bdH",
         "description": "Smoked Bacon Strips."
     },
     {
         "name": "Pepperoni",
         "weight": 90,
         "type": "Meat",
-        "picture": "/assets/pictures/burger-ingredients/pepperoni.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1KiRBb_dGYb6KVi33JdmAVILHstN5qFGW",
         "description": "Italian Pepperoni sausage."
     },
     {
         "name": "Egg",
         "weight": 20,
         "type": "Other",
-        "picture": "/assets/pictures/burger-ingredients/egg.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1V9gbGTWBLSujYhYf-bvHUfORLT1qkPng",
         "description": "Fresh Egg."
     },
     {
         "name": "Tomatoes",
         "weight": 30,
         "type": "Vegetable",
-        "picture": "/assets/pictures/burger-ingredients/tomatoes.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1bSn_tBhnX6YB7-WkP-_BzmzDvuqf48cS",
         "description": "Fresh Tomatoes."
     },
     {
         "name": "Mushrooms",
         "weight": 30,
         "type": "Vegetable",
-        "picture": "/assets/pictures/burger-ingredients/mushrooms.png",
+        "picture": "https://drive.google.com/uc?export=view&id=13oiBp8EA_BQEsdWb_qqWXoerxtVumF0k",
         "description": "Fresh Mushrooms"
     },
     {
         "name": "Pickles",
         "weight": 30,
         "type": "Vegetable",
-        "picture": "/assets/pictures/burger-ingredients/pickles.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1tLv0b0s1IlZKmIpbauCGqTayeTc7WaF7",
         "description": "Sour Pickles."
     },
     {
         "name": "Lettuce",
         "weight": 30,
         "type": "Vegetable",
-        "picture": "/assets/pictures/burger-ingredients/lettuce.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1zERzCsnoiHSQztd6KYGu6509LKzkX9oo",
         "description": "Fresh Lettuce."
     },
     {
         "name": "Green Peppers",
         "weight": 30,
         "type": "Vegetable",
-        "picture": "/assets/pictures/burger-ingredients/greenpeppers.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1j-ymKtnxMGa-pavBsB9o2tTJ5dfPyJX9",
         "description": "Fresh Green Peppers."
     },
     {
         "name": "Onions",
         "weight": 30,
         "type": "Vegetable",
-        "picture": "/assets/pictures/burger-ingredients/onions.png",
+        "picture": "https://drive.google.com/uc?export=view&id=10qSzz7I25pzCRXw-4vtNd9hJnF_pXmyU",
         "description": "Fresh Onions."
     },
     {
         "name": "Caramelized Onions",
         "weight": 30,
         "type": "Vegetable",
-        "picture": "/assets/pictures/burger-ingredients/caramelizedonions.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1i-uR2rbCd77PuAZy3oeFVbtzIhpUbddB",
         "description": "Cooked Caramelized Onions."
     },
     {
         "name": "Fried Onions",
         "weight": 30,
         "type": "Vegetable",
-        "picture": "/assets/pictures/burger-ingredients/friedonions.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1zO-6WUar39ExuTv-vj_fNxOdehDOCoGe",
         "description": "Crispy Fried Onions."
     },
     {
         "name": "Flaky Salt",
         "weight": 10,
         "type": "Condiment",
-        "picture": "/assets/pictures/burger-ingredients/flakysalt.png",
+        "picture": "https://drive.google.com/uc?export=view&id=10QpA4yBwuABSYAiisMEyu6ncFo74yDq5",
         "description":  "Flaky Salt condiment."
     },
     {
         "name": "Black Pepper",
         "weight": 10,
         "type": "Condiment",
-        "picture": "/assets/pictures/burger-ingredients/blackpepper.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1hpJ6CKTvw8b0t2BVKTbaoeQ4ZRIHshej",
         "description": "Black Pepper condiment."
     },
     {
         "name": "Garlic Powder",
         "weight": 10,
         "type": "Condiment",
-        "picture": "/assets/pictures/burger-ingredients/garlicpowder.png",
+        "picture": "https://drive.google.com/uc?export=view&id=1Amflq6uH_DjfeE_9sPLtKODbCO6VPo-f",
         "description": "Garlic Powder condiment."
     }
 ]

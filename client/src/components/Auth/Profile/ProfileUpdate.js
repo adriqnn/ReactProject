@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { ApplicationContext } from "../../../contexts/ApplicationContext";
+import './ProfileUpdate.css';
 
 export const ProfileUpdate = () => {
     const { updateFieldsError, updateUsernameTaken, updateEmailTaken, updatePasswordsMustMatch, updateServerOffline, onUpdateFormSubmit, auth } = useContext(ApplicationContext);

@@ -1,0 +1,205 @@
+.details {
+  color: white;
+  border: 1px solid black;
+}
+
+.details .container {
+  padding: 2%;
+}
+
+.details .item-details{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.item-details>div {
+  width: 33%;
+}
+
+.item-details>div:nth-child(2) {
+  text-align: center;
+}
+
+.details .item-info {
+  text-align: center;
+  width: 100%;
+}
+
+.details .brand {
+  text-align: left;
+}
+
+.details .icon {
+  display: block;
+  margin: 25px auto;
+  max-width: 100px;
+}
+
+.details h5 {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.details h5 span {
+  font-weight: bold;
+}
+
+section div.container.home {
+  padding-top: 0;
+}
+
+div.container .register, div.container .login {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+.gender label:first-of-type {
+  margin-right: 60px;
+}
+
+.ingredientsbuild label:first-of-type {
+  margin-right: 60px;
+}
+
+label, .container>h1 {
+  color: white;
+}
+
+.container form {
+  text-align: center;
+}
+
+section>div.container {
+  padding-top: 40px;
+}
+
+.line {
+  box-shadow: 2px 0px 4px 1px #1eff00, inset -14px -14px 30px -13px rgb(0 0 0 / 55%);
+  border: 0;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.line2 {
+  box-shadow: 2px 0px 4px 1px #1eff00, inset -14px -14px 30px -13px rgb(0 0 0 / 55%);
+  border: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.home p.lead {
+  font-size: 24px;
+  font-style: italic;
+}
+
+.leadpar {
+  font-size: 24px;
+  font-style: italic;
+}
+
+.no-ingredients p.lead {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.ingredient p.lead {
+  margin-bottom: 0px;
+}
+
+.item-picanddesc {
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.item-picanddesc .img-fluid.rounded {
+  max-width: 500px;
+  transition: all .2s ease-in-out;
+  box-shadow: 0px -2px 20px -1px #00bbff, inset -14px -14px 30px -13px rgb(0 0 0 / 55%);
+}
+.img-fluid.rounded:hover {
+  transform: scale(1.02);
+  cursor: grab;
+  box-shadow: 0px -2px 20px -1px #64ff86f5, inset -14px -14px 30px -13px rgb(0 0 0 / 55%);
+}
+
+.item-picanddesc div:first-child {
+  width: 80%;
+  display: flex;
+  justify-content: space-between
+}
+
+.item-desc {
+  width: 55%!important;
+  text-align: center;
+  word-wrap: break-word;
+  padding: 0%;
+}
+
+.item-desc textarea {
+  box-shadow: 0px -2px 20px -1px #00bbff, inset -14px -14px 30px -13px rgb(0 0 0 / 55%);
+  border-radius: 25px;
+  height: 300px;
+}
+.item-desc > h5 {
+  font-size: 22px;
+}
+
+img.card-img-top {
+  height: 170px;
+}
+
+.no-ingredients img {
+  box-shadow: 0px -2px 20px -1px #f4c537, inset -14px -14px 30px -13px rgb(0 0 0 / 55%);
+  width: 80%;
+  height: auto;
+  opacity: 0.95;
+  margin-bottom: 10px;
+}
+
+.card-img-top {
+  height: 200px;
+}
+
+.no-ingredients {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.ingredientsbuild {
+  box-shadow: 0px -2px 20px -1px #7dff59, inset -14px -14px 30px -13px rgb(0 0 0 / 55%);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: .25rem;
+  padding-top: 5px;
+  margin-bottom: 15px;
+}
+
+.ingredientsbuild label:hover, .ingredientsbuild input:hover {
+  cursor: pointer;
+}
+
+.ingredient {
+  text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-top: 100px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.row {
+  justify-content: center;
+  margin-top: 40px;
+}
