@@ -65,7 +65,7 @@ export const Register = () => {
             <section className="py-5" id="register-page">
                 <div className="container register-page">
                     <h1 style={{fontFamily: "cursive"}}>
-                        <h1 style={{fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</h1>
+                        <p style={{fontSize: "36px", fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</p>
                         <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>Register...</p>
                         <p> </p>
                         <p className="line"></p>

@@ -165,7 +165,7 @@ restaurant delete - 'http://localhost:3000/restaurants/item/delete/id';
     * Pizza Catalog and Pizza Details;
     * Pizza Ingredients Catalog and Pizza Ingredient Details;
     * Restaurant Catalog and Restaurant Details;
-3. CRUD Collection:
+3. CRUD Collections:
     * Users - Create, Read and Update;
     * Burgers - Create, Read, Delete and Like/Unlike Functionality;
     * Pizzas - Create, Read, Delete and Like/Unlike Functionality;

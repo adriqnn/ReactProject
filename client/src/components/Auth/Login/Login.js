@@ -50,7 +50,7 @@ export const Login = () => {
             <section className="py-5" id="login-page">
                 <div className="container login-page">
                     <h1 style={{fontFamily: "cursive"}}>
-                        <h1 style={{fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</h1>
+                        <p style={{fontSize: "36px", fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</p>
                         <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>Login...</p>
                         <p> </p>
                         <p className="line"></p>

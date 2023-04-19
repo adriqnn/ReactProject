@@ -3,168 +3,168 @@
         "name": "Traditional Dough",
         "weight": 450,
         "type": "Dough",
-        "picture": "https://drive.google.com/uc?export=view&id=1ezwlux-SxzkNG-III0gwgQiYKegn2adz",
+        "picture": "/assets/pictures/pizza-ingredients/traditional.png",
         "description": "Traditional dough mixture."
     },
     {
         "name": "Italian Style",
         "weight": 370,
         "type": "Dough",
-        "picture": "https://drive.google.com/uc?export=view&id=1DVXX-htXpG66egO8OaxL2JpiqlIK6v9G",
+        "picture": "/assets/pictures/pizza-ingredients/italian.png",
         "description": "Thin Italian style dough mixture."
     },
     {
         "name": "Thin Crust Style",
         "weight": 300,
         "type": "Dough",
-        "picture": "https://drive.google.com/uc?export=view&id=1IqkmwAj_7d3Gg8ZcWLOYknGF-ENgsAQP",
+        "picture": "/assets/pictures/pizza-ingredients/thincrispy.png",
         "description": "Thin and Crispy dough mixture."
     },
     {
         "name": "Tomato Sauce",
         "weight": 80,
         "type": "Sauce",
-        "picture": "https://drive.google.com/uc?export=view&id=1A1IR24BJLEZ12QKQpLyMrdz2dFLAYztb",
+        "picture": "/assets/pictures/pizza-ingredients/tomatosauce.png",
         "description": "Made from fresh Tomatoes."
     },
     {
         "name": "Ketchup",
         "weight": 80,
         "type": "Sauce",
-        "picture": "https://drive.google.com/uc?export=view&id=19KRT7FNbH7hXCH1Ph7-pdWY-c_HdPbQf",
+        "picture": "/assets/pictures/pizza-ingredients/ketchup.png",
         "description": "Regular Heinz Ketchup base."
     },
     {
         "name": "Sour Cream",
         "weight": 80,
         "type": "Sauce",
-        "picture": "https://drive.google.com/uc?export=view&id=1Z9ijxy9MIMXTRvuShh3VTv0oQaMWL70L",
+        "picture": "/assets/pictures/pizza-ingredients/sourcream.png",
         "description": "Sour Cream base."
     },
     {
         "name": "Mozzarella",
         "weight": 60,
         "type": "Cheese",
-        "picture": "https://drive.google.com/uc?export=view&id=106XX5dcKQCWOodiYSC07aOcfB1cYeXxN",
+        "picture": "/assets/pictures/pizza-ingredients/mozzarella.png",
         "description": "Fresh Mozzarella from local supplier."
     },
     {
         "name": "Smoked Cheese",
         "weight": 50,
         "type": "Cheese",
-        "picture": "https://drive.google.com/uc?export=view&id=1nO_y14FCxFEtrZ6rBfwxrPT_QkPDBH4E",
+        "picture": "/assets/pictures/pizza-ingredients/smokedcheese.png",
         "description": "Best Smoked Cheese provided locally."
     },
     {
         "name": "Emental",
         "weight": 40,
         "type": "Cheese",
-        "picture": "https://drive.google.com/uc?export=view&id=1zpdMKuwy50sb1IoWSHMqKs_tnEKYYRgz",
+        "picture": "/assets/pictures/pizza-ingredients/emental.png",
         "description": "French Emental Cheese."
     },
     {
         "name": "Pepperoni",
         "weight": 90,
         "type": "Meat",
-        "picture": "https://drive.google.com/uc?export=view&id=1KiRBb_dGYb6KVi33JdmAVILHstN5qFGW",
+        "picture": "/assets/pictures/pizza-ingredients/pepperoni.png",
         "description": "Italian Pepperoni sausage."
     },
     {
         "name": "Smoked Ham",
         "weight": 90,
         "type": "Meat",
-        "picture": "https://drive.google.com/uc?export=view&id=17tfCWLt_MSa8jshGPAC3GSt7j_WcSYCb",
+        "picture": "/assets/pictures/pizza-ingredients/smokedham.png",
         "description": "Smoked Ham from the best local provider."
     },
     {
         "name": "Smoked Bacon",
         "weight": 90,
         "type": "Meat",
-        "picture": "https://drive.google.com/uc?export=view&id=17FqN1A-MqboEj34y2hXbhVq8yaZu-94M",
+        "picture": "/assets/pictures/pizza-ingredients/smokedbacon.png",
         "description": "Crispy and Smoked Bacon."
     },
     {
         "name": "Chicken",
         "weight": 90,
         "type": "Meat",
-        "picture": "https://drive.google.com/uc?export=view&id=1NwAh7CZB9UG4xeOGbFTMjqI2CEZelqeO",
+        "picture": "/assets/pictures/pizza-ingredients/chicken.png",
         "description": "Smoked Chicken."
     },
     {
         "name": "Tomatoes",
         "weight": 50,
         "type": "Vegetable",
-        "picture": "https://drive.google.com/uc?export=view&id=1bSn_tBhnX6YB7-WkP-_BzmzDvuqf48cS",
+        "picture": "/assets/pictures/pizza-ingredients/tomatoes.png",
         "description": "Fresh Tomatoes."
     },
     {
         "name": "Mushrooms",
         "weight": 50,
         "type": "Vegetable",
-        "picture": "https://drive.google.com/uc?export=view&id=13oiBp8EA_BQEsdWb_qqWXoerxtVumF0k",
+        "picture": "/assets/pictures/pizza-ingredients/mushrooms.png",
         "description": "Fresh Mushrooms."
     },
     {
         "name": "Corn",
         "weight": 50,
         "type": "Vegetable",
-        "picture": "https://drive.google.com/uc?export=view&id=1PExCX3WLO2GEKM3Lts7QNE17dYZ7Fhln",
+        "picture": "/assets/pictures/pizza-ingredients/corn.png",
         "description": "Fresh Sweet Corn."
     },
     {
         "name": "Green Peppers",
         "weight": 50,
         "type": "Vegetable",
-        "picture": "https://drive.google.com/uc?export=view&id=1j-ymKtnxMGa-pavBsB9o2tTJ5dfPyJX9",
+        "picture": "/assets/pictures/pizza-ingredients/greenpeppers.png",
         "description": "Fresh Green Peppers."
     },
     {
         "name": "Onions",
         "weight": 30,
         "type": "Vegetable",
-        "picture": "https://drive.google.com/uc?export=view&id=10qSzz7I25pzCRXw-4vtNd9hJnF_pXmyU",
+        "picture": "/assets/pictures/pizza-ingredients/onions.png",
         "description": "Fresh Onions."
     },
     {
         "name": "Olives",
         "weight": 50,
         "type": "Vegetable",
-        "picture": "https://drive.google.com/uc?export=view&id=1xRSV6vC23jVlKsImWsfNlBemISDbG40f",
+        "picture": "/assets/pictures/pizza-ingredients/olives.png",
         "description": "Fresh Green and Red Olives."
     },
     {
         "name": "Pickles",
         "weight": 30,
         "type": "Vegetable",
-        "picture": "https://drive.google.com/uc?export=view&id=1tLv0b0s1IlZKmIpbauCGqTayeTc7WaF7",
+        "picture": "/assets/pictures/pizza-ingredients/pickles.png",
         "description": "Sour Pickles."
     },
     {
         "name": "Oregano",
         "weight": 10,
         "type": "Condiment",
-        "picture": "https://drive.google.com/uc?export=view&id=1P46WSvLFIz8OZLbk6hDM6ebCUY-skdBg",
+        "picture": "/assets/pictures/pizza-ingredients/oregano.png",
         "description": "Oregano condiment."
     },
     {
         "name": "Basil",
         "weight": 10,
         "type": "Condiment",
-        "picture": "https://drive.google.com/uc?export=view&id=1kcmN8v7ZB0R4ZD7E3ZH6wDVAc0-WsSOf",
+        "picture": "/assets/pictures/pizza-ingredients/basil.png",
         "description": "Basil condiment."
     },
     {
         "name": "Flaky Salt",
         "weight": 10,
         "type": "Condiment",
-        "picture": "https://drive.google.com/uc?export=view&id=10QpA4yBwuABSYAiisMEyu6ncFo74yDq5",
+        "picture": "/assets/pictures/pizza-ingredients/flakysalt.png",
         "description": "Flaky Salt condiment."
     },
     {
         "name": "Garlic Powder",
         "weight": 10,
         "type": "Condiment",
-        "picture": "https://drive.google.com/uc?export=view&id=1Amflq6uH_DjfeE_9sPLtKODbCO6VPo-f",
+        "picture": "/assets/pictures/pizza-ingredients/garlicpowder.png",
         "description": "Garlic Powder condiment."
     }
 ]
