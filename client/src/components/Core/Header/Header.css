@@ -1,6 +1,6 @@
 .navbar {
     padding: 16px 64px;
-    border-bottom: 1px solid #677bbe;
+    border-bottom: 2px solid #2c2c2c;
     overflow: hidden;
     position: sticky;
     top: 0px;
@@ -20,7 +20,7 @@
 
 .navbar-logo-list-name{
     color: whitesmoke;
-    font-size: 42px;
+    font-size: 46px;
     display: flex;
     flex-direction: row;
     gap: 24px;
@@ -45,22 +45,55 @@
     -webkit-text-fill-color: transparent;
 }
 
+.navbar-links-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
 .navbar-links {
     display: flex;
     list-style: none;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
 }
 
 .nav-link {
     color: whitesmoke;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .nav-link:hover {
     background: linear-gradient(90deg, #ffff00, #ffd000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-nav {
+    text-decoration: none;
+    padding: 6px 12px;
+    background-color: #2c2c2c;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    border-radius: 6px;
+}
+
+.btn-nav:hover {
+    color: black;
+    background-color: whitesmoke;
+}
+
+.btn-container-p {
+    font-size: 20px;
+    color: whitesmoke;
 }

@@ -19,43 +19,44 @@ export const Header = () => {
                 </Link>
                 <div className="navbar-links-container">
                     <ul className="navbar-links">
-                        <li className="nav-link">
+                        <li className="nav-link-li">
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
-                        <li className="nav-link">
+                        <li className="nav-link-li">
                             <Link className="nav-link" to="/pizzas">Pizza</Link>
                         </li>
-                        <li className="nav-link">
+                        <li className="nav-link-li">
                             <Link className="nav-link" to="/burgers">Burger</Link>
                         </li>
-                        <li className="nav-link">
+                        <li className="nav-link-li">
                             <Link className="nav-link" to="/restaurants">Restaurants</Link>
                         </li>
                         {
-                            !isAuthenticated && (
-                                <>
-                                    <li className="nav-link">
-                                        <Link className="nav-link" to="/auth/login">Login</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/auth/register">Register</Link>
-                                    </li>
-                                </>
-                            )
-                        }
-                        {
-                            isAuthenticated && (
-                                <>
-                                    <li className="nav-link">
-                                        <Link className="nav-link" to="/auth/profile">Profile</Link>
-                                    </li>
-                                    <li className="nav-link">
-                                        <Link className="nav-link" to="/auth/logout">Logout as {auth.user.email}</Link>
-                                    </li>
-                                </>
-                            )
-                        }
+                        isAuthenticated && (
+                            <>
+                                <li className="nav-link-li">
+                                    <Link className="nav-link" to="/auth/profile">Profile</Link>
+                                </li>
+                            </>
+                        )
+                    }
                     </ul>
+                    {
+                        !isAuthenticated && (
+                            <div className="btn-container">
+                                <Link className="btn-nav" to="/auth/login">Login</Link>
+                                <Link className="btn-nav" to="/auth/register">Register</Link>
+                            </div>
+                        )
+                    }
+                    {
+                        isAuthenticated && (
+                            <div className="btn-container">
+                                <Link className="btn-nav" to="/auth/logout">Logout</Link>
+                                <p className="btn-container-p">{auth.user.email}</p>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </nav>

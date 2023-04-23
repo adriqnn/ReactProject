@@ -1,0 +1,85 @@
+.footer {
+    padding: 20px 64px;
+    border-top: 2px solid #232323;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgba(16, 16, 16, 0.9);
+    display: flex;
+    justify-content: center;
+    font-family: 'Bruno Ace SC', cursive;
+}
+
+.footer-container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-p {
+    font-size: 24px;
+    color: whitesmoke;
+}
+
+.copyright-span {
+    font-size: 36px;
+}
+
+.page-links {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.page-link {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.page-link:hover {
+    background: linear-gradient(90deg, #ffff00, #ffd000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.socials-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+}
+
+.socials-link {
+    font-size: 32px;
+    color: whitesmoke;
+}
+
+.socials-link-twitter:hover {
+    color: #00acee;
+}
+
+.socials-link-facebook:hover {
+    color: #3b5998;
+}
+
+.socials-link-instagram:hover {
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.socials-link-youtube:hover {
+    color: 	#FF0000;
+}
+
+.socials-link-linkedin:hover {
+    color: #0072b1;
+}
