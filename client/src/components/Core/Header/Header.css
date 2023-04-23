@@ -4,7 +4,7 @@
     overflow: hidden;
     position: sticky;
     top: 0px;
-    background-color: rgba(16, 16, 16, 0.8);
+    background-color: rgba(16, 16, 16, 0.9);
     display: flex;
     justify-content: center;
     font-family: 'Bruno Ace SC', cursive;
@@ -20,10 +20,10 @@
 
 .navbar-logo-list-name{
     color: whitesmoke;
-    font-size: 54px;
+    font-size: 42px;
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 24px;
     justify-content: center;
     align-items: center;
     text-decoration: none;
@@ -39,10 +39,29 @@
 }
 
 .navbar-name{
-    font-size: 38px;
-    background: linear-gradient(90deg, #fffb00, #00ff0d);
+    font-size: 34px;
+    background: linear-gradient(90deg, #ffff00, #ffd000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.navbar-links {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-link {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    background: linear-gradient(90deg, #ffff00, #ffd000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 

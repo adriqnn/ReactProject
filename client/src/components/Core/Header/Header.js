@@ -19,22 +19,22 @@ export const Header = () => {
                 </Link>
                 <div className="navbar-links-container">
                     <ul className="navbar-links">
-                        <li className="nav-item">
+                        <li className="nav-link">
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-link">
                             <Link className="nav-link" to="/pizzas">Pizza</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-link">
                             <Link className="nav-link" to="/burgers">Burger</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-link">
                             <Link className="nav-link" to="/restaurants">Restaurants</Link>
                         </li>
                         {
                             !isAuthenticated && (
                                 <>
-                                    <li className="nav-item">
+                                    <li className="nav-link">
                                         <Link className="nav-link" to="/auth/login">Login</Link>
                                     </li>
                                     <li className="nav-item">
@@ -46,10 +46,10 @@ export const Header = () => {
                         {
                             isAuthenticated && (
                                 <>
-                                    <li className="nav-item">
+                                    <li className="nav-link">
                                         <Link className="nav-link" to="/auth/profile">Profile</Link>
                                     </li>
-                                    <li className="nav-item">
+                                    <li className="nav-link">
                                         <Link className="nav-link" to="/auth/logout">Logout as {auth.user.email}</Link>
                                     </li>
                                 </>
