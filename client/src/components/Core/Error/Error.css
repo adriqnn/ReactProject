@@ -1,4 +1,4 @@
-.details {
+/* .details {
   color: white;
   border: 1px solid black;
 }
@@ -219,7 +219,6 @@ textarea:disabled {
 
 .form-group p {
   color: #f8f9fa;
-  /* // text-shadow: 1px 1px #007bff; */
   font-size: 20px;
   font-style: italic;
 }
@@ -310,10 +309,6 @@ textarea, input {
   margin: 25px auto;
   max-width: 100px;
 }
-
-/* // .icon i, i.buddies {
-//   font-size: 4em;
-// } */
 
 div.container .register, div.container .login {
   margin: 0 auto;
@@ -524,4 +519,4 @@ footer {
   position: absolute;
   width: 100%;
   
-}
+} */

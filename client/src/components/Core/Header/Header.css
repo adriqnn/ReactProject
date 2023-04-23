@@ -1,46 +1,48 @@
-li>a.nav-link {
-  color: rgba(255, 255, 255, 0.8)!important;
+.navbar {
+    padding: 16px 64px;
+    border-bottom: 1px solid #677bbe;
+    overflow: hidden;
+    position: sticky;
+    top: 0px;
+    background-color: rgba(16, 16, 16, 0.8);
+    display: flex;
+    justify-content: center;
+    font-family: 'Bruno Ace SC', cursive;
 }
 
-li>a.nav-link:hover {
-  color: #099cf1!important;
+.navbar-container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.details .container {
-  padding: 2%;
+.navbar-logo-list-name{
+    color: whitesmoke;
+    font-size: 54px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
-section div.container.home {
-  padding-top: 0;
+.navbar-logo-list{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
-div.container .register, div.container .login {
-  margin: 0 auto;
-  width: 50%;
-  text-align: center;
+.navbar-name{
+    font-size: 38px;
+    background: linear-gradient(90deg, #fffb00, #00ff0d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-label, .container>h1 {
-  color: white;
-}
 
-label, .container>h1 {
-  color: white;
-}
-
-.container form {
-  text-align: center;
-}
-
-section>div.container {
-  padding-top: 40px;
-}
-
-.car.logo {
-  transform: rotate(-8deg);
-}
-
-.logo {
-  width: 55px;
-  height: 55px;
-}

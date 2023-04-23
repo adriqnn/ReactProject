@@ -8,14 +8,17 @@ export const Header = () => {
     const { auth, isAuthenticated } = useContext(ApplicationContext);
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div className="container">
-                <Link to="/">
-                    <img className="car logo" src="/assets/pictures/main/animepizza.png" alt="pizza-logo"/>
-                    <img className="logo" src="/assets/pictures/main/animeburger.png" alt="burger-logo"/>
+        <nav className="navbar">
+            <div className="navbar-container">
+                <Link to="/" className="navbar-logo-list-name">
+                    <ul className="navbar-logo-list">
+                        <li><i class="fas fa-hamburger"></i></li>
+                        <li><i class="fas fa-pizza-slice"></i></li>
+                    </ul>
+                    <p className="navbar-name">PizzaBurgerSpot</p>
                 </Link>
-                <div className="collapse navbar-collapse" id="navbarResponsive" style={{fontSize: "18px", fontFamily: "cursive"}}>
-                    <ul className="navbar-nav ml-auto">
+                <div className="navbar-links-container">
+                    <ul className="navbar-links">
                         <li className="nav-item">
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
