@@ -1,0 +1,129 @@
+.login-main {
+    width: 60%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.login-page-container {
+    width: 420px;
+    height: 600px;
+    background-color: rgb(33, 33, 33);
+    background-image: url("/public/assets/pictures/main/login-bg-3.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 2px rgb(33, 33, 33);
+    /* border: solid 2px rgb(33, 33, 33); */
+}
+
+.login-page {
+    height: 99.5%;
+    width: 99%;
+    background-image: url("/public/assets/pictures/main/login-bg-2.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    border: solid 2px rgb(33, 33, 33);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    padding-top: 50px;
+}
+
+.login-page-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-page-h1 {
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.login-page-line {
+    width: 300px;
+    height: 3px;
+    background-color: whitesmoke;
+}
+
+.login-page-form-container {
+    width: 80%;
+}
+
+.login-page-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-page-form-server-errors {
+    text-align: center;
+}
+
+.login-form-group {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 6px;
+    position: relative;
+}
+
+.login-form-group-label {
+    color: whitesmoke;
+    text-align: start;
+    width: 100%;
+    font-size: 16px;
+}
+
+.login-form-group-input {
+    width: 100%;
+    padding-left: 26px;
+}
+
+.login-form-group-i {
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+}
+
+.login-form-group-error-message {
+    color: red;
+}
+
+.login-form-group-register {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 18px;
+    margin: 8px 0px 8px 0px;
+}
+
+.login-form-group-register-link {
+    font-size: 20px;
+    text-decoration: none;
+    color: greenyellow;
+}
+
+.login-form-group-btn {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    background-color: #00c37a;
+    border: 1px solid #00774b;
+    border-radius: 10px;
+    padding: 6px 50px;
+    margin: 16px;
+}

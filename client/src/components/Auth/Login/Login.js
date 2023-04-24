@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ApplicationContext } from '../../../contexts/ApplicationContext';
-// import './Login.css';
+import './Login.css';
 
 export const Login = () => {
     const { loginFieldsError, loginWrongUsernameOrPassowrd, loginServerOffline, onLoginFormSubmit } = useContext(ApplicationContext);
@@ -46,74 +46,75 @@ export const Login = () => {
     };
  
     return (
-        <main>
-            <section className="py-5" id="login-page">
-                <div className="container login-page">
-                    <h1 style={{fontFamily: "cursive"}}>
-                        <p style={{fontSize: "36px", fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</p>
-                        <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>Login...</p>
-                        <p> </p>
-                        <p className="line"></p>
-                    </h1>
-                    <p>&nbsp;</p>
-                    <div className="login">
-                        <form method="POST" onSubmit={onSubmit}>
-                            {
-                                loginFieldsError && (
-                                    <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>All fields are required!</label>
-                                </div>
-                                )
-                            }
-                            {
-                                loginWrongUsernameOrPassowrd && (
-                                    <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>Incorrect username or password!</label>
-                                </div>
-                                )
-                            }
-                            {
-                                loginServerOffline && (
-                                    <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>Please try again later!</label>
-                                </div>
-                                )
-                            }
-                            {
-                                fillTheFormProperly && (
-                                    <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>Fill the form properly!</label>
-                                </div>
-                                )
-                            }
-                            <div className="form-group">
-                                <label htmlFor="username">Username</label>
-                                <input type="text" className={`form-control ${formErrors.usernameRequired ? "errorred" : ""} ${formErrors.usernameMinLength ? "errorred" : ""}`} id="username" placeholder="Username" 
+        <main className="login-main" id="login-main">
+            <section className="login-page-container">
+                <div className="login-page">
+                    <div className='login-page-heading'>
+                        <h1 className='login-page-h1'>Login</h1>
+                        <p className="login-page-line"></p>
+                    </div>
+                    <div className="login-page-form-container">
+                        <form method="POST" onSubmit={onSubmit} className='login-page-form'>
+                            <div className="login-page-form-server-errors">
+                                {
+                                    loginFieldsError && (
+                                        <div className="login-form-group">
+                                        <label htmlFor="error" className="login-form-group-error-message">All fields are required!</label>
+                                    </div>
+                                    )
+                                }
+                                {
+                                    loginWrongUsernameOrPassowrd && (
+                                        <div className="login-form-group">
+                                        <label htmlFor="error" className="login-form-group-error-message">Incorrect username or password!</label>
+                                    </div>
+                                    )
+                                }
+                                {
+                                    loginServerOffline && (
+                                        <div className="login-form-group">
+                                        <label htmlFor="error" className="login-form-group-error-message">Please try again later!</label>
+                                    </div>
+                                    )
+                                }
+                                {
+                                    fillTheFormProperly && (
+                                        <div className="login-form-group">
+                                        <label htmlFor="error" className="login-form-group-error-message">Fill the form properly!</label>
+                                    </div>
+                                    )
+                                }
+                            </div>
+                            <div className="login-form-group">
+                                <label htmlFor="username" className="login-form-group-label">Username:</label>
+                                <input type="text" className={`form-control login-form-group-input ${formErrors.usernameRequired ? "errorred" : ""} ${formErrors.usernameMinLength ? "errorred" : ""}`} id="username" placeholder="Username" 
                                     name="username" value={formValues.username} onChange={onUsernameChangeHandler} onBlur={onUsernameChangeHandler}/>
+                                <i class="fas fa-user login-form-group-i"></i>
                             </div>
                             {
                                 (formErrors.usernameRequired || formErrors.usernameMinLength) && (
-                                    <div className="form-group">
-                                        <label htmlFor="error" style={{color: "red"}}>Username is required and must be at least 3 characters!</label>
+                                    <div className="login-form-group">
+                                        <label htmlFor="error" className="login-form-group-error-message">Username is required and must be at least 3 characters long!</label>
                                     </div>
                                 )
                             }
-                            <div className="form-group">
-                                <label htmlFor="password">Password</label>
-                                <input type="password" className={`form-control ${(formErrors.passwordRequired || formErrors.passwordMinLength) ? "errorred" : ""}`} id="password" placeholder="Password" 
-                                name="password" value={formValues.password} onChange={onPasswordChangeHandler} onBlur={onPasswordChangeHandler}/>
+                            <div className="login-form-group">
+                                <label htmlFor="password" className="login-form-group-label">Password:</label>
+                                <input type="password" className={`form-control login-form-group-input ${(formErrors.passwordRequired || formErrors.passwordMinLength) ? "errorred" : ""}`} id="password" placeholder="Password" 
+                                    name="password" value={formValues.password} onChange={onPasswordChangeHandler} onBlur={onPasswordChangeHandler}/>
+                                <i class="fas fa-lock login-form-group-i"></i>
                             </div>
                             {
                                 (formErrors.passwordRequired || formErrors.passwordMinLength) && (
-                                    <div className="form-group">
-                                        <label htmlFor="error" style={{color: "red"}}>Password is required and must be at least 3 characters!</label>
+                                    <div className="login-form-group">
+                                        <label htmlFor="error" className="login-form-group-error-message">Password is required and must be at least 3 characters long!</label>
                                     </div>
                                 )
                             }
-                            <div className="form-group">
-                                <p>Not registered yet? <Link to="/auth/register" style={{fontSize: "20px", color: "greenyellow"}}>Register Now!</Link></p>
+                            <div className="login-form-group-register">
+                                <p>Not registered yet? - <Link to="/auth/register" className='login-form-group-register-link'>Register Now!</Link></p>
                             </div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="login-form-group-btn">Sign In</button>
                         </form>
                     </div>
                 </div>
