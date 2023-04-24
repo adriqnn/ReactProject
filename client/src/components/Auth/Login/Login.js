@@ -89,7 +89,7 @@ export const Login = () => {
                                 <label htmlFor="username" className="login-form-group-label">Username:</label>
                                 <input type="text" className={`form-control login-form-group-input ${formErrors.usernameRequired ? "errorred" : ""} ${formErrors.usernameMinLength ? "errorred" : ""}`} id="username" placeholder="Username" 
                                     name="username" value={formValues.username} onChange={onUsernameChangeHandler} onBlur={onUsernameChangeHandler}/>
-                                <i class="fas fa-user login-form-group-i"></i>
+                                <i className="fas fa-user login-form-group-i"></i>
                             </div>
                             {
                                 (formErrors.usernameRequired || formErrors.usernameMinLength) && (
@@ -102,7 +102,7 @@ export const Login = () => {
                                 <label htmlFor="password" className="login-form-group-label">Password:</label>
                                 <input type="password" className={`form-control login-form-group-input ${(formErrors.passwordRequired || formErrors.passwordMinLength) ? "errorred" : ""}`} id="password" placeholder="Password" 
                                     name="password" value={formValues.password} onChange={onPasswordChangeHandler} onBlur={onPasswordChangeHandler}/>
-                                <i class="fas fa-lock login-form-group-i"></i>
+                                <i className="fas fa-lock login-form-group-i"></i>
                             </div>
                             {
                                 (formErrors.passwordRequired || formErrors.passwordMinLength) && (

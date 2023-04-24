@@ -12,8 +12,8 @@ export const Header = () => {
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo-list-name">
                     <ul className="navbar-logo-list">
-                        <li><i class="fas fa-hamburger"></i></li>
-                        <li><i class="fas fa-pizza-slice"></i></li>
+                        <li><i className="fas fa-hamburger"></i></li>
+                        <li><i className="fas fa-pizza-slice"></i></li>
                     </ul>
                     <p className="navbar-name">PizzaBurgerSpot</p>
                 </Link>

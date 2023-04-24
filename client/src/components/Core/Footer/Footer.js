@@ -23,7 +23,7 @@ export const Footer = () => {
                         <li className="socials-link-li"><Link className="socials-link socials-link-facebook" to='https://www.facebook.com' target="_blank"><i className="fab fa-facebook-square"></i></Link></li>
                         <li className="socials-link-li"><Link className="socials-link socials-link-instagram" to='https://www.instagram.com/' target="_blank"><i className="fab fa-instagram"></i></Link></li>
                         <li className="socials-link-li"><Link className="socials-link socials-link-youtube" to='https://www.youtube.com' target="_blank"><i className="fab fa-youtube"></i></Link></li>
-                        <li className="socials-link-li"><Link className="socials-link socials-link-linkedin" to='https://www.linkedin.com' target="_blank"><i class="fab fa-linkedin"></i></Link></li>
+                        <li className="socials-link-li"><Link className="socials-link socials-link-linkedin" to='https://www.linkedin.com' target="_blank"><i className="fab fa-linkedin"></i></Link></li>
                     </ul>
                 </div>
             </div>
