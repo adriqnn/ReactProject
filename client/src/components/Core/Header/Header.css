@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     font-family: 'Bruno Ace SC', cursive;
+    z-index: 99;
 }
 
 .navbar-container {

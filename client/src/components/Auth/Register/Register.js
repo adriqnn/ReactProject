@@ -61,119 +61,122 @@ export const Register = () => {
     };
 
     return (
-        <main>
-            <section className="py-5" id="register-page">
-                <div className="container register-page">
-                    <h1 style={{fontFamily: "cursive"}}>
-                        <p style={{fontSize: "36px", fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</p>
-                        <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>Register...</p>
-                        <p> </p>
-                        <p className="line"></p>
-                    </h1>
-                    <p>&nbsp;</p>
-                    <div className="register">
-                        <form method="POST" onSubmit={onSubmit}>
-                            {
-                                registerFieldsError && (
-                                    <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>All fields are required!</label>
-                                </div>
-                                )
-                            }
-                            {
-                                registerUsernameTaken && (
-                                    <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>Username is taken!</label>
-                                </div>
-                                )
-                            }
-                            {
-                                registerEmailTaken && (
-                                    <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>Email is taken!</label>
-                                </div>
-                                )
-                            }
-                            {
-                                registerPasswordsMustMatch && (
-                                    <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>Passwords must match!</label>
-                                </div>
-                                )
-                            }
-                            {
-                                registerServerOffline && (
-                                    <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>Please try again later!</label>
-                                </div>
-                                )
-                            }
-                            {
-                                fillTheFormProperly && (
-                                    <div className="form-group">
-                                    <label htmlFor="error" style={{color: "red"}}>Fill the form properly!</label>
-                                </div>
-                                )
-                            }
-                            <div className="form-group">
-                                <label htmlFor="username">Username</label>
-                                <input type="text" className={`form-control ${formErrors.usernameRequired ? "errorred" : ""} ${formErrors.usernameMinLength ? "errorred" : ""}`} id="username" placeholder="Username" 
+        <main className="register-main" id="register-main">
+            <section className="register-page-container">
+                <div className="register-page">
+                    <div className="register-page-heading">
+                        <h1 className="register-page-h1">Sign Up!</h1>
+                        <p className="register-page-line"></p>
+                    </div>
+                    <div className="register-page-form-container">
+                        <form method="POST" onSubmit={onSubmit} className="register-page-form">
+                            <div className="register-page-form-server-errors">
+                                {
+                                    registerFieldsError && (
+                                        <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">All fields are required!</label>
+                                    </div>
+                                    )
+                                }
+                                {
+                                    registerUsernameTaken && (
+                                        <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">Username is taken!</label>
+                                    </div>
+                                    )
+                                }
+                                {
+                                    registerEmailTaken && (
+                                        <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">Email is taken!</label>
+                                    </div>
+                                    )
+                                }
+                                {
+                                    registerPasswordsMustMatch && (
+                                        <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">Passwords must match!</label>
+                                    </div>
+                                    )
+                                }
+                                {
+                                    registerServerOffline && (
+                                        <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">Please try again later!</label>
+                                    </div>
+                                    )
+                                }
+                                {
+                                    fillTheFormProperly && (
+                                        <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">Fill the form properly!</label>
+                                    </div>
+                                    )
+                                }
+                            </div>
+                            <div className="register-form-group">
+                                <label htmlFor="username" className="register-form-group-label">Username</label>
+                                <input type="text" className={`form-control register-form-group-input ${formErrors.usernameRequired ? "errorred" : ""} ${formErrors.usernameMinLength ? "errorred" : ""}`} id="username" placeholder="Username" 
                                     name="username" value={formValues.username} onChange={onUsernameChangeHandler} onBlur={onUsernameChangeHandler}/>
+                                <i className="fas fa-user register-form-group-i"></i>
                             </div>
                             {
                                 (formErrors.usernameRequired || formErrors.usernameMinLength) && (
-                                    <div className="form-group">
-                                        <label htmlFor="error" style={{color: "red"}}>Username is required and must be at least 3 characters!</label>
+                                    <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">Username is required and must be at least 3 characters!</label>
                                     </div>
                                 )
                             }
-                            <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <input type="text" className={`form-control ${formErrors.emailRequired ? "errorred" : ""} ${formErrors.emailMinLength ? "errorred" : ""} ${formErrors.emailIsNotValid ? "errorred" : ""}`} id="email" placeholder="Email" 
+                            <div className="register-form-group">
+                                <label htmlFor="email" className="register-form-group-label">Email</label>
+                                <input type="text" className={`form-control register-form-group-input ${formErrors.emailRequired ? "errorred" : ""} ${formErrors.emailMinLength ? "errorred" : ""} ${formErrors.emailIsNotValid ? "errorred" : ""}`} id="email" placeholder="Email" 
                                     name="email" value={formValues.email} onChange={onEmailChangeHandler} onBlur={onEmailChangeHandler}/>
+                                <i className="fas fa-envelope register-form-group-i"></i>
                             </div>
                             {
                                 (formErrors.emailRequired || formErrors.emailMinLength) && (
-                                    <div className="form-group">
-                                        <label htmlFor="error" style={{color: "red"}}>Email is required and must be at least 3 characters!</label>
+                                    <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">Email is required and must be at least 3 characters!</label>
                                     </div>
                                 )
                             }
                             {
                                 formErrors.emailIsNotValid && (
-                                    <div className="form-group">
-                                        <label htmlFor="error" style={{color: "red"}}>Email is not valid!</label>
+                                    <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">Email is not valid!</label>
                                     </div>
                                 )
                             }
-                            <div className="form-group">
-                                <label htmlFor="password">Password</label>
-                                <input type="password" className={`form-control ${(formErrors.passwordRequired || formErrors.passwordMinLength) ? "errorred" : ""}`} id="password" placeholder="Password" 
+                            <div className="register-form-group">
+                                <label htmlFor="password" className="register-form-group-label">Password</label>
+                                <input type="password" className={`form-control register-form-group-input ${(formErrors.passwordRequired || formErrors.passwordMinLength) ? "errorred" : ""}`} id="password" placeholder="Password" 
                                     name="password" value={formValues.password} onChange={onPasswordChangeHandler} onBlur={onPasswordChangeHandler}/>
+                                <i className="fas fa-lock register-form-group-i"></i>
                             </div>
                             {
                                 (formErrors.passwordRequired || formErrors.passwordMinLength) && (
-                                    <div className="form-group">
-                                        <label htmlFor="error" style={{color: "red"}}>Password is required and must be at least 3 characters!</label>
+                                    <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">Password is required and must be at least 3 characters!</label>
                                     </div>
                                 )
                             }
-                            <div className="form-group">
-                                <label htmlFor="rePassword">Confirm Password</label>
-                                <input type="password" className={`form-control ${formErrors.passwordMatch ? "errorred" : ""}`} id="rePassword" placeholder="Confirm Password" 
+                            <div className="register-form-group">
+                                <label htmlFor="rePassword" className="register-form-group-label">Confirm Password</label>
+                                <input type="password" className={`form-control register-form-group-input ${formErrors.passwordMatch ? "errorred" : ""}`} id="rePassword" placeholder="Confirm Password" 
                                 name="repass" value={formValues.repass} onChange={onRePassChangeHandler} onBlur={onRePassChangeHandler}/>
+                                <i className="fas fa-lock register-form-group-i"></i>
                             </div>
                             {
                                 formErrors.passwordMatch && (
-                                    <div className="form-group">
-                                        <label htmlFor="error" style={{color: "red"}}>Passwords must match!</label>
+                                    <div className="register-form-group">
+                                        <label htmlFor="error" className="register-form-group-error-message">Passwords must match!</label>
                                     </div>
                                 )
                             }
-                            <div className="form-group">
-                                <p>Already have account? <Link to="/auth/login" style={{fontSize: "20px", color: "greenyellow"}}>Login Now!</Link></p>
+                            <div className="register-form-group-login">
+                                <p>Already have account? - <Link to="/auth/login" className="register-form-group-login-link">Sign In now!</Link></p>
                             </div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="register-form-group-btn">Submit</button>
                         </form>
                     </div>
                 </div>
