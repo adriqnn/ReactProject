@@ -107,21 +107,15 @@
 }
 
 .register-form-group-login {
+    width: 300px;
     color: whitesmoke;
     text-align: center;
-    font-size: 18px;
-    margin: 8px 0px 8px 0px;
-}
-
-.register-form-group-login {
-    color: whitesmoke;
-    text-align: start;
-    font-size: 18px;
+    font-size: 14px;
     margin: 8px 0px 8px 0px;
 }
 
 .register-form-group-login-link {
-    font-size: 20px;
+    font-size: 14px;
     text-decoration: none;
     color: greenyellow;
 }

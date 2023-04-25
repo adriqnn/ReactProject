@@ -2,12 +2,23 @@ import './Contacts.css';
 
 export const Contacts = () => {
     return (
-        <main>
-            <section id="home-page" className="py-5">
-                <div style={{height: "15vh"}}></div>
-                <div className="container home">
-                    <h1 style={{fontStyle: "italic", fontFamily: "cursive"}}>CONTACTS:</h1>
-                    <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>Call us at: +359-XXXX-XX-XX-XX!</p>
+        <main className="contacts-main" id="contacts-main">
+            <section className="contacts-page-container">
+                <div className="contacts-page-header">
+                    <h1 className="contacts-page-h1">CONTACT US:</h1>
+                </div>
+                <div className="contacts-page-contacts-section">
+                    <div>
+                        <p className="contacts-page-contacts-section-phone">Call us at: +359-XXXX-XX-XX-XX!</p>
+                    </div>
+                    <div className="contacts-page-contacts-section-separator"></div>
+                    <div>
+                        <p className="contacts-page-contacts-section-email">Call us at: +359-XXXX-XX-XX-XX!</p>
+                    </div>
+                    <div className="contacts-page-contacts-section-separator"></div>
+                    <div>
+                        <p className="contacts-page-contacts-section-message">Call us at: +359-XXXX-XX-XX-XX!</p>
+                    </div>
                 </div>
             </section>
         </main>

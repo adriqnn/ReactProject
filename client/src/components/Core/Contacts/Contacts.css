@@ -1,0 +1,40 @@
+.contacts-main {
+    font-family: 'Raleway', sans-serif;
+    width: 60%;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(16, 16, 16, 0.9);
+    border-radius: 8px;
+    border: 2px solid whitesmoke
+}
+
+.contacts-page-container {
+    min-height: 600px;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 120px;
+}
+
+.contacts-page-h1 {
+    color: whitesmoke;
+    font-weight: 700;
+}
+
+.contacts-page-contacts-section {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 50px;
+}
+
+.contacts-page-contacts-section-separator {
+    height: 160px;
+    width: 2px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+}
