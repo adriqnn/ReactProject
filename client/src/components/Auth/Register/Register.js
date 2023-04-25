@@ -176,7 +176,7 @@ export const Register = () => {
                             <div className="register-form-group-login">
                                 <p>Already have account? - <Link to="/auth/login" className="register-form-group-login-link">Sign In now!</Link></p>
                             </div>
-                            <button type="submit" className="register-form-group-btn">Submit</button>
+                            <button type="submit" className="register-form-group-btn">Sign Up</button>
                         </form>
                     </div>
                 </div>
