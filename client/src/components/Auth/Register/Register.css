@@ -135,6 +135,16 @@
     border-radius: 10px;
     padding: 6px 50px;
     margin: 16px;
+    cursor: pointer;
+}
+
+.register-form-group-btn:hover {
+    color: whitesmoke;
+    background-color: #00c01a;
+}
+
+.register-form-group-btn:active {
+    opacity: 0.8;
 }
 
 input.form-control {
@@ -147,5 +157,4 @@ input.errorred {
     border: 3.5px solid #ff0000;
     border-radius: 6px;
     /* box-shadow: 0px 0px 30px -1px #ff0000; */
-  }
-  
+}
