@@ -50,7 +50,7 @@ export const Login = () => {
             <section className="login-page-container">
                 <div className="login-page">
                     <div className='login-page-heading'>
-                        <h1 className='login-page-h1'>Login</h1>
+                        <h1 className='login-page-h1'>Sign In!</h1>
                         <p className="login-page-line"></p>
                     </div>
                     <div className="login-page-form-container">
@@ -112,7 +112,8 @@ export const Login = () => {
                                 )
                             }
                             <div className="login-form-group-register">
-                                <p>Not registered yet? - <Link to="/auth/register" className='login-form-group-register-link'>Register Now!</Link></p>
+                                <p>Forgot password ? - <Link to="#" className='login-form-group-register-link'>Reset Password!</Link></p>
+                                <p>Not registered yet? - <Link to="/auth/register" className='login-form-group-register-link'>Sign Up now!</Link></p>
                             </div>
                             <button type="submit" className="login-form-group-btn">Sign In</button>
                         </form>
