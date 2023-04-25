@@ -38,3 +38,21 @@
     border-radius: 20px;
     background-color: whitesmoke;
 }
+
+.contacts-page-contacts-section-part {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts-page-contacts-section-part i {
+    font-size: 64px;
+    color: whitesmoke;
+}
+
+.contacts-page-contacts-section-part-p {
+    color: whitesmoke;
+    font-size: 18px;
+}

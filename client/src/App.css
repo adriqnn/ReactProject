@@ -62,3 +62,7 @@ body::before {
 main {
   position: relative;
 }
+
+.footer-divider {
+  height: 164px;
+}
