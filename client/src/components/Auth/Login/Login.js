@@ -51,7 +51,7 @@ export const Login = () => {
                 <section className="login-page-container">
                     <div className="login-page">
                         <div className="login-page-heading">
-                            <h1 className="login-page-h1">Sign In!</h1>
+                            <h1 className="login-page-h1">Login</h1>
                             <p className="login-page-line"></p>
                         </div>
                         <div className="login-page-form-container">

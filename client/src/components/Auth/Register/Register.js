@@ -66,7 +66,7 @@ export const Register = () => {
                 <section className="register-page-container">
                     <div className="register-page">
                         <div className="register-page-heading">
-                            <h1 className="register-page-h1">Sign Up!</h1>
+                            <h1 className="register-page-h1">Register</h1>
                             <p className="register-page-line"></p>
                         </div>
                         <div className="register-page-form-container">
