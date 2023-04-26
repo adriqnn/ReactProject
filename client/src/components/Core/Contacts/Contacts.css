@@ -1,10 +1,11 @@
 .contacts-main {
     font-family: 'Raleway', sans-serif;
-    width: 60%;
+    /* width: 60%; */
+    width: 1150px;
     margin: 100px auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     background-color: rgba(16, 16, 16, 0.9);
     border-radius: 8px;
     border: 2px solid whitesmoke
@@ -27,8 +28,8 @@
 .contacts-page-contacts-section {
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     align-items: center;
+    text-align: center;
     gap: 50px;
 }
 
@@ -42,6 +43,7 @@
 .contacts-page-contacts-section-part {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 30px;
     justify-content: center;
     align-items: center;
@@ -54,5 +56,11 @@
 
 .contacts-page-contacts-section-part-p {
     color: whitesmoke;
+    font-size: 18px;
+}
+
+.contacts-page-contacsts-section-part-link {
+    text-decoration: none;
+    color: gold;
     font-size: 18px;
 }

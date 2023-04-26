@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import './Contacts.css';
 
 export const Contacts = () => {
@@ -11,17 +13,28 @@ export const Contacts = () => {
                     <div className="contacts-page-contacts-section">
                         <div className="contacts-page-contacts-section-part">
                             <i className="fas fa-phone-square-alt"></i>
-                            <p className="contacts-page-contacts-section-part-p">Call us at: +359-XXX-XX-XX-XX!</p>
+                            <div>
+                                <p className="contacts-page-contacts-section-part-p">Call us:</p>
+                                <p className="contacts-page-contacts-section-part-p">+359-XXX-XX-XX-XX!</p>
+                            </div>
                         </div>
                         <div className="contacts-page-contacts-section-separator"></div>
                         <div className="contacts-page-contacts-section-part">
                             <i className="fas fa-envelope"></i>
-                            <p className="contacts-page-contacts-section-part-p">Email us at: PizzaBurgerSpot@abv.bg!</p>
+                            <div>
+                                <p className="contacts-page-contacts-section-part-p">Email us:</p>
+                                <p className="contacts-page-contacts-section-part-p">PizzaBurgerSpot@abv.bg!</p>
+                            </div>
                         </div>
                         <div className="contacts-page-contacts-section-separator"></div>
                         <div className="contacts-page-contacts-section-part">
                             <i className="fas fa-comment-dots"></i>
-                            <p className="contacts-page-contacts-section-part-p">Message us: with our live chat system!</p>
+                            <div>
+                                <p className="contacts-page-contacts-section-part-p">Message us:</p>
+                                <p className="contacts-page-contacts-section-part-p">Live chat system -
+                                    <Link to="#" className="contacts-page-contacsts-section-part-link"> Here</Link>!
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
