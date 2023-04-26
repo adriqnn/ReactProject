@@ -1,7 +1,7 @@
 # PizzaBurgerSpot - React Application - Educational Client Project!
 
 ## Getting Started:
-This is a small react client-side application called PizzaBurgerSpot for managing collections of pizzas, burggers and restaurants - created by the users. The application runs with it's own REST-api server made with ExpressJS and is connected to a NoSQL database - MongoDB;
+This is a small react client-side application called PizzaBurgerSpot for managing collections of pizzas, burgers and restaurants - created by the users. The application runs with it's own REST-api server made with ExpressJS and is connected to a NoSQL database - MongoDB;
 
 You need to download the client and run:
 ```

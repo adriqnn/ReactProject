@@ -12,12 +12,12 @@
 }
 
 .contacts-page-container {
-    min-height: 600px;
-    padding: 80px;
+    min-height: 500px;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 120px;
+    gap: 90px;
 }
 
 .contacts-page-h1 {
