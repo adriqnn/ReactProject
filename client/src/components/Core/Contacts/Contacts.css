@@ -43,7 +43,6 @@
 .contacts-page-contacts-section-part {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 30px;
     justify-content: center;
     align-items: center;
