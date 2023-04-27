@@ -8,18 +8,18 @@ export const PizzaIngredient = ({
     picture
 }) => {
     return (
-        <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100">
-                <img className="card-img-top"
-                    src={picture}
-                    alt="pizzaIngredient"/>
-                <div className="card-body">
-                    <h5 className="card-title2"><span>{name}</span></h5>
-                    <h5 className="mt-4 card-info"> Type: {type}<span></span></h5>
-                    <h5 className="mt-4 card-info"> Weight: {weight}g<span></span></h5>
+        <div className="item-card">
+            <div className="item-card-container">
+                <div className="item-card-container-div-img">
+                    <img className="item-card-container-img" src={picture} alt="pizzaIngredient"/>
                 </div>
-                <div className="card-footer">
-                    <Link to={`/pizzas/pizza-ingredients/${_id}`} className="btn btn-success">Details</Link>
+                <div className="item-card-container-main">
+                    <h1 className="item-card-container-main-h1">{name}</h1>
+                    <h2 className="item-card-container-main-h2"> Type: {type}<span></span></h2>
+                    <h2 className="item-card-container-main-h2"> Weight: {weight}g<span></span></h2>
+                </div>
+                <div className="item-card-container-footer">
+                    <Link to={`/pizzas/pizza-ingredients/${_id}`} className="item-card-container-footer-btn">Details</Link>
                 </div>
             </div>
         </div>
