@@ -100,7 +100,7 @@ main {
 }
 
 .item-card-container-main-h1 {
-  font-size: 24px;
+  font-size: 26px;
   color: whitesmoke;
 }
 
@@ -117,7 +117,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
 }
 
 .item-card-container-footer-btn {

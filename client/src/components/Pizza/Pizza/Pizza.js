@@ -32,32 +32,32 @@ export const Pizza = ({
                     <img className="item-card-container-img" src={picture} alt="pizzaIngredient"/>
                 </div>
                 <div className="item-card-container-main">
-                    <h5 className="item-card-container-main-h1">{name}</h5>
-                    <h5 className="item-card-container-main-h2"> Weight: {weight}g</h5>
+                    <h1 className="item-card-container-main-h1">{name}</h1>
+                    <h2 className="item-card-container-main-h2"> Weight: {weight}g</h2>
                     {
                         (isAuthenticated && !userHasAlreadyLiked()) &&(
                             <>
-                                <h5 className="item-card-container-main-h2" onClick={() => onLikePizza(_id, auth.user._id)}> 
-                                    Like: <i className="fas fa-heart"></i> {likes.length}
-                                </h5>
+                                <h2 className="item-card-container-main-h2" onClick={() => onLikePizza(_id, auth.user._id)}> 
+                                    Like: <i className="fas fa-heart" style={{color: "#0477b6"}}></i> {likes.length}
+                                </h2>
                             </>
                         )
                     }
                       {
                         (isAuthenticated && userHasAlreadyLiked()) && (
                             <>
-                                <h5 className="item-card-container-main-h2" onClick={() => onUnlikePizza(_id, auth.user._id)}> 
+                                <h2 className="item-card-container-main-h2" onClick={() => onUnlikePizza(_id, auth.user._id)}> 
                                     Liked: <i className="fas fa-heart" style={{color: "red"}}></i> {likes.length}
-                                </h5>
+                                </h2>
                             </>
                         )
                     }
                     {
                         !isAuthenticated && (
                             <>
-                                <h5 className="item-card-container-main-h2"> 
+                                <h2 className="item-card-container-main-h2"> 
                                     Likes <i className="fas fa-heart" style={{color: "whitesmoke"}}></i> {likes.length}
-                                </h5>
+                                </h2>
                             </>
                         )
                     }
