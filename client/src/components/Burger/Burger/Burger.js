@@ -29,7 +29,7 @@ export const Burger = ({
         <div className="item-card">
             <div className="item-card-container">
                 <div className="item-card-container-div-img">
-                    <img className="item-card-container-img" src={picture} alt="pizzaIngredient"/>
+                    <img className="item-card-container-img" src={picture} alt="burger"/>
                 </div>
                 <div className="item-card-container-main">
                     <h1 className="item-card-container-main-h1">{name}</h1>
