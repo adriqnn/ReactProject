@@ -52,14 +52,17 @@
 
 .navbar-name {
     font-size: 30px;
-    background: linear-gradient(90deg, #ffff00, #ffd000);
     transition: 0.3s;
+    background: linear-gradient(90deg, whitesmoke, whitesmoke);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .navbar-name:hover {
-    font-size: 32px;
+    background: linear-gradient(90deg, #ffff00, #ffd000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s;
 }
 
 .navbar-links-container {
