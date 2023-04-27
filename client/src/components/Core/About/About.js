@@ -4,10 +4,14 @@ export const About = () => {
     return (
         <>
             <main className="about-main" id="about-main">
+                <section className="about-page-title">
+                    <div className="about-page-title-div">
+                        <h1 className="about-page-title-h1">PizzaBurgerSpot React Project</h1>
+                    </div>
+                </section>
                 <section className="about-page-container">
                     <div className="about-page-header">
-                        <h1 className="about-page-header-h1-1">PizzaBurgerSpot React Projectw</h1>
-                        <h1 className="about-page-header-h1-2">ABOUT:</h1>
+                        <h1 className="about-page-header-h1">ABOUT:</h1>
                     </div>
                     <div className="about-page-project-description">
                         <p className="about-page-project-description-p">This is a small react client-side application called PizzaBurgerSpot for managing collections of pizzas, burgers and restaurants - created by the users.</p>
