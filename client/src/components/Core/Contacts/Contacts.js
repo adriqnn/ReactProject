@@ -23,7 +23,7 @@ export const Contacts = () => {
                             <i className="fas fa-envelope"></i>
                             <div>
                                 <p className="contacts-page-contacts-section-part-p">Email us:</p>
-                                <p className="contacts-page-contacts-section-part-p">PizzaBurgerSpot@abv.bg!</p>
+                                <p className="contacts-page-contacts-section-part-p">PizzaBurgerSpot@gmail.com!</p>
                             </div>
                         </div>
                         <div className="contacts-page-contacts-section-separator"></div>
