@@ -23,7 +23,7 @@
     font-size: 46px;
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
@@ -51,7 +51,7 @@
 }
 
 .navbar-name {
-    font-size: 32px;
+    font-size: 30px;
     background: linear-gradient(90deg, #ffff00, #ffd000);
     transition: 0.3s;
     -webkit-background-clip: text;
@@ -59,7 +59,7 @@
 }
 
 .navbar-name:hover {
-    font-size: 34px;
+    font-size: 32px;
 }
 
 .navbar-links-container {
