@@ -60,6 +60,7 @@
 .socials-link {
     font-size: 32px;
     color: whitesmoke;
+    transition: 0.2s;
 }
 
 .socials-link-twitter:hover {
