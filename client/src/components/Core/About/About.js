@@ -13,7 +13,6 @@ export const About = () => {
                     <div className="about-page-header">
                         <h1 className="about-page-header-h1">ABOUT:</h1>
                     </div>
-                    <div className="about-page-line"></div>
                     <div className="about-page-project-description">
                         <p className="about-page-project-description-p">This is a small react client-side application called PizzaBurgerSpot for managing collections of pizzas, burgers and restaurants - created by the users. The application runs with it's own REST-api server made with ExpressJS and is connected to a NoSQL database - MongoDB.</p>
                     </div>
