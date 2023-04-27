@@ -52,8 +52,8 @@ export const Header = () => {
                     {
                         isAuthenticated && (
                             <div className="btn-container">
-                                <Link className="btn-nav" to="/auth/logout">Logout</Link>
                                 <p className="btn-container-p">{auth.user.email}</p>
+                                <Link className="btn-nav" to="/auth/logout">Logout</Link>
                             </div>
                         )
                     }
