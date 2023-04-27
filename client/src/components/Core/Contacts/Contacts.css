@@ -60,6 +60,10 @@
 
 .contacts-page-contacsts-section-part-link {
     text-decoration: none;
-    color: gold;
+    color: rgb(236, 200, 0);
     font-size: 18px;
+}
+
+.contacts-page-contacsts-section-part-link:hover {
+    color: rgb(255, 247, 0);
 }

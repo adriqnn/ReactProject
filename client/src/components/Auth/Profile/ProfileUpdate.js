@@ -64,7 +64,7 @@ export const ProfileUpdate = () => {
     return (
         <main>
             <section className="py-5" id="register-page">
-                <div className="container register-page">
+                <div className="container">
                     <h1 style={{fontFamily: "cursive"}}>
                         <p style={{fontSize: "36px", fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</p>
                         <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>Register...</p>
