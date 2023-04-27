@@ -26,44 +26,44 @@ export const Burger = ({
     };
 
     return (
-        <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100">
-                <img className="card-img-top2"
-                    src={picture}
-                    alt="pizzaIngredient"/>
-                <div className="card-body">
-                    <h5 className="card-title2"><span>{name}</span></h5>
-                    <h5 className="mt-4 card-info"> Weight: {weight}g<span></span></h5>
+        <div className="item-card">
+            <div className="item-card-container">
+                <div className="item-card-container-div-img">
+                    <img className="item-card-container-img" src={picture} alt="pizzaIngredient"/>
+                </div>
+                <div className="item-card-container-main">
+                    <h1 className="item-card-container-main-h1">{name}</h1>
+                    <h2 className="item-card-container-main-h2"> Weight: {weight}g</h2>
                     {
                         (isAuthenticated && !userHasAlreadyLiked()) &&(
                             <>
-                                <h5 className="mt-4 card-info" onClick={() => onLikeBurger(_id, auth.user._id)}> 
-                                    Like: <i className="fas fa-heart"></i> {likes.length}<span></span>
-                                </h5>
+                                <h2 className="item-card-container-main-h2" onClick={() => onLikeBurger(_id, auth.user._id)}> 
+                                    Like: <i className="fas fa-heart" style={{color: "#0477b6"}}></i> {likes.length}
+                                </h2>
                             </>
                         )
                     }
-                      {
+                    {
                         (isAuthenticated && userHasAlreadyLiked()) && (
                             <>
-                                <h5 className="mt-4 card-info" onClick={() => onUnlikeBurger(_id, auth.user._id)}> 
-                                    Liked: <i className="fas fa-heart" style={{color: "red"}}></i> {likes.length}<span></span>
-                                </h5>
+                                <h2 className="item-card-container-main-h2" onClick={() => onUnlikeBurger(_id, auth.user._id)}> 
+                                    Liked: <i className="fas fa-heart" style={{color: "red"}}></i> {likes.length}
+                                </h2>
                             </>
                         )
                     }
                     {
                         !isAuthenticated && (
                             <>
-                                <h5 className="mt-4 card-info"> 
-                                    Likes <i className="fas fa-heart" style={{color: "white"}}></i> {likes.length}<span></span>
-                                </h5>
+                                <h2 className="item-card-container-main-h2"> 
+                                    Likes <i className="fas fa-heart" style={{color: "whitesmoke"}}></i> {likes.length}
+                                </h2>
                             </>
                         )
                     }
                 </div>
-                <div className="card-footer">
-                    <Link to={`/burgers/item/${_id}`} className="btn btn-success">Details</Link>
+                <div className="item-card-container-footer">
+                    <Link to={`/burgers/item/${_id}`} className="item-card-container-footer-btn">Details</Link>
                 </div>
             </div>
         </div>

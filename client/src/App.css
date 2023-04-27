@@ -50,7 +50,7 @@ body {
 body::before {
   content: "";
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/public/assets/pictures/main/background.jpg");
-  background-size: cover;
+  background-size: scroller;
   background-position: center;
   position: absolute;
   top: 0px;
@@ -61,6 +61,73 @@ body::before {
 
 main {
   position: relative;
+}
+
+.item-card {
+  font-family: 'Raleway', sans-serif;
+  width: 400px;
+  height: 600px;
+  background-color: rgba(16, 16, 16, 0.95);
+  border: 2px solid whitesmoke;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.item-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 20px 24px;
+}
+
+.item-card-container-div-img {
+  height: 330px;
+}
+
+.item-card-container-img {
+  width: 100%;
+}
+
+.item-card-container-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 130px;
+}
+
+.item-card-container-main-h1 {
+  font-size: 24px;
+  color: whitesmoke;
+}
+
+.item-card-container-main-h2 {
+  font-size: 18px;
+  color: whitesmoke;
+}
+
+.item-card-container-footer {
+  height: 40px;
+}
+
+.item-card-container-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
+
+.item-card-container-footer-btn {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 700;
+  padding: 8px 30px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #27a844;
 }
 
 .footer-divider {
