@@ -39,6 +39,14 @@
     gap: 10px;
 }
 
+.navbar-logo-list li {
+    transition: 0.3s;
+}
+
+.navbar-logo-list li:hover {
+    transform: scale(1.15);
+}
+
 .navbar-name{
     font-size: 34px;
     background: linear-gradient(90deg, #ffff00, #ffd000);
@@ -87,6 +95,7 @@
     color: whitesmoke;
     border: 1px solid whitesmoke;
     border-radius: 6px;
+    transition: 0.5s;
 }
 
 .btn-nav:hover {
