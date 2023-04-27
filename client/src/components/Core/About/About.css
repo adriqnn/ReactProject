@@ -1,3 +1,60 @@
 .about-main {
     font-family: 'Raleway', sans-serif;
+    width: 1150px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
+
+.about-page-title, .about-page-container {
+    width: 100%;
+    padding: 24px 48px;
+    background-color: rgba(16, 16, 16, 0.9);
+    border-radius: 8px;
+    border: 2px solid whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.about-page-title-h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.about-page-container {
+    gap: 60px;
+}
+
+.about-page-header-h1 {
+    color: whitesmoke;
+    font-weight: 700;
+}
+
+.about-page-line {
+    width: 600px;
+    height: 2px;
+    background-color: whitesmoke;
+}
+
+.about-page-project-description {
+    width: 800px;
+}
+
+.about-page-project-technologies {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.about-page-general-information {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+

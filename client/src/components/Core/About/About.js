@@ -6,17 +6,18 @@ export const About = () => {
             <main className="about-main" id="about-main">
                 <section className="about-page-title">
                     <div className="about-page-title-div">
-                        <h1 className="about-page-title-h1">PizzaBurgerSpot React Project</h1>
+                        <h1 className="about-page-title-h1">PizzaBurgerSpot React Client Side Project</h1>
                     </div>
                 </section>
                 <section className="about-page-container">
                     <div className="about-page-header">
                         <h1 className="about-page-header-h1">ABOUT:</h1>
                     </div>
+                    <div className="about-page-line"></div>
                     <div className="about-page-project-description">
-                        <p className="about-page-project-description-p">This is a small react client-side application called PizzaBurgerSpot for managing collections of pizzas, burgers and restaurants - created by the users.</p>
-                        <p className="about-page-project-description-p">The application runs with it's own REST-api server made with ExpressJS and is connected to a NoSQL database - MongoDB.</p>
+                        <p className="about-page-project-description-p">This is a small react client-side application called PizzaBurgerSpot for managing collections of pizzas, burgers and restaurants - created by the users. The application runs with it's own REST-api server made with ExpressJS and is connected to a NoSQL database - MongoDB.</p>
                     </div>
+                    <div className="about-page-line"></div>
                     <div className="about-page-project-technologies">
                         <div className="about-page-project-technologies-client">
                             <p className="about-page-project-technologies-p">1. React Client:</p>
@@ -41,6 +42,7 @@ export const About = () => {
                             </ul>
                         </div>
                     </div>
+                    <div className="about-page-line"></div>
                     <div className="about-page-general-information">
                         <div className="about-page-general-information-div">
                             <p className="about-page-general-information-main-p">1. Dynamic Pages:</p>
@@ -125,9 +127,6 @@ export const About = () => {
                         </div>
                         <div className="about-page-general-information-div">
                             <p className="about-page-general-information-main-p">16. Used Google Drive to store Assets;</p>
-                        </div>
-                        <div>
-
                         </div>
                     </div>
                 </section>
