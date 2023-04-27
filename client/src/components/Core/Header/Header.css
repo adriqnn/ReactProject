@@ -20,14 +20,12 @@
 }
 
 .navbar-logo-list-name{
-    color: whitesmoke;
     font-size: 46px;
     display: flex;
     flex-direction: row;
     gap: 24px;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
 }
 
 .navbar-logo-list{
@@ -39,6 +37,11 @@
     gap: 10px;
 }
 
+.nav-bar-logolist-name-link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
 .navbar-logo-list li {
     transition: 0.3s;
 }
@@ -47,11 +50,16 @@
     transform: scale(1.15);
 }
 
-.navbar-name{
-    font-size: 34px;
+.navbar-name {
+    font-size: 32px;
     background: linear-gradient(90deg, #ffff00, #ffd000);
+    transition: 0.3s;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.navbar-name:hover {
+    font-size: 34px;
 }
 
 .navbar-links-container {

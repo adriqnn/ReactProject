@@ -10,13 +10,13 @@ export const Header = () => {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                <Link to="/" className="navbar-logo-list-name">
+                <div className="navbar-logo-list-name">
                     <ul className="navbar-logo-list">
-                        <li><i className="fas fa-hamburger"></i></li>
-                        <li><i className="fas fa-pizza-slice"></i></li>
+                        <li><Link to="/burgers" className="nav-bar-logolist-name-link"><i className="fas fa-hamburger"></i></Link></li>
+                        <li><Link to="/pizzas" className="nav-bar-logolist-name-link"><i className="fas fa-pizza-slice"></i></Link></li>
                     </ul>
-                    <p className="navbar-name">PizzaBurgerSpot</p>
-                </Link>
+                    <Link to="/" className="nav-bar-logolist-name-link"><p className="navbar-name">PizzaBurgerSpot</p></Link>
+                </div>
                 <div className="navbar-links-container">
                     <ul className="navbar-links">
                         <li className="nav-link-li">
