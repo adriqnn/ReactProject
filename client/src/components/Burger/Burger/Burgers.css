@@ -7,8 +7,60 @@
     align-items: center; 
     background-color: rgba(16, 16, 16, 0.9);
     border-radius: 8px;
-    border: 2px solid black;
-    padding: 100px 52px;
+    border: 2px solid whitesmoke;
+    padding: 24px 100px 100px 100px;
+}
+
+.burgers-page-container {
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px
+}
+
+.burgers-page-container-header {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+}
+
+.burgers-page-container-h1 {
+    font-size: 36px;
+    color: whitesmoke;
+}
+
+.burgers-page-container-line {
+    background-color: whitesmoke;
+    height: 2px;
+    width: 800px;
+}
+
+.burgers-page-container-links {
+    font-size: 28px;
+    color: whitesmoke;
+}
+
+.burgers-page-container-link {
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    font-size: 28px;
+    color: whitesmoke;
+    line-height: 34px;
+    font-weight: 600;
+}
+
+.burgers-page-container-link:hover {
+    color: #ffff00;
+    font-size: 32px;
+}
+
+.burgers-page-container-burgers-list {
+    font-size: 34px;
+    color: whitesmoke;
+    margin-bottom: 24px;
+    font-weight: 600;
 }
 
 .burgers-card-gallery {
