@@ -121,6 +121,7 @@
 }
 
 .register-form-group-btn {
+    transition: all .2s ease-in-out;
     font-size: 18px;
     font-weight: 600;
     color: black;
@@ -134,7 +135,7 @@
 
 .register-form-group-btn:hover {
     color: whitesmoke;
-    background-color: #00c01a;
+    background-color: #27a844;
 }
 
 .register-form-group-btn:active {

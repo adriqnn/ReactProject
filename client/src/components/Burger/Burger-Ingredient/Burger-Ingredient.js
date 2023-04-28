@@ -13,6 +13,7 @@ export const BurgerIngredient = ({
                 <div className="item-card-container-div-img">
                     <img className="item-card-container-img" src={picture} alt="burgerIngredient"/>
                 </div>
+                <div className="item-card-container-divider-line"></div>
                 <div className="item-card-container-main">
                     <h1 className="item-card-container-main-h1">{name}</h1>
                     <h2 className="item-card-container-main-h2"> Type: {type}</h2>

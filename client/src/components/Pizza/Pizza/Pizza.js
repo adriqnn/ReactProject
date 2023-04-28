@@ -31,6 +31,7 @@ export const Pizza = ({
                 <div className="item-card-container-div-img">
                     <img className="item-card-container-img" src={picture} alt="pizza"/>
                 </div>
+                <div className="item-card-container-divider-line"></div>
                 <div className="item-card-container-main">
                     <h1 className="item-card-container-main-h1">{name}</h1>
                     <h2 className="item-card-container-main-h2"> Weight: {weight}g</h2>
@@ -56,7 +57,7 @@ export const Pizza = ({
                         !isAuthenticated && (
                             <>
                                 <h2 className="item-card-container-main-h2"> 
-                                    Likes <i className="fas fa-heart" style={{color: "whitesmoke"}}></i> {likes.length}
+                                    Likes: <i className="fas fa-heart" style={{color: "whitesmoke"}}></i> {likes.length}
                                 </h2>
                             </>
                         )

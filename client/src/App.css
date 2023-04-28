@@ -65,6 +65,7 @@ main {
 
 .item-card {
   font-family: 'Raleway', sans-serif;
+  transition: all .2s ease-in-out;
   width: 400px;
   height: 600px;
   background-color: rgba(16, 16, 16, 0.95);
@@ -73,6 +74,17 @@ main {
   overflow: hidden;
   display: flex;
   align-items: center;
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+  border: 2px solid #27a844;
+}
+
+.item-card:hover .item-card-container-main-h1 {
+  background: linear-gradient(90deg, #ffff00, #ffd000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .item-card-container {
@@ -92,10 +104,22 @@ main {
   width: 100%;
 }
 
+.item-card-container-divider-line {
+  transition: all .3s ease-in-out;
+  width: 130px;
+  height: 2px;
+  background-color: whitesmoke;
+}
+
+.item-card:hover .item-card-container-divider-line {
+  width: 100%;
+  background-color: #27a844;
+}
+
 .item-card-container-main {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   height: 130px;
 }
 
@@ -120,12 +144,18 @@ main {
 }
 
 .item-card-container-footer-btn {
+  transition: all .2s ease-in-out;
   text-decoration: none;
-  color: whitesmoke;
+  color: black;
   font-weight: 700;
   padding: 8px 30px;
   border: 1px solid black;
   border-radius: 8px;
+  background-color: #00c37a;
+}
+
+.item-card-container-footer-btn:hover {
+  color: whitesmoke;
   background-color: #27a844;
 }
 

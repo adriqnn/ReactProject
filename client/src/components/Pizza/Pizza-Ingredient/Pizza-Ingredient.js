@@ -13,6 +13,7 @@ export const PizzaIngredient = ({
                 <div className="item-card-container-div-img">
                     <img className="item-card-container-img" src={picture} alt="pizzaIngredient"/>
                 </div>
+                <div className="item-card-container-divider-line"></div>
                 <div className="item-card-container-main">
                     <h1 className="item-card-container-main-h1">{name}</h1>
                     <h2 className="item-card-container-main-h2"> Type: {type}<span></span></h2>
