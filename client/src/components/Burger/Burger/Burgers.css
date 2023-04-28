@@ -1,0 +1,18 @@
+.burgers-main {
+    font-family: 'Raleway', sans-serif;
+    width: 1600px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgba(16, 16, 16, 0.9);
+    border-radius: 8px;
+    border: 2px solid black;
+    padding: 100px 52px;
+}
+
+.burgers-card-gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 30px
+}

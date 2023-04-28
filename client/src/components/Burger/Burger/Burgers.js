@@ -12,28 +12,25 @@ export const Burgers = () => {
  
     return (
         <>
-            <main>
-                <section className="container" id="burgers-main">
-                    <header className="ingredient">
-                        <h1 style={{fontFamily: "cursive"}}>
-                            <p style={{fontSize: "36px", fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</p>
-                            <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>We make the best Burgers in town and here is a list of our Burgers!</p>
-                            <p> </p>
-                            <p className="line"></p>
-                            <p>&nbsp;&nbsp;&nbsp;</p>
+            <main className="burgers-main" id="burgers-main">
+                <section className="burgers-page-container">
+                    <header className="burgers-page-container-header">
+                        <h1 className="burgers-page-container-h1">We make the best Burgers in town and here is a list of our Burgers!</h1>
+                        <div className="burgers-page-container-line"></div>
+                        <div className="burgers-page-container-links">
                             { 
                                 isAuthenticated && (
                                     <>
-                                        <Link to="/burgers/create" style={{color: "gold"}}> Add Burger </Link>
+                                        <Link to="/burgers/create" className="burgers-page-container-link"> Add Burger </Link>
                                         | 
                                     </>
                                 )
                             }
-                            <Link to="/burgers/burger-ingredients" style={{color: "gold"}}> Ingredients </Link>
-                        </h1>
-                        <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "22px"}}>Burgers List:</p>
+                            <Link to="/burgers/burger-ingredients" className="burgers-page-container-link"> Ingredients </Link>
+                        </div>
+                        <p className="burgers-page-container-burgers-list">Burgers List:</p>
                     </header>
-                    <div className="row text-center">
+                    <div className="burgers-card-gallery">
                         {
                             burgers.length > 0 && burgers.map(x => <Burger key={x._id} {...x}/>)
                         }
