@@ -12,32 +12,30 @@ export const Pizzas = () => {
 
     return (
         <>
-            <main>
-                <section className="container" id="pizzas-main">
-                    <header className="ingredient">
-                        <h1 style={{fontFamily: "cursive"}}>
-                            <p style={{fontSize: "36px", fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</p>
-                            <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>We make the best Pizzas in town and here is a list of our Pizzas!</p>
-                            <p> </p>
-                            <p className="line"></p>
-                            <p>&nbsp;&nbsp;&nbsp;</p>
+            <main className="pizzas-main" id="pizzas-main">
+                <section className="pizzas-page-container">
+                    <header className="pizzas-page-container-header">
+                        <h1 className="pizzas-page-container-h1">We make the best Pizzas in town and here is a list of our Pizzas!</h1>
+                        <div className="pizzas-page-container-line"></div>
+                        <div className="pizzas-page-container-links">
                             {
                                 isAuthenticated && (
                                     <>
-                                        <Link to="/pizzas/create" style={{color: "gold"}}> Add Pizza </Link> 
+                                        <Link to="/pizzas/create" className="pizzas-page-container-link"> Add Pizza </Link> 
                                         | 
                                     </>
                                 )
                             }
-                            <Link to="/pizzas/pizza-ingredients" style={{color: "gold"}}> Ingredients </Link>
-                        </h1>
-                        <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive", fontSize: "22px"}}>Pizzas List:</p>
+                            <Link to="/pizzas/pizza-ingredients" className="pizzas-page-container-link"> Ingredients </Link>
+                        </div>
+                        <p className="pizzas-page-container-pizzas-list">Pizzas List:</p>
                     </header>
-                    <div className="row text-center">
+                    <div className="pizzas-card-gallery">
                         {
                             pizzas.length > 0 && pizzas.map(x => <Pizza key={x._id} {...x}/>)
                         }
                         {
+                            // todo
                             (pizzas.length <= 0 || errorFetchingPizzasData) && (
                                 <div className="no-ingredients">
                                     <img src="/assets/pictures/main/404missin.png" alt="missing"/>
