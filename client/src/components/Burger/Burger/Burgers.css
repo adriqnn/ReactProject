@@ -70,5 +70,5 @@
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
-    gap: 36px
+    gap: 36px;
 }
