@@ -1,4 +1,4 @@
-.burger-ingredient-main {
+.burger-ingredients-main {
     font-family: 'Raleway', sans-serif;
     width: 1600px;
     margin: 100px auto;
@@ -11,14 +11,14 @@
     padding: 24px 100px 100px 100px;
 }
 
-.burger-ingredient-page-container {
+.burger-ingredients-page-container {
     margin: 24px;
     display: flex;
     flex-direction: column;
     gap: 24px
 }
 
-.burger-ingredient-page-container-header {
+.burger-ingredients-page-container-header {
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -31,18 +31,18 @@
     color: whitesmoke;
 }
 
-.burger-ingredient-page-container-line {
+.burger-ingredients-page-container-line {
     background-color: whitesmoke;
     height: 2px;
     width: 800px;
 }
 
-.burger-ingredient-page-container-links {
+.burger-ingredients-page-container-links {
     font-size: 28px;
     color: whitesmoke;
 }
 
-.burger-ingredient-page-container-link {
+.burger-ingredients-page-container-link {
     transition: all .3s ease-in-out;
     text-decoration: none;
     font-size: 28px;
@@ -51,19 +51,19 @@
     font-weight: 600;
 }
 
-.burger-ingredient-page-container-link:hover {
+.burger-ingredients-page-container-link:hover {
     color: #ffff00;
     font-size: 32px;
 }
 
-.burger-ingredient-page-container-burger-ingredient-list {
+.burger-ingredients-page-container-burger-ingredients-list {
     font-size: 34px;
     color: whitesmoke;
     margin-bottom: 24px;
     font-weight: 600;
 }
 
-.burger-ingredient-card-gallery {
+.burger-ingredients-card-gallery {
     justify-content: center;
     align-items: center;
     width: 1600px;
