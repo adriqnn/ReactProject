@@ -1,4 +1,4 @@
-.pizza-ingredient-main {
+.pizza-ingredients-main {
     font-family: 'Raleway', sans-serif;
     width: 1600px;
     margin: 100px auto;
@@ -11,14 +11,14 @@
     padding: 24px 100px 100px 100px;
 }
 
-.pizza-ingredient-page-container {
+.pizza-ingredients-page-container {
     margin: 24px;
     display: flex;
     flex-direction: column;
     gap: 24px
 }
 
-.pizza-ingredient-page-container-header {
+.pizza-ingredients-page-container-header {
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -26,23 +26,23 @@
     justify-content: center;
 }
 
-.pizza-ingredient-page-container-h1 {
+.pizza-ingredients-page-container-h1 {
     font-size: 36px;
     color: whitesmoke;
 }
 
-.pizza-ingredient-page-container-line {
+.pizza-ingredients-page-container-line {
     background-color: whitesmoke;
     height: 2px;
     width: 800px;
 }
 
-.pizza-ingredient-page-container-links {
+.pizza-ingredients-page-container-links {
     font-size: 28px;
     color: whitesmoke;
 }
 
-.pizza-ingredient-page-container-link {
+.pizza-ingredients-page-container-link {
     transition: all .3s ease-in-out;
     text-decoration: none;
     font-size: 28px;
@@ -51,19 +51,19 @@
     font-weight: 600;
 }
 
-.pizza-ingredient-page-container-link:hover {
+.pizza-ingredients-page-container-link:hover {
     color: #ffff00;
     font-size: 32px;
 }
 
-.pizza-ingredient-page-container-pizza-ingredient-list {
+.pizza-ingredients-page-container-pizza-ingredients-list {
     font-size: 34px;
     color: whitesmoke;
     margin-bottom: 24px;
     font-weight: 600;
 }
 
-.pizza-ingredient-card-gallery {
+.pizza-ingredients-card-gallery {
     justify-content: center;
     align-items: center;
     /* width: 1600px; */
