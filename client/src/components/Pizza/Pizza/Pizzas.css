@@ -1,0 +1,70 @@
+.pizzas-main {
+    font-family: 'Raleway', sans-serif;
+    width: 1600px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgba(16, 16, 16, 0.9);
+    border-radius: 8px;
+    border: 2px solid whitesmoke;
+    padding: 24px 100px 100px 100px;
+}
+
+.pizzas-page-container {
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px
+}
+
+.pizzas-page-container-header {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+}
+
+.pizzas-page-container-h1 {
+    font-size: 36px;
+    color: whitesmoke;
+}
+
+.pizzas-page-container-line {
+    background-color: whitesmoke;
+    height: 2px;
+    width: 800px;
+}
+
+.pizzas-page-container-links {
+    font-size: 28px;
+    color: whitesmoke;
+}
+
+.pizzas-page-container-link {
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    font-size: 28px;
+    color: whitesmoke;
+    line-height: 34px;
+    font-weight: 600;
+}
+
+.pizzas-page-container-link:hover {
+    color: #ffff00;
+    font-size: 32px;
+}
+
+.pizzas-page-container-pizzas-list {
+    font-size: 34px;
+    color: whitesmoke;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.pizzas-card-gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 30px
+}
