@@ -66,7 +66,7 @@
 .pizzas-card-gallery {
     justify-content: center;
     align-items: center;
-    width: 1600px;
+    /* width: 1600px; */
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
