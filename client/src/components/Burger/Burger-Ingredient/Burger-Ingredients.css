@@ -37,25 +37,6 @@
     width: 800px;
 }
 
-.burger-ingredients-page-container-links {
-    font-size: 28px;
-    color: whitesmoke;
-}
-
-.burger-ingredients-page-container-link {
-    transition: all .3s ease-in-out;
-    text-decoration: none;
-    font-size: 28px;
-    color: whitesmoke;
-    line-height: 34px;
-    font-weight: 600;
-}
-
-.burger-ingredients-page-container-link:hover {
-    color: #ffff00;
-    font-size: 32px;
-}
-
 .burger-ingredients-page-container-burger-ingredients-list {
     font-size: 34px;
     color: whitesmoke;
