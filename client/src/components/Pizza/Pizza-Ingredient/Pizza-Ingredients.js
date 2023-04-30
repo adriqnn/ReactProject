@@ -23,23 +23,20 @@ export const PizzaIngredients = () => {
 
     return (
         <>
-            <main>
-                <section className="container" id="pizza-ingredient">
-                    <header className="ingredient">
-                        <h1 style={{fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</h1>
-                        <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>We make our pizzas with the freshest ingredients out there!</p>
-                        <p> </p>
-                        <p className="line"></p>
-                        <p>&nbsp;&nbsp;&nbsp;</p>
-                        <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>Here is a list of products we use in the making of the pizzas!</p>
-                        <p> </p>
-                        <p className="line"></p>
+            <main className="pizza-ingredients-main" id="pizza-ingredients-main">
+                <section className="pizza-ingredients-page-container">
+
+                <header className="pizza-ingredients-page-container-header">
+                        <h1 className="pizza-ingredients-page-container-h1">We make our pizzas with the freshest ingredients out there!</h1>
+                        <div className="pizza-ingredients-page-container-line"></div>
+                        <p className="pizza-ingredients-page-container-burger-ingredients-list">Pizza Ingredients List:</p>
                     </header>
-                    <div className="row text-center">
+                    <div className="pizza-ingredients-card-gallery">
                         {
                             pizzaIngredients.length > 0 && pizzaIngredients.map(x => <PizzaIngredient key={x._id} {...x}/>)
                         }
                         {
+                            //todo
                             (pizzaIngredients.length <= 0 || errorFetchingPizzaIngredientsData) && (
                                 <div className="no-ingredients">
                                     <img src="/assets/pictures/main/404missin.png" alt="missing"/>

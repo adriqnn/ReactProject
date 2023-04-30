@@ -35,6 +35,7 @@ export const BurgerIngredients = () => {
                             burgerIngredients.length > 0 && burgerIngredients.map(x => <BurgerIngredient key={x._id} {...x}/>)                       
                         }
                         {
+                            //todo
                             (burgerIngredients.length <= 0 || errorFetchingBurgerIngredientsData) && (
                                 <div className="no-ingredients">
                                     <img src="/assets/pictures/main/404missin.png" alt="missing"/>
