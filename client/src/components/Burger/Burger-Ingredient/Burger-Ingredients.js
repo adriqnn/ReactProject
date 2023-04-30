@@ -23,19 +23,14 @@ export const BurgerIngredients = () => {
 
     return (
         <>
-            <main>
-                <section className="container" id="burger-ingredient">
-                    <header className="ingredient">
-                        <h1 style={{fontFamily: "cursive", color: "gold", textDecoration: "underline"}}>Pizza & Burger Spot</h1>
-                        <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>We make our burgers with the freshest ingredients out there!</p>
-                        <p> </p>
-                        <p className="line"></p>
-                        <p>&nbsp;&nbsp;&nbsp;</p>
-                        <p className="lead" style={{fontStyle: "italic", fontFamily: "cursive"}}>Here is a list of products we use in the making of the burgers!</p>
-                        <p> </p>
-                        <p className="line"></p>
+            <main className="burger-ingredients-main" id="burger-ingredients-main">
+                <section className="burger-ingredients-page-container">
+                    <header className="burger-ingredients-page-container-header">
+                        <h1 className="burger-ingredients-page-container-h1">We make our burgers with the freshest ingredients out there!</h1>
+                        <div className="burger-ingredients-page-container-line"></div>
+                        <p className="burger-ingredients-page-container-burger-ingredients-list">Burger Ingredients List:</p>
                     </header>
-                    <div className="row text-center">
+                    <div className="burger-ingredients-card-gallery">
                         {
                             burgerIngredients.length > 0 && burgerIngredients.map(x => <BurgerIngredient key={x._id} {...x}/>)                       
                         }
