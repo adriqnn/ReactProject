@@ -29,7 +29,7 @@ export const PizzaIngredients = () => {
                 <header className="pizza-ingredients-page-container-header">
                         <h1 className="pizza-ingredients-page-container-h1">We make our pizzas with the freshest ingredients out there!</h1>
                         <div className="pizza-ingredients-page-container-line"></div>
-                        <p className="pizza-ingredients-page-container-burger-ingredients-list">Pizza Ingredients List:</p>
+                        <p className="pizza-ingredients-page-container-pizza-ingredients-list">Pizza Ingredients List:</p>
                     </header>
                     <div className="pizza-ingredients-card-gallery">
                         {
