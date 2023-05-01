@@ -8,17 +8,18 @@ export const Restaurant = ({
     rating 
 }) => {
     return (
-        <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100">
-                <img className="card-img-top2"
-                    src={picture}
-                    alt="pizzaIngredient"/>
-                <div className="card-body">
-                    <h5 className="card-title2"><span>{name}</span></h5>
-                    <h5 className="mt-4 card-info"> Address: {address}<span></span></h5>
-                    <h5 className="mt-4 card-info"> Rating: {rating}<span></span></h5>
+        <div className="item-card">
+            <div className="item-card-container">
+                <div className="item-card-container-div-img">
+                    <img className="item-card-container-img" src={picture} alt="restaurant"/>
                 </div>
-                <div className="card-footer">
+                <div className="item-card-container-divider-line"></div>
+                <div className="item-card-container-main">
+                    <h1 className="item-card-container-main-h1">{name}</h1>
+                    <h2 className="item-card-container-main-h2"> Address: {address}</h2>
+                    <h2 className="item-card-container-main-h2"> Rating: {rating}</h2>
+                </div>
+                <div className="item-card-container-footer">
                     <Link to={`/restaurants/item/${_id}`} className="btn btn-success">Details</Link>
                 </div>
             </div>
