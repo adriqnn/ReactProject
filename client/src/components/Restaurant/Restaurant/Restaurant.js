@@ -20,7 +20,7 @@ export const Restaurant = ({
                     <h2 className="item-card-container-main-h2"> Rating: {rating}</h2>
                 </div>
                 <div className="item-card-container-footer">
-                    <Link to={`/restaurants/item/${_id}`} className="btn btn-success">Details</Link>
+                    <Link to={`/restaurants/item/${_id}`} className="item-card-container-footer-btn">Details</Link>
                 </div>
             </div>
         </div>
