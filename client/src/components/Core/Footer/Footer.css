@@ -64,10 +64,12 @@
 }
 
 .socials-link-twitter:hover {
+    transition: all .3s ease-in-out;
     color: #00acee;
 }
 
 .socials-link-facebook:hover {
+    transition: all .3s ease-in-out;
     color: #3b5998;
 }
 
@@ -78,9 +80,11 @@
 }
 
 .socials-link-youtube:hover {
+    transition: all .3s ease-in-out;
     color: 	#FF0000;
 }
 
 .socials-link-linkedin:hover {
+    transition: all .3s ease-in-out;
     color: #0072b1;
 }
